@@ -6,4 +6,4 @@ The research group “AIST – Advanced Information Systems and Technology” re
 
 ## How to contribute
 
-Contribution guidelines can be found [here](./contributing.html).
+Contribution guidelines can be found [here](./contributing.md).
