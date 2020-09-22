@@ -3,6 +3,11 @@ plugins:
 relative_links:
   enabled: true
   collections: true
+include:
+  - CODE_OF_CONDUCT.md 
+  - CONTRIBUTING.md
+  - CodingConventions.md
+  - index.md
 theme: jekyll-theme-tactile
 title: AIST
 description: Advanced Information Systems and Technology
