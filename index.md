@@ -7,3 +7,8 @@ The research group “AIST – Advanced Information Systems and Technology” re
 ## How to contribute
 
 Contribution guidelines can be found [here](CONTRIBUTING.md).
+
+## Projects
+
+- [Seshat](seshat/)
+- [Jack](jack/)
