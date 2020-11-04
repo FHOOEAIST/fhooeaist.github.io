@@ -10,5 +10,8 @@ Contribution guidelines can be found [here](CONTRIBUTING.md).
 
 ## Projects
 
-- [Seshat](seshat/)
-- [Jack](jack/)
+- [Seshat](seshat/): Logging Framework
+- [Jack](jack/): Collection of Java Utility classes.
+- [BPMN Model](bpmn-model/): Generated bpmn model.
+- [BPMN Visualization](bpmn-viz/): Automatic generation of DI elements in BPMN.
+- [Itamae](https://github.com/FHOOEAIST/Itamae): Visual Studio Code Plugin to edit HL7® FHIR® Shorthand
