@@ -11,6 +11,7 @@ Contribution guidelines can be found [here](CONTRIBUTING.md).
 ## Projects
 
 - [Seshat](seshat/): Logging Framework
+- [GTF](GTF/): Graph Transformation Framework
 - [Jack](jack/): Collection of Java Utility classes.
 - [BPMN Model](bpmn-model/): Generated bpmn model.
 - [BPMN Visualization](bpmn-viz/): Automatic generation of DI elements in BPMN.
