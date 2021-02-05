@@ -17,3 +17,4 @@ Contribution guidelines can be found [here](CONTRIBUTING.md).
 - [BPMN Visualization](bpmn-viz/): Automatic generation of DI elements in BPMN.
 - [Itamae](https://github.com/FHOOEAIST/Itamae): Visual Studio Code Plugin to edit HL7® FHIR® Shorthand
 - [MSBPMN](https://fhooeaist.github.io/MSBPMN/): Transformation from HL7® FHIR® PlanDefinition to BPMN2.0
+- [AistCV](https://fhooeaist.github.io/aistcv/): OpenCV Wrapper for Java with Contribution Packages
