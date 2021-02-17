@@ -4,6 +4,8 @@
 
 The research group “AIST – Advanced Information Systems and Technology” researches software solutions in the fields of Machine Learning, Data Mining and Computer Vision as well as eHealth.
 
+Find us also on: [aist.science](http://aist.science)
+
 ## How to contribute
 
 Contribution guidelines can be found [here](CONTRIBUTING.md).
@@ -18,3 +20,4 @@ Contribution guidelines can be found [here](CONTRIBUTING.md).
 - [Itamae](https://github.com/FHOOEAIST/Itamae): Visual Studio Code Plugin to edit HL7® FHIR® Shorthand
 - [MSBPMN](https://fhooeaist.github.io/MSBPMN/): Transformation from HL7® FHIR® PlanDefinition to BPMN2.0
 - [AistCV](https://fhooeaist.github.io/aistcv/): OpenCV Wrapper for Java with Contribution Packages
+- [Imaging](https://github.com/FHOOEAIST/imaging): Java based image processing and computer vision framework
