@@ -20,4 +20,5 @@ Contribution guidelines can be found [here](CONTRIBUTING.md).
 - [Itamae](https://github.com/FHOOEAIST/Itamae): Visual Studio Code Plugin to edit HL7® FHIR® Shorthand
 - [MSBPMN](https://fhooeaist.github.io/MSBPMN/): Transformation from HL7® FHIR® PlanDefinition to BPMN2.0
 - [AistCV](https://fhooeaist.github.io/aistcv/): OpenCV Wrapper for Java with Contribution Packages
-- [Imaging](https://github.com/FHOOEAIST/imaging): Java based image processing and computer vision framework
+- [Imaging](https://fhooeaist.github.io/imaging/): Java based image processing and computer vision framework
+- [Aist Neo4j](https://fhooeaist.github.io/aist-neo4j/): AIST Neo4J DB Integration
