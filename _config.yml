@@ -8,6 +8,7 @@ include:
   - CONTRIBUTING.md
   - CodingConventions.md
   - index.md
-theme: jekyll-theme-tactile
+theme: jekyll-theme-cayman
+show_downloads: false
 title: AIST
 description: Advanced Information Systems and Technology
