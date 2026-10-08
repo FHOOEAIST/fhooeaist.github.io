@@ -3,10 +3,10 @@ lang: en
 page_id: pub:oh-deer-should-i-handle-this-seasonal-priors-for-selective-wildlife-annotation
 permalink: /publications/oh-deer-should-i-handle-this-seasonal-priors-for-selective-wildlife-annotation/
 date: 2026-08-03  # arXiv submission date, not necessarily the final proceedings date
-title: Oh Deer, Should I Handle This? Seasonal Priors for Selective Wildlife
+title: Oh Deer, How Should I Handle This? Seasonal Priors for Selective Wildlife
   Fine-Grained Annotation
 reference: Markoff H., Praschl C., Jørgensen A., Mogensen C., Skadhauge M., Beery
-  S., Ørsted M., Schedl D. “Oh Deer, Should I Handle This? Seasonal Priors for Selective
+  S., Ørsted M., Schedl D. “Oh Deer, How Should I Handle This? Seasonal Priors for Selective
   Wildlife Fine-Grained Annotation“, CV4E Workshop @ ECCV 2026.
 categories: [cv, ml, geo]
 external_url: https://arxiv.org/abs/2608.02762
