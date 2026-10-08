@@ -16,6 +16,7 @@ projects:
       Technical Communication - tekom Europe e.V.
     foerdergeber: Erasmus+ Cooperation Partnerships in Higher Education programme
 category: unknown
+eu_funded: true
 ---
 
 ## TecCOMFrame+

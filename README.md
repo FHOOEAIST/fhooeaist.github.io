@@ -123,6 +123,7 @@ projects:
     partner: FH OÖ Media Interaction Lab, ...
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – AI4Green
     dissertant: <optional>
+eu_funded: true         # optional: shows the official "Funded by the European Union" emblem after the text
 ---
 
 Markdown description for Bambi...

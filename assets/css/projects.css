@@ -295,6 +295,20 @@
   margin-top: 0;
 }
 
+/* EU emblem + funding statement: 56px keeps the flag above the 1 cm minimum
+   height; the white background guarantees contrast for the positive version. */
+.project-eu-funding {
+  margin: 1.5rem 0 0;
+}
+
+.project-eu-funding img {
+  display: block;
+  width: auto;
+  height: 56px;
+  max-width: 100%;
+  background: #fff;
+}
+
 .project-facts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

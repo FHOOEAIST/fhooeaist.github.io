@@ -62,6 +62,17 @@ css: projects
           {{ content_sections[section_index] }}
         {% endif %}
 
+        {%- comment -%}
+          Official EU emblem with funding statement (EC download centre, horizontal
+          positive version) — kept unmodified and with its protection area, see
+          "The use of the EU emblem in the context of EU programmes 2021-2027".
+        {%- endcomment -%}
+        {% if page.eu_funded and forloop.first %}
+        <p class="project-eu-funding">
+          <img src="{{ '/assets/images/projects/eu-funded-' | append: site.active_lang | append: '.png' | relative_url }}" alt="{% if en %}Funded by the European Union{% else %}Finanziert von der Europäischen Union{% endif %}" width="252" height="56" loading="lazy">
+        </p>
+        {% endif %}
+
         {% if proj.laufzeitStart or proj.partner != "" or proj.dissertant or proj.foerdergeber %}
         <dl class="project-facts">
           {% if projects_count > 1 %}
