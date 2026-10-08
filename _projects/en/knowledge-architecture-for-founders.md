@@ -8,7 +8,7 @@ background: /assets/images/projects/Autonomous_Innovation_background.jpg
 projects:
   - title: Scalable Knowledge-Data Architecture for Founders
     laufzeitStart: 01.09.2026
-    laufzeitEnd: 10.09.2026
+    laufzeitEnd: 30.11.2026
     partner: Innoflow
     foerdergeber: WKOÖ Technologie-Scheck
 category: ml
