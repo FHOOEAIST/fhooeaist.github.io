@@ -21,7 +21,7 @@
         <p class="eyebrow">Research Group · University of Applied Sciences Upper Austria, Campus Hagenberg</p>
         <h1>Advanced Information Systems <span>and Technology</span></h1>
         <p class="home-intro">
-          The research group "AIST – Advanced Information Systems and Technology" conducts research on software solutions in the areas of eHealth, Machine Learning and Data Mining, as well as Computer Vision.
+          The research group "AIST – Advanced Information Systems and Technology" conducts research on software solutions in the areas of eHealth, Machine Learning and Data Mining, as well as Visual Computing.
         </p>
         <div class="hero-actions">
           <a class="btn btn-light" href="{{ projects_page.permalink | relative_url }}">Explore projects</a>
@@ -47,7 +47,7 @@
         <li>
           <a href="#cv">
             <span class="area-thumb"><img src="{{ '/assets/images/index/computervision.svg' | relative_url }}" alt=""></span>
-            <span><strong>Computer Vision</strong><small>Image analysis &amp; mixed reality</small></span>
+            <span><strong>Visual Computing</strong><small>Image processing, graphics &amp; mixed reality</small></span>
             <i class="fas fa-arrow-down" aria-hidden="true"></i>
           </a>
         </li>
@@ -134,11 +134,11 @@
 
       <div class="area-card" id="cv" data-area="cv">
         <div class="area-icon">
-          <img src="{{ '/assets/images/index/computervision.svg' | relative_url }}" alt="Computer Vision Icon" loading="lazy">
+          <img src="{{ '/assets/images/index/computervision.svg' | relative_url }}" alt="Visual Computing icon" loading="lazy">
         </div>
-        <h2>Computer Vision</h2>
+        <h2>Visual Computing</h2>
         <p>
-          Computer Vision deals with the analysis of image content and thus the extraction of semantic information. Similar to the ability of humans to understand their environment by means of visual impressions, this research field tries to create a comparable capability for digital systems. For example, in the thematic field of Mixed Reality it is necessary to combine information from the real world with digital data. For this purpose, image information must first be created, pre-processed and then analyzed.
+          Visual Computing covers both the analysis and the generation of visual information. Computer Vision and Image Processing extract semantic information from image content: just as humans understand their environment through visual impressions, this field aims to give digital systems a comparable ability. Computer Graphics creates and renders digital content, and Mixed Reality brings both together by combining information from the real world with digital data. Our work spans the whole chain, from image acquisition and pre-processing through analysis to visualisation.
         </p>
         {% assign cv_projects = site.projects | where: 'lang', 'en' | where: 'category', 'cv' | sort: 'title' %}
         {% if cv_projects.size > 0 %}

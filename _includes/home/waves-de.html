@@ -21,7 +21,7 @@
         <p class="eyebrow">Forschungsgruppe · FH Oberösterreich, Campus Hagenberg</p>
         <h1>Advanced Information Systems <span>and Technology</span></h1>
         <p class="home-intro">
-          Die Forschungsgruppe „AIST – Advanced Information Systems and Technology" forscht an Softwarelösungen in den Bereichen eHealth, Machine Learning und Data Mining sowie Computer Vision.
+          Die Forschungsgruppe „AIST – Advanced Information Systems and Technology" forscht an Softwarelösungen in den Bereichen eHealth, Machine Learning und Data Mining sowie Visual Computing.
         </p>
         <div class="hero-actions">
           <a class="btn btn-light" href="{{ projects_page.permalink | relative_url }}">Projekte entdecken</a>
@@ -47,7 +47,7 @@
         <li>
           <a href="#cv">
             <span class="area-thumb"><img src="{{ '/assets/images/index/computervision.svg' | relative_url }}" alt=""></span>
-            <span><strong>Computer Vision</strong><small>Bildanalyse &amp; Mixed Reality</small></span>
+            <span><strong>Visual Computing</strong><small>Bildverarbeitung, Grafik &amp; Mixed Reality</small></span>
             <i class="fas fa-arrow-down" aria-hidden="true"></i>
           </a>
         </li>
@@ -134,11 +134,11 @@
 
       <div class="area-card" id="cv" data-area="cv">
         <div class="area-icon">
-          <img src="{{ '/assets/images/index/computervision.svg' | relative_url }}" alt="Computer Vision Icon" loading="lazy">
+          <img src="{{ '/assets/images/index/computervision.svg' | relative_url }}" alt="Visual Computing Icon" loading="lazy">
         </div>
-        <h2>Computer Vision</h2>
+        <h2>Visual Computing</h2>
         <p>
-          Computer Vision beschäftigt sich mit der Analyse von Bildinhalten und somit der Extraktion von semantischen Informationen. Ähnlich wie es dem Menschen möglich ist, sein Umfeld anhand von visuellen Eindrücken zu verstehen, versucht dieses Forschungsfeld eine vergleichbare Fähigkeit für digitale Systeme zu erschaffen. Etwa im Themenumfeld von Mixed Reality ist es notwendig Informationen aus der realen Welt mit digitalen Daten zu kombinieren. Hierfür müssen Bildinformationen zunächst erstellt, vorverarbeitet und im Anschluss analysiert werden.
+          Visual Computing umfasst sowohl die Analyse als auch die Erzeugung visueller Informationen. Computer Vision und Bildverarbeitung extrahieren semantische Informationen aus Bildinhalten: Ähnlich wie der Mensch sein Umfeld anhand visueller Eindrücke versteht, versucht dieses Forschungsfeld eine vergleichbare Fähigkeit für digitale Systeme zu erschaffen. Computergrafik erzeugt und visualisiert digitale Inhalte, und Mixed Reality verbindet beides, indem Informationen aus der realen Welt mit digitalen Daten kombiniert werden. Unsere Arbeiten decken die gesamte Kette ab – von der Bilderfassung und Vorverarbeitung über die Analyse bis zur Visualisierung.
         </p>
         {% assign cv_projects = site.projects | where: 'lang', 'de' | where: 'category', 'cv' | sort: 'title' %}
         {% if cv_projects.size > 0 %}

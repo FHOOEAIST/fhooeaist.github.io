@@ -17,10 +17,10 @@
   short_en: eHealth
 
 - id: cv
-  label_de: Computer Vision & Bildverarbeitung
-  label_en: Computer Vision & Image Processing
-  short_de: Computer Vision
-  short_en: Computer Vision
+  label_de: Visual Computing
+  label_en: Visual Computing
+  short_de: Visual Computing
+  short_en: Visual Computing
 
 - id: ml
   label_de: Machine Learning & Data Science

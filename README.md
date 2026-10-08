@@ -181,7 +181,7 @@ into that category.
 | id        | Area                                |
 | --------- | ----------------------------------- |
 | `ehealth` | eHealth & Medical Informatics       |
-| `cv`      | Computer Vision & Image Processing  |
+| `cv`      | Visual Computing (Computer Vision, Image Processing, Computer Graphics, Mixed Reality) |
 | `ml`      | Machine Learning & Data Science     |
 | `se`      | Software Engineering                |
 | `pm`      | Process Mining & Process Analytics  |
