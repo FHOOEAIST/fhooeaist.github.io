@@ -52,6 +52,7 @@ members:
     details_url: https://pure.fh-ooe.at/en/persons/helga-ludwig
   - name: Brecht Maes
     category: student
+    gender: m
     role: PXL University of Applied Sciences and Arts
     email: brecht.maes@students.fh-hagenberg.at
     image: /assets/images/team/brecht_maes.jpg
