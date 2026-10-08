@@ -8,7 +8,7 @@ background: /assets/images/projects/Human-Centered_Artificial_Intelligence_backg
 projects:
   - title: Human-Centered Artificial Intelligence
     laufzeitStart: 01.04.2022
-    laufzeitEnd: 30.04.2026
+    laufzeitEnd: 31.03.2027
     partner: ""
     foerdergeber: FWF – Doc.fund.connects
 category: ml
