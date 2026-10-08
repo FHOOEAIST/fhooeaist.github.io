@@ -10,9 +10,9 @@ projects:
     laufzeitStart: 01.10.2024
     laufzeitEnd: 30.09.2026
     dissertant: Christoph Praschl
-    foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG –
+    foerdergeber: Austrian Research Promotion Agency FFG –
       Dissertationsprogramm der Fachhochschule OÖ
-category: unknown
+category: cv
 ---
 
 ## Thumper

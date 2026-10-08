@@ -5,6 +5,8 @@ permalink: /theses/daniel-stigler-evaluierung-von-klassifikatoren-f-r-den-einsat
 date: 2018-12-31
 title: Evaluation of classifiers for use in emergency detection systems
 student: Daniel Stigler
+thesis_type: bachelor
+categories: [ml, cv]
 project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/projekt-eden
 ---
 

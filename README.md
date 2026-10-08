@@ -66,6 +66,17 @@ Conventions:
 - **Top-level pages** exist as a German version (`page.html`) and an English version (`page-en.html`).
 - Translations of the *same* content are linked by a shared `page_id` (e.g. `news:my-post`, `projects:bambi`, `pub:...`, `thesis:...`). The language switcher uses this to jump between the DE and EN versions.
 
+## Design Variants
+
+Two complete designs live side by side; `site_design` in `_config.yml` picks the one that is built:
+
+```yaml
+site_design: tiles   # light layout with the square tile mosaic (fh-ooe.at style)
+site_design: waves   # dark navy header and the animated wave hero
+```
+
+Only the value has to change – content, collections and page front matter are shared by both variants. See `CLAUDE.md` (Design variants) for the files involved.
+
 ## News Posts
 
 Blog-style news entries shown on the news page.
@@ -190,7 +201,7 @@ counts, filter behaviour) and
 entries and badges), so `publications.html` and `publications-en.html` stay in sync.
 
 ## Theses
-Bachelor/Master theses, shown grouped by year.
+Bachelor/Master theses and dissertations, shown grouped by year and filterable by research category, year and type. Categories use the same taxonomy as the publications ([`_data/publication_categories.yml`](_data/publication_categories.yml)) and appear as badges on each entry.
 
 - **Location:** `_theses/{de,en}/YYYY-student-title.md`
 
@@ -202,6 +213,8 @@ permalink: /theses/andreas-erhard-process-mining-.../  # optional, used as ancho
 date: 2023-12-31
 title: Process Mining im Radiologiebereich
 student: Andreas Erhard
+thesis_type: master  # bachelor | master | dissertation -- shown as a label and used by the type filter
+categories: [pm, ehealth]  # ids from _data/publication_categories.yml, usually one or two
 project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/pica  # optional
 ---
 
@@ -210,7 +223,7 @@ Abstract (Markdown)...
 
 # Team
 
-Team members are listed from [`_data/team.yml`](_data/team.yml)
+Team members are listed from [`_data/team.yml`](_data/team.yml). Each member carries a `category:` (`professor` | `project_manager` | `researcher` | `student`, labels in [`_data/team_categories.yml`](_data/team_categories.yml)) that is shown after the name, and a `gender:` (`m` | `f`) that picks the German form of that label (neutral fallback without it); an optional `role:` (e.g. the study programme of a student employee) is shown next to it.
 
 ---
 

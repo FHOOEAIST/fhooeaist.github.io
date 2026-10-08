@@ -8,10 +8,10 @@ background: /assets/images/projects/BuildPilot_background.jpg
 projects:
   - title: BuildPilot
     laufzeitStart: 01.08.2025
-    laufzeitEnd: 31.10.2028
+    laufzeitEnd: 31.10.2025
     partner: Monto Tech GmbH
     foerdergeber: Land Oberösterreich – easy2research
-category: unknown
+category: ml
 ---
 
 ## BuildPilot

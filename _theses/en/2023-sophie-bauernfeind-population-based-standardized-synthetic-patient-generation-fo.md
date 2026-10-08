@@ -6,6 +6,8 @@ date: 2023-12-31
 title: Population-based Standardized, Synthetic Patient Generation for
   Healthcare Applications
 student: Sophie Bauernfeind
+thesis_type: master
+categories: [ehealth, ml]
 project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/pica
 ---
 

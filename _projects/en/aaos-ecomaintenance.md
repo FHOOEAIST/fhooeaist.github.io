@@ -10,8 +10,8 @@ projects:
     laufzeitStart: 01.11.2025
     laufzeitEnd: 31.10.2026
     partner: Aximote
-    foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
-category: unknown
+    foerdergeber: Austrian Research Promotion Agency FFG – Basisprogramm
+category: ml
 ---
 
 ## AAOS Eco+Maintenance

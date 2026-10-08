@@ -1,20 +1,24 @@
 ---
 layout: default
 ---
-<article class="thesis-entry">
-  <header>
-    <h1>{{ page.title }}</h1>
-    <p class="thesis-meta">
-      <strong>{% if site.active_lang == 'de' %}Student{% else %}Student{% endif %}:</strong> {{ page.student }}
-      | <strong>{% if site.active_lang == 'de' %}Jahr{% else %}Year{% endif %}:</strong> {{ page.year }}
-    </p>
-  </header>
+<div class="container container-narrow" style="padding-top: 3rem;">
+  <article class="thesis-entry">
+    <header class="article-header">
+      <p class="eyebrow">{% if site.active_lang == 'de' %}Diplomarbeit{% else %}Thesis{% endif %}</p>
+      <h1>{{ page.title }}</h1>
+      <p class="article-meta">
+        <span><i class="fas fa-user-graduate" aria-hidden="true"></i>{{ page.student }}</span>
+        <span><i class="far fa-calendar" aria-hidden="true"></i>{{ page.year }}</span>
+        {% if page.thesis_type %}<span><i class="fas fa-graduation-cap" aria-hidden="true"></i>{% if page.thesis_type == "bachelor" %}{% if site.active_lang == 'de' %}Bachelorarbeit{% else %}Bachelor thesis{% endif %}{% elsif page.thesis_type == "master" %}{% if site.active_lang == 'de' %}Masterarbeit{% else %}Master thesis{% endif %}{% else %}Dissertation{% endif %}</span>{% endif %}
+      </p>
+    </header>
 
-  {% if page.project_url %}
-  <p><strong>{% if site.active_lang == 'de' %}Projekt{% else %}Project{% endif %}:</strong> <a href="{{ page.project_url }}">{{ page.project_url }}</a></p>
-  {% endif %}
+    {% if page.project_url %}
+    <p><strong>{% if site.active_lang == 'de' %}Projekt{% else %}Project{% endif %}:</strong> <a href="{{ page.project_url }}">{{ page.project_url }}</a></p>
+    {% endif %}
 
-  <div>
-    {{ content }}
-  </div>
-</article>
+    <div class="article-body">
+      {{ content }}
+    </div>
+  </article>
+</div>

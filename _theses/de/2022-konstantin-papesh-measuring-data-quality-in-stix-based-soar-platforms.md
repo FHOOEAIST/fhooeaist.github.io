@@ -5,6 +5,8 @@ permalink: /theses/konstantin-papesh-measuring-data-quality-in-stix-based-soar-p
 date: 2022-12-31
 title: Measuring Data Quality in STIX-based SOAR Platforms
 student: Konstantin Papesh
+thesis_type: master
+categories: [se]
 project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/soc-toolkit
 ---
 

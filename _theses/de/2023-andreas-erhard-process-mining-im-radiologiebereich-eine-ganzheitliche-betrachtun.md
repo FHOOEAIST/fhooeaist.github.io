@@ -7,6 +7,8 @@ title: Process Mining im Radiologiebereich - Eine ganzheitliche Betrachtung der
   organisatorischen und datenspezifischen Reife anhand eines kanonischen
   Reifegradmodells
 student: Andreas Erhard
+thesis_type: master
+categories: [pm, ehealth]
 project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/pica
 ---
 

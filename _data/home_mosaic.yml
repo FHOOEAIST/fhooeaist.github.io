@@ -1,0 +1,16 @@
+# Pictures in the hero mosaic of the "tiles" design (site_design: tiles).
+#
+# Two static photo tiles, rendered by _includes/home/tiles-{de,en}.html:
+# the first entry fills the square tile at the top right, the second the
+# wide (3 : 2) tile at the bottom left. No links, no cycling.
+#
+#   image     path of the picture
+#   alt_de    alternative text, German
+#   alt_en    alternative text, English
+#   position  optional: CSS object-position for the crop, e.g. "center bottom"
+- image: /assets/images/news/ICECCME_2023_title.jpg
+  alt_de: Das AIST-Team auf der ICECCME 2023
+  alt_en: The AIST team at ICECCME 2023
+- image: /assets/images/index/aist-team.jpg
+  alt_de: Das AIST-Team im Hörsaal am Campus Hagenberg
+  alt_en: The AIST team in a lecture hall at Campus Hagenberg

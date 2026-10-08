@@ -5,6 +5,8 @@ permalink: /theses/simone-sandler-modelltransformation-von-digitalen-geb-udepl-n
 date: 2019-12-31
 title: Model transformation of digital building plans to STL 3D printing
 student: Simone Sandler
+thesis_type: bachelor
+categories: [se]
 project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/moxup
 ---
 

@@ -6,6 +6,8 @@ date: 2021-12-31
 title: "FHIR-Tooling: Ein interaktiver Editor für Erstellung und Design von
   FHIR-Shorthand Spezifikationen"
 student: Sophie Bauernfeind
+thesis_type: master
+categories: [ehealth, se]
 project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/project-oppa
 ---
 

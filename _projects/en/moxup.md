@@ -10,8 +10,8 @@ projects:
     laufzeitStart: 01.10.2018
     laufzeitEnd: 31.03.2019
     partner: Mox Innovations GmbH
-    foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Innovationsscheck
-category: unknown
+    foerdergeber: Austrian Research Promotion Agency FFG – Innovationsscheck
+category: cv
 ---
 
 ## Project MoxUP

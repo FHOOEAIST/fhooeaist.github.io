@@ -10,8 +10,8 @@ projects:
     laufzeitStart: 01.04.2025
     laufzeitEnd: 30.09.2025
     partner: Doppel-N GmbH
-    foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Kleinprojekt
-category: unknown
+    foerdergeber: Austrian Research Promotion Agency FFG – Kleinprojekt
+category: ml
 ---
 
 ## Replient Side-Kick
