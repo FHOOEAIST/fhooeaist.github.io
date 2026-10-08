@@ -50,6 +50,11 @@ members:
     phone: +43 5 0804 27172
     image: /assets/images/team/helga_billensteiner_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/helga-ludwig
+  - name: Brecht Maes
+    category: intern
+    role: PXL University of Applied Sciences and Arts
+    email: brecht.maes@students.fh-hagenberg.at
+    image: /assets/images/team/brecht_maes.jpg
   - name: FH-Prof. DI Dr. Herwig Mayr
     category: professor
     gender: m

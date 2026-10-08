@@ -32,3 +32,9 @@
   label_de_f: Studentische Mitarbeiterin
   label_de: Studentische*r Mitarbeiter*in
   label_en: Student Employee
+
+- id: intern
+  label_de_m: Studentischer Praktikant
+  label_de_f: Studentische Praktikantin
+  label_de: Studentische*r Praktikant*in
+  label_en: Student Intern

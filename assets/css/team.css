@@ -104,7 +104,8 @@
   color: var(--area-ml);
 }
 
-.team-category-student {
+.team-category-student,
+.team-category-intern {
   background: var(--area-ehealth-soft);
   color: var(--area-ehealth);
 }
