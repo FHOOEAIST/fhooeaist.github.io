@@ -68,9 +68,16 @@ css: projects
           "The use of the EU emblem in the context of EU programmes 2021-2027".
         {%- endcomment -%}
         {% if page.eu_funded and forloop.first %}
-        <p class="project-eu-funding">
+        <div class="project-eu-funding">
           <img src="{{ '/assets/images/projects/eu-funded-' | append: site.active_lang | append: '.png' | relative_url }}" alt="{% if en %}Funded by the European Union{% else %}Finanziert von der Europäischen Union{% endif %}" width="252" height="56" loading="lazy">
-        </p>
+          <p class="project-eu-disclaimer">
+            {%- if en -%}
+            Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the granting authority. Neither the European Union nor the granting authority can be held responsible for them.
+            {%- else -%}
+            Finanziert von der Europäischen Union. Die geäußerten Ansichten und Meinungen entsprechen jedoch ausschließlich denen des Autors bzw. der Autoren und spiegeln nicht zwingend die der Europäischen Union oder der Bewilligungsbehörde wider. Weder die Europäische Union noch die Bewilligungsbehörde können dafür verantwortlich gemacht werden.
+            {%- endif -%}
+          </p>
+        </div>
         {% endif %}
 
         {% if proj.laufzeitStart or proj.partner != "" or proj.dissertant or proj.foerdergeber %}

@@ -309,6 +309,13 @@
   background: #fff;
 }
 
+.project-eu-disclaimer {
+  margin: 0.6rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-text-light);
+}
+
 .project-facts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
