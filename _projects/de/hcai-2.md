@@ -2,13 +2,13 @@
 lang: de
 title: Human-Centered Artificial Intelligence
 logo: /assets/images/projects/Human-Centered_Artificial_Intelligence_logo.png
-page_id: projects:6631-2
-permalink: /projects/6631-2/
+page_id: projects:hcai-2
+permalink: /projects/hcai-2/
 background: /assets/images/projects/Human-Centered_Artificial_Intelligence_background.jpg
 projects:
   - title: Human-Centered Artificial Intelligence
     laufzeitStart: 01.04.2022
-    laufzeitEnd: 30.04.2026
+    laufzeitEnd: 31.03.2027
     partner: ""
     foerdergeber: FWF – Doc.fund.connects
 category: ml
