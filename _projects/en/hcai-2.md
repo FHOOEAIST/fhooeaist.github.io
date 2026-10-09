@@ -2,7 +2,7 @@
 lang: en
 title: Human-Centered Artificial Intelligence
 logo: /assets/images/projects/Human-Centered_Artificial_Intelligence_logo.png
-page_id: projects:6631-2
+page_id: projects:hcai-2
 permalink: /projects/hcai-2/
 background: /assets/images/projects/Human-Centered_Artificial_Intelligence_background.jpg
 projects:
