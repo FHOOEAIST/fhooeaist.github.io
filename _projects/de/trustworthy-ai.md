@@ -12,7 +12,9 @@ projects:
     partner: CAS, CGM, Black Tusk, HSE 365, Sclable
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Virtuelle
       Welten und digitale Lösungen für die Gesundheit
-category: cv
+category:
+  - ehealth
+  - ml
 ---
 
 ## Trustworthy AI

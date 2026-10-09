@@ -318,7 +318,7 @@
       });
 
       cards.forEach(function (card) {
-        var show = filter === "all" || card.getAttribute("data-category") === filter;
+        var show = filter === "all" || card.getAttribute("data-category").split(" ").indexOf(filter) !== -1;
         card.hidden = !show;
       });
 

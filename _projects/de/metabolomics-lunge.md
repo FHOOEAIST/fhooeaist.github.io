@@ -11,7 +11,9 @@ projects:
     laufzeitEnd: 30.06.2027
     partner: Medizinische Universität Graz
     foerdergeber: Auftragsprojekt
-category: ml
+category:
+  - ehealth
+  - ml
 ---
 
 ## Metabolomics Lunge
