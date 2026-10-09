@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Jekyll source for the AIST (Advanced Information Systems and Technology) research group website (University of Applied Sciences Upper Austria, Campus Hagenberg), deployed to GitHub Pages.
 
-**⚠️ Pushing to `main` triggers a live deployment via GitHub Actions.** Test non-trivial changes locally first, or open a pull request: every PR from a branch of this repo gets a preview at `https://fhooeaist.github.io/pr-preview/pr-<N>/` (`.github/workflows/preview.yml`), linked in a PR comment and removed when the PR is closed.
+**⚠️ Pushing to `main` triggers a live deployment via GitHub Actions.** Test non-trivial changes locally first, or open a pull request: every PR from a branch of this repo gets a preview at `https://aist.fh-hagenberg.at/pr-preview/pr-<N>/` (`.github/workflows/preview.yml`), linked in a PR comment and removed when the PR is closed.
 
 ## Commands
 
