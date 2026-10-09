@@ -15,7 +15,7 @@
         <link rel="canonical" href="{{ page.url | absolute_url }}" />
 
         <!-- SEO -->
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="{% if site.preview %}noindex, nofollow{% else %}index, follow{% endif %}" />
         <meta name="author" content="{{ site.author | escape }}" />
 
         <!-- Open Graph -->

@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Jekyll source for the AIST (Advanced Information Systems and Technology) research group website (University of Applied Sciences Upper Austria, Campus Hagenberg), deployed to GitHub Pages.
 
-**⚠️ Pushing to `main` triggers a live deployment via GitHub Actions — there is no staging.** Test non-trivial changes locally first.
+**⚠️ Pushing to `main` triggers a live deployment via GitHub Actions.** Test non-trivial changes locally first, or open a pull request: every PR from a branch of this repo gets a preview at `https://fhooeaist.github.io/pr-preview/pr-<N>/` (`.github/workflows/preview.yml`), linked in a PR comment and removed when the PR is closed.
 
 ## Commands
 
@@ -34,7 +34,9 @@ bundle exec jekyll build
 npx pagefind --site _site
 ```
 
-Production builds (`.github/workflows/deploy.yml`) run with `JEKYLL_ENV=production` and a `--baseurl` flag, then run `pagefind` against `_site` before deploying. The workflow also runs nightly (`0 3 * * *`) and via `workflow_dispatch`, in addition to on every push to `main`.
+Production builds (`.github/workflows/deploy.yml`) run with `JEKYLL_ENV=production`, then run `pagefind` against `_site` and push the result to the `gh-pages` branch, which GitHub Pages serves ("Deploy from a branch"). The push leaves `gh-pages/pr-preview/` alone. The workflow also runs nightly (`0 3 * * *`) and via `workflow_dispatch`, in addition to on every push to `main`.
+
+PR previews (`.github/workflows/preview.yml`) build the same way with `--baseurl /pr-preview/pr-<N>` and `--config _config.yml,_config.preview.yml`; the overlay sets `preview: true`, which switches the robots meta in `_layouts/default.html` to `noindex, nofollow`. Since previews are served under a sub-path, links and image paths must go through `relative_url` (or be bare `src="/..."`, which `img_baseurl.rb` fixes up). PRs from forks get no preview, since their token can't push to `gh-pages`.
 
 ## Architecture
 

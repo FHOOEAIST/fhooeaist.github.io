@@ -1,0 +1,6 @@
+# Overrides for PR preview builds (.github/workflows/preview.yml), layered on
+# top of _config.yml via `--config _config.yml,_config.preview.yml`.
+
+# Marks every page noindex, nofollow (see _layouts/default.html) so search
+# engines don't pick up the previews under /pr-preview/.
+preview: true

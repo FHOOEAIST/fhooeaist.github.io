@@ -7,10 +7,12 @@ on:
     - cron: "0 3 * * *"
   workflow_dispatch:
 
+# The site is published from the gh-pages branch (Settings → Pages → "Deploy
+# from a branch"), so this workflow pushes the built site there instead of
+# uploading a Pages artifact. That lets PR previews (preview.yml) live next to
+# it under /pr-preview/pr-<N>/.
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: "pages"
@@ -21,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://fhooeaist.github.io/
     steps:
       - uses: actions/checkout@v4
 
@@ -43,16 +45,21 @@ jobs:
         with:
           node-version: "20"
 
-      - id: pages
-        uses: actions/configure-pages@v5
-
-      - run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+      - run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
 
       - run: npx pagefind --site _site
 
-      - uses: actions/upload-pages-artifact@v3
+      # The output is already built; stop GitHub Pages from running Jekyll on it again.
+      - run: touch _site/.nojekyll
 
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _site
+          branch: gh-pages
+          # Keep the PR previews that preview.yml deploys into this folder.
+          clean-exclude: pr-preview/
+          # Rebase onto gh-pages instead of force-pushing, so a preview pushed
+          # at the same time isn't overwritten.
+          force: false
