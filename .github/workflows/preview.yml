@@ -54,3 +54,6 @@ jobs:
           source-dir: _site
           preview-branch: gh-pages
           umbrella-dir: pr-preview
+          # The action would otherwise guess <org>.github.io/<repo>; the site is
+          # served from the custom domain in CNAME.
+          pages-base-url: aist.fh-hagenberg.at
