@@ -240,3 +240,8 @@ Before cloning or committing images, make sure LFS is installed and initialized
 # Deployment
 
 Deployment is automated via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml):
+
+- Every push to `main` (plus a nightly run and manual `workflow_dispatch`) builds the site with `JEKYLL_ENV=production`, indexes it with Pagefind and pushes `_site` to the `gh-pages` branch, which GitHub Pages serves.
+- Every pull request from a branch of this repository gets a **preview** at `https://fhooeaist.github.io/pr-preview/pr-<N>/` via [`.github/workflows/preview.yml`](.github/workflows/preview.yml). A bot comment on the PR links to it; it is updated on every push to the PR and removed when the PR is closed or merged. Preview pages are marked `noindex` (see `_config.preview.yml`). PRs from forks don't get a preview.
+
+Repository setting required: **Settings → Pages → Build and deployment → Source: "Deploy from a branch", branch `gh-pages`, folder `/ (root)`**.

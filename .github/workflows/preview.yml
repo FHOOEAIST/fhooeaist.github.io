@@ -1,0 +1,56 @@
+name: PR Preview
+
+# Builds every pull request into gh-pages/pr-preview/pr-<N>/, so it is served at
+# https://fhooeaist.github.io/pr-preview/pr-<N>/, and posts the link as a sticky
+# PR comment. Closing or merging the PR removes the preview again.
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: preview-${{ github.event.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    # PRs from forks only get a read-only token and cannot push to gh-pages.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout code
+        if: github.event.action != 'closed'
+        uses: nschloe/action-cached-lfs-checkout@v1
+
+      - uses: ruby/setup-ruby@v1
+        if: github.event.action != 'closed'
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - uses: actions/setup-node@v4
+        if: github.event.action != 'closed'
+        with:
+          node-version: "20"
+
+      # _config.preview.yml sets `preview: true`, which marks every page noindex.
+      - name: Build preview
+        if: github.event.action != 'closed'
+        run: |
+          bundle exec jekyll build \
+            --config _config.yml,_config.preview.yml \
+            --baseurl "/pr-preview/pr-${{ github.event.number }}"
+          npx pagefind --site _site
+        env:
+          JEKYLL_ENV: production
+
+      - uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: _site
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
