@@ -171,6 +171,8 @@ attachment: /assets/.../paper.pdf            # optional
 Abstract (Markdown)...
 ```
 
+To check for duplicates (missing DE/EN pairs, reused `page_id`s or permalinks, near-identical titles) run `python scripts/check_duplicates.py`; add `--base origin/main` to also compare newly added entries against the existing ones by authors and title keywords.
+
 ### Categories
 
 A publication carries a **list** of categories — most sit at the intersection of
