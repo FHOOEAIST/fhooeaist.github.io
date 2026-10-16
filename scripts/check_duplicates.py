@@ -6,14 +6,13 @@ Always checks (both collections, both languages):
   - every page_id exists exactly once per language, in both de/ and en/
   - permalinks are unique per language
   - no DOI / external_url is shared by several entries (hint only)
-  - no two English titles are near-identical (hint only)
+  - no two English titles are identical (error) or near-identical (hint)
 With --base, the entries added since that git ref are additionally compared
 against all older ones by shared authors and title keywords, which catches the
 same work listed under a different title.
 
-Exit code 1 if a page_id or permalink problem is found; the other findings are
-hints that need a human look (e.g. a workshop paper and its later journal
-version are legitimately separate entries).
+Exit code 1 if a page_id, permalink or identical-title problem is found; the
+other findings are hints that each need a human look before they are dismissed.
 """
 import argparse, difflib, re, subprocess, sys
 from collections import defaultdict
@@ -105,7 +104,10 @@ def main():
 
     for a, b in combinations(en, 2):
         ratio = difflib.SequenceMatcher(None, norm(a.get("title", "")), norm(b.get("title", ""))).ratio()
-        if ratio >= 0.8:
+        if ratio == 1.0:
+            errors += 1
+            print(f"ERROR identical titles:\n      {a['path']}\n      {b['path']}")
+        elif ratio >= 0.8:
             hints += 1
             print(f"HINT  similar titles ({ratio:.2f}):\n      {a['path']}\n      {b['path']}")
 
