@@ -6,7 +6,7 @@ date: 2026-06-03  # CVPR 2026 workshop day 1 (June 3–4); exact day of this wor
 title: "The BAMBI Dataset: Multimodal Nadir UAV-Recordings of Forest Wildlife"
 reference: 'Praschl C., Markoff H., Maschek A., Jantsch W., Wohlfahrt S., Leitner
   H., Beery S., Ørsted M., Schedl D. “The BAMBI Dataset: Multimodal Nadir UAV-Recordings
-  of Forest Wildlife“, CV4Animals Workshop @ CPVR 2026.'
+  of Forest Wildlife“, CV4Animals Workshop @ CVPR 2026.'
 categories: [cv, geo]
 ---
 
