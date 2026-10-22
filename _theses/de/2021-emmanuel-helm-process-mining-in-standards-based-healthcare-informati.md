@@ -6,7 +6,7 @@ date: 2021-12-31
 title: 'Process Mining in Standards-Based Healthcare Information Systems'
 student: Emmanuel Helm
 thesis_type: dissertation
-categories: [ehealth]
+categories: [ehealth, pm]
 ---
 
 Dissertation an der Johannes Kepler Universität Linz. [Volltext](https://epub.jku.at/download/pdf/6024630.pdf)
