@@ -13,6 +13,11 @@ same work listed under a different title.
 
 Exit code 1 if a page_id, permalink or identical-title problem is found; the
 other findings are hints that each need a human look before they are dismissed.
+
+A pair that was checked and really is two works (e.g. a non-archival workshop
+version and the conference paper with the same title) is marked in the front
+matter of either entry with `not_duplicate_of: [<page_id>, ...]`; the title,
+DOI/link and same-work checks then skip that pair. An unknown id there is an error.
 """
 import argparse, difflib, re, subprocess, sys
 from collections import defaultdict
@@ -60,6 +65,11 @@ def authors(e):
     return names
 
 
+def id_list(value):
+    """`[a, b]` or a bare `a` → ["a", "b"] / ["a"]."""
+    return [v.strip().strip("'\"") for v in value.strip("[]").split(",") if v.strip()]
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--base", help="git ref; compare entries added since then against older ones")
@@ -91,18 +101,30 @@ def main():
             errors += 1
             print(f"ERROR permalink {link} used by {paths}")
 
+    known = {pid for _, pid in by_id}
+    not_dup = set()
+    for e in entries:
+        for other in id_list(e.get("not_duplicate_of", "")):
+            if other not in known:
+                errors += 1
+                print(f"ERROR not_duplicate_of {other} in {e['path']}: no such page_id")
+            not_dup.add(frozenset((e.get("page_id"), other)))
+    excused = lambda a, b: frozenset((a.get("page_id"), b.get("page_id"))) in not_dup
+
     en = [e for e in entries if e["lang"] == "en"]
     for field in ("doi", "external_url"):
         seen = defaultdict(list)
         for e in en:
             if e.get(field):
-                seen[e[field].lower().rstrip("/")].append(e["path"])
-        for value, paths in seen.items():
-            if len(paths) > 1:
+                seen[e[field].lower().rstrip("/")].append(e)
+        for value, group in seen.items():
+            if len(group) > 1 and not all(excused(a, b) for a, b in combinations(group, 2)):
                 hints += 1
-                print(f"HINT  same {field} {value}:\n      " + "\n      ".join(paths))
+                print(f"HINT  same {field} {value}:\n      " + "\n      ".join(e["path"] for e in group))
 
     for a, b in combinations(en, 2):
+        if excused(a, b):
+            continue
         ratio = difflib.SequenceMatcher(None, norm(a.get("title", "")), norm(b.get("title", ""))).ratio()
         if ratio == 1.0:
             errors += 1
@@ -122,6 +144,8 @@ def main():
         for n in new:
             nw, na, ny = words(n.get("title", "")), authors(n), int(n["date"][:4])
             for o in old:
+                if excused(n, o):
+                    continue
                 ow = words(o.get("title", ""))
                 jac = len(nw & ow) / max(1, len(nw | ow))
                 shared = na & authors(o)
@@ -130,7 +154,8 @@ def main():
                     print(f"HINT  possible same work (title overlap {jac:.2f}, shared authors {sorted(shared)}):\n"
                           f"      new {n['path']}\n      old {o['path']}")
 
-    print(f"\n{len(entries)} files checked: {errors} error(s), {hints} hint(s)")
+    print(f"\n{len(entries)} files checked: {errors} error(s), {hints} hint(s), "
+          f"{len(not_dup)} pair(s) marked not_duplicate_of")
     return 1 if errors else 0
 
 
