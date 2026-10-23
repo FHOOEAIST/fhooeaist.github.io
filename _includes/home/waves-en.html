@@ -4,6 +4,7 @@
 {% assign team_page = site.pages | where: "page_id", "team" | where: "lang", "en" | first %}
 {% assign news_page = site.pages | where: "page_id", "news" | where: "lang", "en" | first %}
 {% assign contact_page = site.pages | where: "page_id", "contact" | where: "lang", "en" | first %}
+{% assign positions_page = site.pages | where: "page_id", "positions" | where: "lang", "en" | first %}
 
 {% assign n_projects = site.projects | where: "lang", "en" | size %}
 {% assign n_pubs = site.publications | where: "lang", "en" | size %}
@@ -188,12 +189,12 @@
   <div class="container">
     <div class="home-cta">
       <div>
-        <h2>Collaboration &amp; theses</h2>
-        <p>Interested in a cooperation, a joint research project, or writing your thesis as part of our research? We look forward to hearing from you.</p>
+        <h2>Collaboration, jobs &amp; theses</h2>
+        <p>Interested in a cooperation, a joint research project, a job in our team, or writing your thesis as part of our research? We look forward to hearing from you.</p>
       </div>
       <div class="hero-actions">
         <a class="btn btn-light" href="{{ contact_page.permalink | relative_url }}">Get in touch</a>
-        <a class="btn btn-ghost-light" href="{{ theses_page.permalink | relative_url }}">Theses</a>
+        <a class="btn btn-ghost-light" href="{{ positions_page.permalink | relative_url }}">Open positions &amp; topics</a>
       </div>
     </div>
   </div>

@@ -10,6 +10,7 @@ version; tiles-de.html is the German twin. Styles: assets/css/home-tiles.css.
 {% assign team_page = site.pages | where: "page_id", "team" | where: "lang", "en" | first %}
 {% assign news_page = site.pages | where: "page_id", "news" | where: "lang", "en" | first %}
 {% assign contact_page = site.pages | where: "page_id", "contact" | where: "lang", "en" | first %}
+{% assign positions_page = site.pages | where: "page_id", "positions" | where: "lang", "en" | first %}
 {% assign history_page = site.pages | where: "page_id", "history" | where: "lang", "en" | first %}
 
 {% assign n_projects = site.projects | where: "lang", "en" | size %}
@@ -208,12 +209,12 @@ version; tiles-de.html is the German twin. Styles: assets/css/home-tiles.css.
     <div class="tiles-cta-grid">
       <div>
         <p class="eyebrow">Cooperation</p>
-        <h2>Collaboration &amp; theses</h2>
-        <p>Interested in a cooperation, a joint research project or a thesis within the scope of our research? We look forward to hearing from you.</p>
+        <h2>Collaboration, jobs &amp; theses</h2>
+        <p>Interested in a cooperation, a joint research project, a job or a thesis within the scope of our research? We look forward to hearing from you.</p>
       </div>
       <div class="tiles-hero-actions">
         <a class="btn" href="{{ contact_page.permalink | relative_url }}">Get in touch <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        <a class="btn btn-outline" href="{{ theses_page.permalink | relative_url }}">Theses</a>
+        <a class="btn btn-outline" href="{{ positions_page.permalink | relative_url }}">Open positions &amp; topics</a>
       </div>
     </div>
   </div>

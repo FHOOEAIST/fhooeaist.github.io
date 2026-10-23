@@ -10,6 +10,7 @@ version; tiles-en.html is the English twin. Styles: assets/css/home-tiles.css.
 {% assign team_page = site.pages | where: "page_id", "team" | where: "lang", "de" | first %}
 {% assign news_page = site.pages | where: "page_id", "news" | where: "lang", "de" | first %}
 {% assign contact_page = site.pages | where: "page_id", "contact" | where: "lang", "de" | first %}
+{% assign positions_page = site.pages | where: "page_id", "positions" | where: "lang", "de" | first %}
 {% assign history_page = site.pages | where: "page_id", "history" | where: "lang", "de" | first %}
 
 {% assign n_projects = site.projects | where: "lang", "de" | size %}
@@ -208,12 +209,12 @@ version; tiles-en.html is the English twin. Styles: assets/css/home-tiles.css.
     <div class="tiles-cta-grid">
       <div>
         <p class="eyebrow">Kooperation</p>
-        <h2>Zusammenarbeit &amp; Diplomarbeiten</h2>
-        <p>Sie interessieren sich für eine Kooperation, ein gemeinsames Forschungsprojekt oder eine Diplomarbeit im Rahmen unserer Forschung? Wir freuen uns über Ihre Nachricht.</p>
+        <h2>Zusammenarbeit, Mitarbeit &amp; Diplomarbeiten</h2>
+        <p>Sie interessieren sich für eine Kooperation, ein gemeinsames Forschungsprojekt, eine Mitarbeit oder eine Diplomarbeit im Rahmen unserer Forschung? Wir freuen uns über Ihre Nachricht.</p>
       </div>
       <div class="tiles-hero-actions">
         <a class="btn" href="{{ contact_page.permalink | relative_url }}">Kontakt aufnehmen <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        <a class="btn btn-outline" href="{{ theses_page.permalink | relative_url }}">Diplomarbeiten</a>
+        <a class="btn btn-outline" href="{{ positions_page.permalink | relative_url }}">Offene Stellen &amp; Themen</a>
       </div>
     </div>
   </div>
