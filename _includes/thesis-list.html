@@ -1,0 +1,76 @@
+{% comment %}
+Theses grouped by year, newest first. Expects:
+  include.lang    — "de" or "en"
+  include.items   — optional subset of site.theses (default: all of the
+                    language), e.g. the theses of one project
+  include.project — optional page_id of the project page the list sits on;
+                    its own link is left out of the "Project" line
+
+Entries carry data-year / data-type / data-categories for the filter in
+_includes/listing-filter.html and repeat the categories as badges (on the
+theses page a button for the filter, elsewhere a link into the filtered
+page). An entry's `projects:` list (project page_ids) is shown as links to
+those projects. One section per year, each showing two entries and a "show
+more" button (_includes/year-more.html, initYearSections in main.js).
+{% endcomment %}
+{% assign en = false %}{% if include.lang == "en" %}{% assign en = true %}{% endif %}
+{% if include.items %}
+  {% assign theses = include.items | sort: "date" | reverse %}
+{% else %}
+  {% assign theses = site.theses | where: "lang", include.lang | sort: "date" | reverse %}
+{% endif %}
+{% assign cats = site.data.publication_categories %}
+{% assign theses_page = site.pages | where: "page_id", "theses-index" | where: "lang", include.lang | first %}
+{% if en %}
+  {% assign t_filter_by = "Filter by category" %}
+  {% assign t_project = "Project" %}
+{% else %}
+  {% assign t_filter_by = "Nach Kategorie filtern" %}
+  {% assign t_project = "Projekt" %}
+{% endif %}
+
+{% assign by_year = theses | group_by_exp: "item", "item.date | date: '%Y'" %}
+<div class="listing-items">
+  {% for group in by_year %}
+    {% assign thesis_year = group.name %}
+    <section class="year-section" data-year="{{ thesis_year }}">
+    <h2 class="year-heading">{{ thesis_year }}</h2>
+    <div class="year-items">
+    {% for thesis in group.items %}
+    <div class="listing-item thesis-entry collapsible" data-year="{{ thesis_year }}" data-type="{{ thesis.thesis_type }}" data-categories="{{ thesis.categories | join: ' ' }}">
+      {% assign anchor = thesis.permalink | slugify %}
+      <h3 class="listing-title" id="{{ anchor }}">
+        <button type="button" class="listing-toggle" aria-controls="{{ anchor }}-content">
+          <span class="listing-toggle-text">{{ thesis.title }}</span>
+          <span class="listing-toggle-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+      </h3>
+      <p class="thesis-meta"><i class="fas fa-user-graduate" aria-hidden="true"></i> {{ thesis.student }}{% if thesis.thesis_type %}<span class="thesis-type thesis-type-{{ thesis.thesis_type }}">{% if thesis.thesis_type == "bachelor" %}{% if en %}Bachelor thesis{% else %}Bachelorarbeit{% endif %}{% elsif thesis.thesis_type == "master" %}{% if en %}Master thesis{% else %}Masterarbeit{% endif %}{% elsif thesis.thesis_type == "dissertation" %}Dissertation{% endif %}</span>{% endif %}</p>
+      {% include project-links.html ids=thesis.projects lang=include.lang skip=include.project label=t_project %}
+      {% if thesis.categories.size > 0 %}
+      <p class="publication-categories">
+        {%- for id in thesis.categories -%}
+        {%- for cat in cats -%}
+        {%- if cat.id == id -%}
+        {%- if en -%}{%- assign short = cat.short_en -%}{%- assign full = cat.label_en -%}{%- else -%}{%- assign short = cat.short_de -%}{%- assign full = cat.label_de -%}{%- endif -%}
+        {%- if include.items -%}
+        <a class="publication-category" href="{{ theses_page.permalink | relative_url }}#cat={{ cat.id }}" title="{{ t_filter_by }}: {{ full | escape }}">{{ short | escape }}</a>
+        {%- else -%}
+        <button type="button" class="publication-category" data-category="{{ cat.id }}" title="{{ t_filter_by }}: {{ full | escape }}">{{ short | escape }}</button>
+        {%- endif %}
+        {% endif -%}
+        {%- endfor -%}
+        {%- endfor -%}
+      </p>
+      {% endif %}
+      <div class="listing-content" id="{{ anchor }}-content">
+        {{ thesis.content }}
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+    {% assign extra = group.size | minus: 2 %}
+    {% include year-more.html lang=include.lang extra=extra %}
+    </section>
+  {% endfor %}
+</div>

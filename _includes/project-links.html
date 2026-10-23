@@ -1,0 +1,21 @@
+{% comment %}
+"Project: A, B" line under a publication or thesis. Expects:
+  include.ids   — the entry's `projects:` list of project page_ids
+  include.lang  — "de" or "en"
+  include.skip  — optional page_id to leave out (the project page the list sits on)
+  include.label — "Projekt" / "Project"
+Unknown ids are ignored; nothing is rendered when no project is left. The
+link text is the `sort_title` (_plugins/project_sort_title.rb), so the line
+reads "Projekt: EDEN" rather than "Projekt: Projekt EDEN".
+{% endcomment %}
+{% assign link_projects = "" | split: "" %}
+{% for id in include.ids %}
+  {% if id != include.skip %}
+    {% assign linked = site.projects | where: "page_id", id | where: "lang", include.lang | first %}
+    {% if linked %}{% assign link_projects = link_projects | push: linked %}{% endif %}
+  {% endif %}
+{% endfor %}
+{% if link_projects.size > 0 %}
+<p class="entry-projects"><i class="fas fa-diagram-project" aria-hidden="true"></i> {{ include.label }}:
+  {%- for linked in link_projects %} <a href="{{ linked.url | relative_url }}">{{ linked.sort_title | default: linked.title }}</a>{% unless forloop.last %},{% endunless %}{% endfor %}</p>
+{% endif %}

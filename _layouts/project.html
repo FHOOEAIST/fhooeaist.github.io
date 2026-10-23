@@ -123,6 +123,28 @@ css: projects
       {% endif %}
     </div>
 
+    {%- comment -%}
+      Output of the project: publications and theses whose `projects:` list
+      names this page_id. Shown once after all phases; left out when empty.
+      Not indexed by Pagefind, the entries are already found on their own
+      listing pages.
+    {%- endcomment -%}
+    {% assign project_id = page.page_id %}
+    {% assign related_pubs = site.publications | where: "lang", site.active_lang | where_exp: "p", "p.projects contains project_id" %}
+    {% assign related_theses = site.theses | where: "lang", site.active_lang | where_exp: "t", "t.projects contains project_id" %}
+    {% if related_pubs.size > 0 %}
+    <section class="project-output" id="{% if en %}publications{% else %}publikationen{% endif %}" data-pagefind-ignore>
+      <h2>{% if en %}Publications{% else %}Publikationen{% endif %} <span class="project-output-count">{{ related_pubs.size }}</span></h2>
+      {% include publication-list.html lang=site.active_lang items=related_pubs project=project_id %}
+    </section>
+    {% endif %}
+    {% if related_theses.size > 0 %}
+    <section class="project-output" id="{% if en %}theses{% else %}diplomarbeiten{% endif %}" data-pagefind-ignore>
+      <h2>{% if en %}Theses{% else %}Diplomarbeiten{% endif %} <span class="project-output-count">{{ related_theses.size }}</span></h2>
+      {% include thesis-list.html lang=site.active_lang items=related_theses project=project_id %}
+    </section>
+    {% endif %}
+
     <footer class="article-footer">
       <a class="link-arrow" href="{{ projects_page.permalink | relative_url }}"><i class="fas fa-arrow-left" aria-hidden="true"></i> {% if en %}All projects{% else %}Alle Projekte{% endif %}</a>
     </footer>

@@ -8,7 +8,7 @@ title: Inter-institutional communication for health service providers using the
 student: Jacqueline Schwebach
 thesis_type: bachelor
 categories: [ehealth]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/projekt-cas
+projects: [projects:projekt-cas]
 ---
 
 With the introduction of the electronic health file in Austria (ELGA), a first step has already been taken towards better networking of the various health service providers (GDA). It contributes significantly to improving the quality of patient care and the Austrian e-health infrastructure. Radiological findings, medical and nursing discharge letters and e-medication can already be viewed in the ELGA. The electronic health record is being expanded step by step and continuously supplemented with new applications.

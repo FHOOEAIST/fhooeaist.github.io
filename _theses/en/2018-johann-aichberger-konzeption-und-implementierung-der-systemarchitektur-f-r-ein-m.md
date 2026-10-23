@@ -8,7 +8,7 @@ title: Design and implementation of the system architecture for a mixed reality
 student: Johann Aichberger
 thesis_type: bachelor
 categories: [xr, se]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/projekt-rudy-games
+projects: [projects:projekt-rudy-games]
 ---
 
 Over the last few years, the introduction of many new Augmented Reality (AR) devices like the Microsoft HoloLens has greatly contributed to the popularity and more widespread usage of AR. Supported by recent improvements in hardware and software technologies, even common smartphones have now reached the point where they can be used as a viable alternative for some AR features that were limited to more specialized devices not too long ago.

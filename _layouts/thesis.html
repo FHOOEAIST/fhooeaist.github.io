@@ -13,9 +13,8 @@ layout: default
       </p>
     </header>
 
-    {% if page.project_url %}
-    <p><strong>{% if site.active_lang == 'de' %}Projekt{% else %}Project{% endif %}:</strong> <a href="{{ page.project_url }}">{{ page.project_url }}</a></p>
-    {% endif %}
+    {% if site.active_lang == 'de' %}{% assign t_project = "Projekt" %}{% else %}{% assign t_project = "Project" %}{% endif %}
+    {% include project-links.html ids=page.projects lang=site.active_lang label=t_project %}
 
     <div class="article-body">
       {{ content }}

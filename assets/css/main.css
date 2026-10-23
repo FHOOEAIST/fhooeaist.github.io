@@ -2510,3 +2510,21 @@ html:not(.js) .listing-toggle-icon {
       color 0.2s var(--ease);
   }
 }
+
+/* "Project: …" line under a publication or thesis (_includes/project-links.html) */
+.entry-projects {
+  margin: 0.2rem 0 0;
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+}
+
+.entry-projects i {
+  margin-right: 0.3rem;
+  color: var(--color-primary-light);
+  font-size: 0.8em;
+}
+
+/* category badges outside the filtered listings link into them */
+a.publication-category {
+  text-decoration: none;
+}
