@@ -1,0 +1,32 @@
+{% comment %}
+Alumni list below the current team, from `alumni:` in _data/team.yml.
+Expects include.lang ("de" or "en").
+
+Opt-in only, names without photos (GDPR, see issue #16): an entry is shown
+only when it records the date of the person's consent in `consent:`, so a
+name added without asking never reaches the page. The whole section is left
+out while nobody has opted in.
+{% endcomment %}
+{% assign en = false %}{% if include.lang == "en" %}{% assign en = true %}{% endif %}
+{% assign alumni = site.data.team.alumni | where_exp: "a", "a.consent" | sort: "name" %}
+{% if alumni.size > 0 %}
+<section class="team-alumni" id="alumni">
+  <div class="section-head">
+    <div>
+      <h2>Alumni</h2>
+      <p>{% if en %}Former members of the research group who agreed to be listed here.{% else %}Ehemalige Mitglieder der Forschungsgruppe, die einer Nennung hier zugestimmt haben.{% endif %}</p>
+    </div>
+  </div>
+  <ul class="alumni-list">
+    {% for person in alumni %}
+    {% if en %}{% assign last_role = person.role_en | default: person.role_de %}{% assign now = person.now_en | default: person.now_de %}
+    {% else %}{% assign last_role = person.role_de | default: person.role_en %}{% assign now = person.now_de | default: person.now_en %}{% endif %}
+    <li>
+      <span class="alumni-name">{% if person.url %}<a href="{{ person.url }}" target="_blank" rel="noopener">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</span>
+      {% if person.years or last_role %}<span class="alumni-meta">{% if person.years %}{{ person.years }}{% endif %}{% if person.years and last_role %} · {% endif %}{{ last_role }}</span>{% endif %}
+      {% if now %}<span class="alumni-now">{% if en %}Now:{% else %}Heute:{% endif %} {{ now }}</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

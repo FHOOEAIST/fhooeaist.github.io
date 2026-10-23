@@ -228,6 +228,41 @@ Abstract (Markdown)...
 
 Team members are listed from [`_data/team.yml`](_data/team.yml). Each member carries a `category:` (`professor` | `project_manager` | `researcher` | `student`, labels in [`_data/team_categories.yml`](_data/team_categories.yml)) that is shown after the name, and a `gender:` (`m` | `f`) that picks the German form of that label (neutral fallback without it); an optional `role:` (e.g. the study programme of a student employee) is shown next to it.
 
+All further fields are optional and only rendered when present (cards: [`_includes/team-card.html`](_includes/team-card.html)). Profile links and interests are meant to be added by each member themselves:
+
+```yaml
+members:
+  - name: Jane Doe MSc
+    category: researcher
+    gender: f
+    email: jane.doe@fh-hagenberg.at
+    phone: +43 5 0804 12345
+    image: /assets/images/team/jane_doe_msc.jpg
+    details_url: https://pure.fh-ooe.at/en/persons/jane-doe   # "Details" link
+    interests_de: [Computer Vision, Medizinische Bildverarbeitung]   # tags on the card
+    interests_en: [Computer vision, Medical imaging]
+    orcid: 0000-0002-1825-0097      # ORCID iD
+    scholar: AbCdEfGhIjK            # Google Scholar user id (user=... in the profile URL)
+    github: janedoe                 # GitHub handle
+    linkedin: jane-doe              # linkedin.com/in/<handle>
+```
+
+### Alumni
+
+Former members can be listed below the team (`alumni:` in the same file, [`_includes/team-alumni.html`](_includes/team-alumni.html)) – **opt-in only and without photos** (GDPR). An entry is rendered only when it records the date of the person's consent; remove it when consent is withdrawn. The section is hidden while the list is empty.
+
+```yaml
+alumni:
+  - name: Max Mustermann
+    consent: 2026-10-23        # required, otherwise the entry is not shown
+    years: 2015–2021           # optional
+    role_de: Wissenschaftlicher Mitarbeiter   # optional, last role in the group
+    role_en: Research associate
+    now_de: Data Scientist bei …              # optional, only if the person agreed
+    now_en: Data scientist at …
+    url: https://…                            # optional, a link the person chose
+```
+
 ---
 
 # Images & Git LFS
