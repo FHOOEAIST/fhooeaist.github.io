@@ -10,6 +10,9 @@ version; tiles-en.html is the English twin. Styles: assets/css/home-tiles.css.
 {% assign team_page = site.pages | where: "page_id", "team" | where: "lang", "de" | first %}
 {% assign news_page = site.pages | where: "page_id", "news" | where: "lang", "de" | first %}
 {% assign contact_page = site.pages | where: "page_id", "contact" | where: "lang", "de" | first %}
+{% assign area_ehealth_page = site.pages | where: "page_id", "area:ehealth" | where: "lang", "de" | first %}
+{% assign area_ml_page = site.pages | where: "page_id", "area:ml" | where: "lang", "de" | first %}
+{% assign area_cv_page = site.pages | where: "page_id", "area:cv" | where: "lang", "de" | first %}
 {% assign history_page = site.pages | where: "page_id", "history" | where: "lang", "de" | first %}
 
 {% assign n_projects = site.projects | where: "lang", "de" | size %}
@@ -77,9 +80,9 @@ version; tiles-en.html is the English twin. Styles: assets/css/home-tiles.css.
         <div class="area-tile-icon">
           <img src="{{ '/assets/images/index/ehealth.svg' | relative_url }}" alt="eHealth Icon" loading="lazy">
         </div>
-        <h2>eHealth</h2>
+        <h2><a href="{{ area_ehealth_page.permalink | relative_url }}">eHealth</a></h2>
         <p>
-          Die IT-Unterstützung integrierter Versorgung („eHealth") ermöglicht die Definition, Analyse und Optimierung geeigneter Schnitt-/Nahtstellen, adäquater Versorgungsprozesse sowie leistbarer Geschäftsmodelle für qualitativ hochwertiges Care- und Case-Management im Gesundheitswesen. Das Ziel integrierter Versorgung ist die Bereitstellung umfassender, koordinierter und kontinuierlicher Dienstleistungen, die für einen nahtlosen Versorgungsprozess entlang des gesamten Versorgungskontinuums sorgen. <em>[nach Hagen Kühn, Wissenschaftszentrum Berlin]</em>
+          Wir entwickeln Software für eine vernetzte, standardbasierte Gesundheitsversorgung: interoperable Lösungen auf Basis von HL7 FHIR und IHE, Process Mining in Krankenhaus und Radiologie, digital unterstützte integrierte Versorgung und zunehmend KI im klinischen Umfeld – gemeinsam mit Partnern aus Gesundheitswesen und Industrie.
         </p>
         {% assign ehealth_projects = site.projects | where: 'lang', 'de' | where: 'category', 'ehealth' | sort: 'title' %}
         {% if ehealth_projects.size > 0 %}
@@ -98,17 +101,17 @@ version; tiles-en.html is the English twin. Styles: assets/css/home-tiles.css.
             </div>
           </div>
         </div>
-        <a class="area-tile-link" href="{{ projects_page.permalink | relative_url }}#area=ehealth">{{ ehealth_projects.size }} Projekte ansehen <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         {% endif %}
+        <a class="area-tile-link" href="{{ area_ehealth_page.permalink | relative_url }}">Mehr zu eHealth <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
       </div>
 
       <div class="area-tile" id="ml" data-area="ml">
         <div class="area-tile-icon">
           <img src="{{ '/assets/images/index/machine-learning.svg' | relative_url }}" alt="Machine Learning Icon" loading="lazy">
         </div>
-        <h2>Machine Learning &amp; Data Science</h2>
+        <h2><a href="{{ area_ml_page.permalink | relative_url }}">Machine Learning &amp; Data Science</a></h2>
         <p>
-          Der Fachbereich Machine Learning beschäftigt sich mit Algorithmen, welche automatisiert in der Lage sind, basierend auf Mustern in Daten ein domänenspezifisches Ergebnis zu finden. Dazu zählen Methoden zur Klassifikation und Identifikation von Subjekten in digitalen Informationen, welche zudem dazu imstande sind das eigene Ergebnis durch die Erweiterung der Datenlage stetig zu verbessern. Die Grundidee ist es Algorithmen nicht explizit beizubringen wie eine Aufgabe gelöst werden kann, sondern dies anhand von Trainingsdaten automatisiert zu erreichen.
+          Wir machen Daten aus Industrie, Wirtschaft und Verwaltung nutzbar: von Wissensdatenbanken und Predictive Maintenance in der Produktion über Alarm-Management in kritischer Infrastruktur bis zu großen Sprachmodellen, die Fachleute bei Text- und Lernaufgaben entlasten. Ein eigener Schwerpunkt liegt auf nachvollziehbarer, menschzentrierter KI.
         </p>
         {% assign ml_projects = site.projects | where: 'lang', 'de' | where: 'category', 'ml' | sort: 'title' %}
         {% if ml_projects.size > 0 %}
@@ -127,17 +130,17 @@ version; tiles-en.html is the English twin. Styles: assets/css/home-tiles.css.
             </div>
           </div>
         </div>
-        <a class="area-tile-link" href="{{ projects_page.permalink | relative_url }}#area=ml">{{ ml_projects.size }} Projekte ansehen <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         {% endif %}
+        <a class="area-tile-link" href="{{ area_ml_page.permalink | relative_url }}">Mehr zu Machine Learning <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
       </div>
 
       <div class="area-tile" id="cv" data-area="cv">
         <div class="area-tile-icon">
           <img src="{{ '/assets/images/index/computervision.svg' | relative_url }}" alt="Visual Computing Icon" loading="lazy">
         </div>
-        <h2>Visual Computing</h2>
+        <h2><a href="{{ area_cv_page.permalink | relative_url }}">Visual Computing</a></h2>
         <p>
-          Visual Computing umfasst sowohl die Analyse als auch die Erzeugung visueller Informationen. Computer Vision und Bildverarbeitung extrahieren semantische Informationen aus Bildinhalten und verleihen digitalen Systemen eine Fähigkeit, die der visuellen Wahrnehmung des Menschen ähnelt. Computergrafik erzeugt und visualisiert digitale Inhalte, Mixed Reality kombiniert Informationen aus der realen Welt mit digitalen Daten. Unsere Arbeiten reichen von der Bilderfassung und Vorverarbeitung über die Analyse bis zur Visualisierung.
+          Wir arbeiten entlang der gesamten Kette von der Bildaufnahme über die Analyse bis zur Visualisierung – mit Schwerpunkten auf drohnengestütztem Wildtier-Monitoring in Wärmebild- und RGB-Aufnahmen sowie auf KI-gestützter Qualitätsprüfung und 3D-Rekonstruktion in der Industrie, ergänzt um Mixed Reality und synthetische Trainingsdaten.
         </p>
         {% assign cv_projects = site.projects | where: 'lang', 'de' | where: 'category', 'cv' | sort: 'title' %}
         {% if cv_projects.size > 0 %}
@@ -156,8 +159,8 @@ version; tiles-en.html is the English twin. Styles: assets/css/home-tiles.css.
             </div>
           </div>
         </div>
-        <a class="area-tile-link" href="{{ projects_page.permalink | relative_url }}#area=cv">{{ cv_projects.size }} Projekte ansehen <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         {% endif %}
+        <a class="area-tile-link" href="{{ area_cv_page.permalink | relative_url }}">Mehr zu Visual Computing <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
