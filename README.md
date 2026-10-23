@@ -224,6 +224,25 @@ project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/pica  # optional
 Abstract (Markdown)...
 ```
 
+# Software & Data
+
+The *Software & Data* page ([`software.html`](software.html) / [`software-en.html`](software-en.html), linked under *Projects* and from the home page) lists reusable outputs from [`_data/software.yml`](_data/software.yml), grouped into datasets, software and models. The fields are documented at the top of that file:
+
+```yaml
+- name: BAMBI Dataset
+  type: dataset                 # dataset | software | model
+  categories: [cv, geo]         # ids from _data/publication_categories.yml
+  language: Python              # optional
+  description_de: …
+  description_en: …
+  repo: https://github.com/bambi-eco/Dataset
+  docs: https://…               # optional
+  doi: 10.5281/zenodo.1234567   # optional, DOI of the software/data itself
+  license: CC-BY-4.0, MIT
+  project: projects:bambi       # optional, links the project page
+  publication: pub:the-bambi-dataset-…   # optional, shown as "Please cite"
+```
+
 # Team
 
 Team members are listed from [`_data/team.yml`](_data/team.yml). Each member carries a `category:` (`professor` | `project_manager` | `researcher` | `student`, labels in [`_data/team_categories.yml`](_data/team_categories.yml)) that is shown after the name, and a `gender:` (`m` | `f`) that picks the German form of that label (neutral fallback without it); an optional `role:` (e.g. the study programme of a student employee) is shown next to it.

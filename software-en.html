@@ -1,0 +1,15 @@
+---
+layout: default
+lang: en
+title: Software & Data
+permalink: /software-data/
+page_id: software
+css: software
+---
+
+{% capture software_meta %}<a class="btn btn-sm btn-outline" href="https://github.com/FHOOEAIST" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> All repositories of the research group on GitHub</a>{% endcapture %}
+{% include page-header.html eyebrow="Research" title="Software &amp; Data" lead="Software, datasets and models from our research projects – openly available for reuse. If you use them in your work, please cite the publication given." meta=software_meta %}
+
+<div class="container">
+  {% include software-list.html lang=page.lang %}
+</div>
