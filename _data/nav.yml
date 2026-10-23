@@ -36,9 +36,9 @@
     - page_id: area:cv
       label_de: Visual Computing
       label_en: Visual Computing
-    - href: https://github.com/FHOOEAIST
-      label_de: GitHub
-      label_en: GitHub
+    - page_id: software
+      label_de: Software & Daten
+      label_en: Software & Data
 
 - page_id: publications-index
   label_de: Publikationen

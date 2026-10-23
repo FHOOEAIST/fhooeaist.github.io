@@ -1,0 +1,120 @@
+# Software, datasets and models published by the group, rendered on
+# software.html / software-en.html through _includes/software-list.html,
+# grouped by `type` (datasets first, then software, then models).
+#
+#   name                      — required
+#   type                      — dataset | software | model
+#   categories                — ids from _data/publication_categories.yml
+#   language                  — optional, e.g. Java, Python
+#   description_de / _en      — one or two sentences (Markdown)
+#   repo                      — source repository
+#   docs                      — optional documentation site
+#   doi                       — optional DOI of the software/data itself (e.g. Zenodo), without https://doi.org/
+#   license                   — SPDX id(s) as shown, e.g. MPL-2.0
+#   project                   — optional page_id of the related project
+#   publication               — optional page_id of the publication to cite
+#
+# Order within a type is the order below.
+
+- name: BAMBI Dataset
+  type: dataset
+  categories: [cv, geo]
+  language: Python
+  description_de: Groß angelegter Datensatz mit 389 gepaarten RGB- und Wärmebild-Videosequenzen aus Drohnenflügen über Wäldern und Waldrändern in Österreich, jedes Bild global georeferenziert und mit Wildtier-Annotationen. Das Repository enthält Skripte zum Herunterladen, Aufbereiten und Visualisieren. Die Daten stehen unter CC-BY-4.0 (die Baum- und Totholz-Layer unter CC-BY-NC-4.0), die Skripte unter MIT.
+  description_en: Large-scale airborne dataset of 389 paired RGB and thermal video sequences recorded over forest and forest-adjacent habitats in Austria, every frame globally geo-referenced and annotated with wildlife. The repository provides scripts for downloading, processing and visualising the data. The data is licensed CC-BY-4.0 (the tree cover and deadwood layers CC-BY-NC-4.0), the scripts MIT.
+  repo: https://github.com/bambi-eco/Dataset
+  license: CC-BY-4.0, CC-BY-NC-4.0, MIT
+  project: projects:bambi
+  publication: pub:the-bambi-dataset-multimodal-nadir-uav-recordings-of-forest-wildlife
+
+- name: RARF – Reconstructionless Airborne Radiance Fields
+  type: software
+  categories: [cv, geo]
+  language: Python
+  description_de: Erzeugt Radiance Fields direkt aus Drohnenvideos und den bei der Aufnahme protokollierten globalen Kamerapositionen und -orientierungen, ohne vorgelagerte Rekonstruktion der Kameraposen.
+  description_en: Builds radiance fields directly from drone videos and the global camera positions and orientations logged during the flight, without a preceding camera-pose reconstruction.
+  repo: https://github.com/bambi-eco/RARF
+  license: MIT
+  project: projects:bambi
+  publication: pub:reconstructionless-airborne-radiance-fields
+
+- name: Imaging
+  type: software
+  categories: [cv]
+  language: Java
+  description_de: Framework für Bildverarbeitung und Computer Vision mit einer einheitlichen Schnittstelle zu OpenCV, ImageJ, OpenIMAJ, ND4J, Tesseract und weiteren Bibliotheken.
+  description_en: Image processing and computer vision framework with a uniform interface to OpenCV, ImageJ, OpenIMAJ, ND4J, Tesseract and further libraries.
+  repo: https://github.com/FHOOEAIST/imaging
+  license: MPL-2.0
+  publication: pub:imaging-framework-an-interoperable-and-extendable-connector-for-image-related-ja
+
+- name: GTF – Graph Transformation Framework
+  type: software
+  categories: [se]
+  language: Java
+  description_de: Bibliothek zur Darstellung, Transformation, Verifikation und Visualisierung von Graphstrukturen.
+  description_en: Library for representing, transforming, verifying and visualising graph structures.
+  repo: https://github.com/FHOOEAIST/GTF
+  doi: 10.5281/zenodo.4314721
+  license: MPL-2.0
+  publication: pub:analysing-and-transforming-graph-structures-the-graph-transformation-framework
+
+- name: ProcessMiningOnFHIR
+  type: software
+  categories: [ehealth, pm]
+  description_de: HL7-FHIR-Server, der Zugriffe als AuditEvents protokolliert und so Process Mining auf Basis offener Gesundheitsstandards ermöglicht.
+  description_en: HL7 FHIR server that records access as AuditEvents, enabling process mining based on open healthcare standards.
+  repo: https://github.com/FHOOEAIST/ProcessMiningOnFHIR
+  publication: pub:process-mining-on-fhir-an-open-standards-based-process-analytics-approach-for-he
+
+- name: FhirAuditEvent2XES
+  type: software
+  categories: [ehealth, pm]
+  language: Java
+  description_de: Wandelt HL7-FHIR-R5-AuditEvents in Event Logs im XES-Format um, damit sie mit gängigen Process-Mining-Werkzeugen ausgewertet werden können.
+  description_en: Converts HL7 FHIR R5 AuditEvents into XES event logs for analysis with common process mining tools.
+  repo: https://github.com/FHOOEAIST/FhirAuditEvent2XES
+  doi: 10.5281/zenodo.6901825
+  license: MPL-2.0
+  publication: pub:multi-perspective-process-mining-interfaces-for-hl7-auditevent-repositories-xes-
+
+- name: FhirAuditEvent2OCEL
+  type: software
+  categories: [ehealth, pm]
+  language: Java
+  description_de: Wandelt HL7-FHIR-R5-AuditEvents in objektzentrierte Event Logs (OCEL) für objektzentriertes Process Mining um.
+  description_en: Converts HL7 FHIR R5 AuditEvents into object-centric event logs (OCEL) for object-centric process mining.
+  repo: https://github.com/FHOOEAIST/FhirAuditEvent2OCEL
+  doi: 10.5281/zenodo.6901919
+  license: MPL-2.0
+  publication: pub:multi-perspective-process-mining-interfaces-for-hl7-auditevent-repositories-xes-
+
+- name: neo4j-on-fhir
+  type: software
+  categories: [ehealth]
+  language: Java
+  description_de: Replikationspaket, das HL7-FHIR-Ressourcen aus einem HAPI-FHIR-Server in eine Neo4j-Graphdatenbank mit Namespaces überführt.
+  description_en: Replication package that loads HL7 FHIR resources from a HAPI FHIR server into a Neo4j graph database using namespaces.
+  repo: https://github.com/FHOOEAIST/neo4j-on-fhir
+  license: MPL-2.0
+  publication: pub:enhancing-interoperability-of-hl7-resources-using-namespaces-in-graph-databases
+
+- name: geofiles
+  type: software
+  categories: [geo, xr]
+  language: Python
+  description_de: Georeferenzierte Erweiterungen klassischer 3D-Dateiformate (.geoobj, .geooff, .geoply, .geostl) samt Konvertern, etwa für Outdoor-Augmented-Reality.
+  description_en: Geo-referenced extensions of classic 3D file formats (.geoobj, .geooff, .geoply, .geostl) with converters, e.g. for outdoor augmented reality.
+  repo: https://github.com/FHOOEAIST/geofiles
+  doi: 10.5281/zenodo.6791929
+  license: MPL-2.0
+  publication: pub:extending-3d-geometric-file-formats-for-geospatial-applications
+
+- name: Seshat
+  type: software
+  categories: [se]
+  language: Java
+  description_de: Logging-Framework mit geringem Overhead und einer einheitlichen Schnittstelle, hinter der sich bestehende Logger zur Laufzeit austauschen lassen.
+  description_en: Low-overhead logging framework with a uniform interface that lets existing loggers be swapped at runtime.
+  repo: https://github.com/FHOOEAIST/seshat
+  license: MPL-2.0
