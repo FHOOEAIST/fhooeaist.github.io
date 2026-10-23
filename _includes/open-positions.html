@@ -1,0 +1,68 @@
+{% comment %}
+Open positions from _data/positions.yml. Expects:
+  include.lang    — "de" or "en"
+  include.contact — fallback e-mail address for applications
+
+Positions whose `deadline` has passed are skipped. Without any open position
+the section shows an invitation for unsolicited applications instead of an
+empty list.
+{% endcomment %}
+{% assign en = false %}{% if include.lang == "en" %}{% assign en = true %}{% endif %}
+{% assign today_int = site.time | date: "%Y%m%d" | plus: 0 %}
+{% assign open_positions = "" | split: "" %}
+{% for pos in site.data.positions %}
+  {% assign show = true %}
+  {% if pos.deadline %}
+    {% assign deadline_int = pos.deadline | date: "%Y%m%d" | plus: 0 %}
+    {% if deadline_int < today_int %}{% assign show = false %}{% endif %}
+  {% endif %}
+  {% if show %}{% assign open_positions = open_positions | push: pos %}{% endif %}
+{% endfor %}
+
+{% if en %}
+  {% assign type_ids = "researcher|phd|student|internship" | split: "|" %}
+  {% assign type_labels = "Research associate|Doctoral candidate|Student employee|Internship" | split: "|" %}
+{% else %}
+  {% assign type_ids = "researcher|phd|student|internship" | split: "|" %}
+  {% assign type_labels = "Wissenschaftliche Mitarbeit|Dissertation|Studentische Mitarbeit|Praktikum" | split: "|" %}
+{% endif %}
+
+{% if open_positions.size > 0 %}
+<ul class="position-list">
+  {% for pos in open_positions %}
+  {% if en %}{% assign title = pos.title_en | default: pos.title_de %}{% assign description = pos.description_en | default: pos.description_de %}{% assign hours = pos.hours_en | default: pos.hours_de %}{% assign start = pos.start_en | default: pos.start_de %}
+  {% else %}{% assign title = pos.title_de | default: pos.title_en %}{% assign description = pos.description_de | default: pos.description_en %}{% assign hours = pos.hours_de | default: pos.hours_en %}{% assign start = pos.start_de | default: pos.start_en %}{% endif %}
+  {% assign contact = pos.contact | default: include.contact %}
+  <li class="position-card">
+    <div class="position-head">
+      {% for type_id in type_ids %}{% if type_id == pos.type %}<span class="position-type">{{ type_labels[forloop.index0] }}</span>{% endif %}{% endfor %}
+      <h3>{{ title }}</h3>
+      <ul class="position-facts">
+        {% if hours %}<li><i class="far fa-clock" aria-hidden="true"></i>{{ hours }}</li>{% endif %}
+        {% if start %}<li><i class="far fa-calendar" aria-hidden="true"></i>{% if en %}Start: {% else %}Beginn: {% endif %}{{ start }}</li>{% endif %}
+        {% if pos.deadline %}<li><i class="far fa-hourglass-half" aria-hidden="true"></i>{% if en %}Apply by {{ pos.deadline | date: "%-d %B %Y" }}{% else %}Bewerbung bis {{ pos.deadline | date: "%d.%m.%Y" }}{% endif %}</li>{% endif %}
+      </ul>
+    </div>
+    {% if description %}<div class="position-body">{{ description | markdownify }}</div>{% endif %}
+    <div class="position-actions">
+      {% if pos.url %}<a class="btn btn-sm" href="{{ pos.url }}" target="_blank" rel="noopener">{% if en %}Full job ad{% else %}Zur Ausschreibung{% endif %} <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>{% endif %}
+      <a class="btn btn-sm btn-outline" href="mailto:{{ contact }}?subject={{ title | url_encode }}"><i class="fas fa-envelope" aria-hidden="true"></i> {% if en %}Apply{% else %}Bewerben{% endif %}</a>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<div class="positions-empty">
+  <i class="fas fa-paper-plane" aria-hidden="true"></i>
+  <div>
+    {% if en %}
+    <h3>No open positions at the moment – unsolicited applications are welcome</h3>
+    <p>New positions usually open up with new research projects. If you would like to work with us as a research associate, doctoral candidate or student employee, send us your CV and a short letter of motivation at any time.</p>
+    {% else %}
+    <h3>Derzeit keine offenen Stellen – Initiativbewerbungen sind willkommen</h3>
+    <p>Neue Stellen entstehen meist mit neuen Forschungsprojekten. Wenn Sie als wissenschaftliche*r Mitarbeiter*in, Dissertant*in oder studentische*r Mitarbeiter*in bei uns einsteigen möchten, schicken Sie uns jederzeit Ihren Lebenslauf und ein kurzes Motivationsschreiben.</p>
+    {% endif %}
+    <a class="btn btn-sm" href="mailto:{{ include.contact }}?subject={% if en %}Unsolicited%20application{% else %}Initiativbewerbung{% endif %}"><i class="fas fa-envelope" aria-hidden="true"></i> {% if en %}Apply on your own initiative{% else %}Initiativ bewerben{% endif %}</a>
+  </div>
+</div>
+{% endif %}

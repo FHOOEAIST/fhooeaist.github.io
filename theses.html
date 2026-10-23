@@ -7,7 +7,10 @@ page_id: theses-index
 ---
 
 {% capture theses_lead %}Die Forschungsgruppe AIST bietet Studenten*innen die Möglichkeit sich mit ihren Diplomarbeiten (Bachelor, Master) im Rahmen von Forschungsprojekten praktisch auseinander zu setzen und sich so mit dem jeweiligen Themengebiet intensiver zu beschäftigen. Die praktische Betreuung erfolgt dabei durch einen wissenschaftlichen Mitarbeiter (zusätzlich zum Begutachter seitens der Fachhochschule).{% endcapture %}
-{% include page-header.html eyebrow="Lehre & Forschung" title="Diplomarbeiten" lead=theses_lead %}
+{% assign positions_page = site.pages | where: "page_id", "positions" | where: "lang", "de" | first %}
+{% assign n_topics = site.data.thesis_topics | size %}
+{% capture theses_meta %}<a class="btn btn-sm" href="{{ positions_page.permalink | relative_url }}#themen"><i class="fas fa-lightbulb" aria-hidden="true"></i> {% if n_topics > 0 %}{{ n_topics }} offene Themen{% else %}Offene Themen &amp; eigene Vorschläge{% endif %}</a>{% endcapture %}
+{% include page-header.html eyebrow="Lehre & Forschung" title="Diplomarbeiten" lead=theses_lead meta=theses_meta %}
 
 <div class="container">
   {% include listing-filter.html lang=page.lang kind="theses" %}

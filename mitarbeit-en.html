@@ -1,0 +1,33 @@
+---
+layout: default
+lang: en
+title: Join us
+permalink: /join-us/
+page_id: positions
+css: positions
+contact: gerald.zwettler@fh-hagenberg.at
+---
+
+{% include page-header.html eyebrow="About" title="Join us" lead="Whether as a research associate, doctoral candidate, student employee or with your thesis: at AIST you work on applied research projects together with partners from industry, medicine and academia." %}
+
+<div class="container">
+  <section class="positions-section" id="positions">
+    <div class="section-head">
+      <div>
+        <h2>Open positions</h2>
+        <p>Current vacancies for research associates, doctoral candidates and student employees.</p>
+      </div>
+    </div>
+    {% include open-positions.html lang="en" contact=page.contact %}
+  </section>
+
+  <section class="positions-section" id="topics">
+    <div class="section-head">
+      <div>
+        <h2>Open thesis topics</h2>
+        <p>Bachelor and master theses within our research projects, supervised by a research associate in addition to the assessor from the university.</p>
+      </div>
+    </div>
+    {% include thesis-topics.html lang="en" contact=page.contact %}
+  </section>
+</div>

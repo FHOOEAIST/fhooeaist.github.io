@@ -1,0 +1,33 @@
+---
+layout: default
+lang: de
+title: Mitarbeit
+permalink: /mitarbeit/
+page_id: positions
+css: positions
+contact: gerald.zwettler@fh-hagenberg.at
+---
+
+{% include page-header.html eyebrow="Über uns" title="Mitarbeit" lead="Ob als wissenschaftliche*r Mitarbeiter*in, Dissertant*in, studentische*r Mitarbeiter*in oder mit Ihrer Abschlussarbeit: Bei AIST arbeiten Sie an angewandten Forschungsprojekten gemeinsam mit Partnern aus Wirtschaft, Medizin und Wissenschaft." %}
+
+<div class="container">
+  <section class="positions-section" id="stellen">
+    <div class="section-head">
+      <div>
+        <h2>Offene Stellen</h2>
+        <p>Aktuelle Ausschreibungen für Mitarbeiter*innen, Dissertant*innen und studentische Mitarbeiter*innen.</p>
+      </div>
+    </div>
+    {% include open-positions.html lang="de" contact=page.contact %}
+  </section>
+
+  <section class="positions-section" id="themen">
+    <div class="section-head">
+      <div>
+        <h2>Offene Themen für Abschlussarbeiten</h2>
+        <p>Bachelor- und Masterarbeiten im Rahmen unserer Forschungsprojekte, betreut von einer*einem wissenschaftlichen Mitarbeiter*in zusätzlich zur Begutachtung seitens der Fachhochschule.</p>
+      </div>
+    </div>
+    {% include thesis-topics.html lang="de" contact=page.contact %}
+  </section>
+</div>
