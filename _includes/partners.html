@@ -1,0 +1,25 @@
+{% comment %}
+Opt-in partner list from _data/partners.yml. Expects include.lang. Only
+entries with a `consent:` date are shown (see the note in the data file);
+renders nothing while none qualifies.
+{% endcomment %}
+{% assign en = false %}{% if include.lang == "en" %}{% assign en = true %}{% endif %}
+{% assign partners = site.data.partners | where_exp: "p", "p.consent" | sort: "name" %}
+{% if partners.size > 0 %}
+<ul class="partner-grid">
+  {% for partner in partners %}
+  <li class="partner-card">
+    {% if partner.logo %}<div class="partner-logo"><img src="{{ partner.logo | relative_url }}" alt="{{ partner.name }}" loading="lazy"></div>{% endif %}
+    <p class="partner-name">{% if partner.url %}<a href="{{ partner.url }}" target="_blank" rel="noopener">{{ partner.name }}</a>{% else %}{{ partner.name }}{% endif %}</p>
+    {% assign linked = "" | split: "" %}
+    {% for id in partner.projects %}
+      {% assign p = site.projects | where: "page_id", id | where: "lang", include.lang | first %}
+      {% if p %}{% assign linked = linked | push: p %}{% endif %}
+    {% endfor %}
+    {% if linked.size > 0 %}
+    <p class="partner-projects">{% for p in linked %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

@@ -224,6 +224,13 @@ project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/pica  # optional
 Abstract (Markdown)...
 ```
 
+# Partners & Funders
+
+The *Partners & Funders* page ([`partner.html`](partner.html) / [`partner-en.html`](partner-en.html), linked under *About*) is generated from the projects' `foerdergeber` and two data files:
+
+- [`_data/funders.yml`](_data/funders.yml) – one entry per funding body with the `aliases` that identify it in the free-text `foerdergeber` of the project phases (this merges spelling variants such as "FFG Basisprogramm" / "Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm"), an optional `flag` matching a project field (`eu_funded`), name, URL, programmes and an optional `logo`. Each funder is shown with the number of its projects and a foldable list of them; a project that matches no alias (e.g. contract research) is simply not counted. Logos must be the official files and follow the funder's logo guidelines.
+- [`_data/partners.yml`](_data/partners.yml) – **opt-in only**: logos are trademarks and the names of individuals or small practices are personal data, so a partner is listed only with the date of its consent in `consent:`. Until then the page points to the project pages, which already name the partners.
+
 # Team
 
 Team members are listed from [`_data/team.yml`](_data/team.yml). Each member carries a `category:` (`professor` | `project_manager` | `researcher` | `student`, labels in [`_data/team_categories.yml`](_data/team_categories.yml)) that is shown after the name, and a `gender:` (`m` | `f`) that picks the German form of that label (neutral fallback without it); an optional `role:` (e.g. the study programme of a student employee) is shown next to it.

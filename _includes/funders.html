@@ -1,0 +1,73 @@
+{% comment %}
+Funders overview from _data/funders.yml. Expects include.lang ("de" or "en").
+
+For every funder, the projects of that language whose phases name it in
+`foerdergeber` (any of its `aliases`) or that set its `flag` are collected;
+funders are listed by number of projects, each with its projects folded into
+a <details>. Funders without a project are left out.
+{% endcomment %}
+{% assign en = false %}{% if include.lang == "en" %}{% assign en = true %}{% endif %}
+{% assign all_projects = site.projects | where: "lang", include.lang | sort_natural: "sort_title" %}
+
+{%- comment -%} Count first, then sort on a zero-padded "count|index" key. {%- endcomment -%}
+{% assign keys = "" | split: "" %}
+{% for funder in site.data.funders %}
+  {% assign n = 0 %}
+  {% for project in all_projects %}
+    {% assign hit = false %}
+    {% if funder.flag and project[funder.flag] %}{% assign hit = true %}{% endif %}
+    {% unless hit %}
+      {% for phase in project.projects %}
+        {% for alias in funder.aliases %}
+          {% if phase.foerdergeber contains alias %}{% assign hit = true %}{% break %}{% endif %}
+        {% endfor %}
+        {% if hit %}{% break %}{% endif %}
+      {% endfor %}
+    {% endunless %}
+    {% if hit %}{% assign n = n | plus: 1 %}{% endif %}
+  {% endfor %}
+  {% if n > 0 %}
+    {% capture key %}{{ n | prepend: "0000" | slice: -4, 4 }}|{{ forloop.index0 }}{% endcapture %}
+    {% assign keys = keys | push: key %}
+  {% endif %}
+{% endfor %}
+{% assign keys = keys | sort | reverse %}
+
+<ul class="funder-grid">
+  {% for key in keys %}
+  {% assign parts = key | split: "|" %}
+  {% assign index = parts[1] | plus: 0 %}
+  {% assign funder = site.data.funders[index] %}
+  {% assign n = parts[0] | plus: 0 %}
+  {% if en %}{% assign name = funder.name_en | default: funder.name_de %}{% assign programmes = funder.programmes_en %}{% else %}{% assign name = funder.name_de %}{% assign programmes = funder.programmes_de %}{% endif %}
+  <li class="funder-card">
+    {% if funder.logo %}
+    <div class="funder-logo">
+      <img src="{{ funder.logo | replace: ':lang', include.lang | relative_url }}" alt="{{ name }}" loading="lazy">
+    </div>
+    {% endif %}
+    <div class="funder-body">
+      <h3>{% if funder.url %}<a href="{{ funder.url }}" target="_blank" rel="noopener">{{ name }}</a>{% else %}{{ name }}{% endif %}</h3>
+      {% if programmes %}<p class="funder-programmes">{{ programmes }}</p>{% endif %}
+      <details class="funder-projects">
+        <summary>{{ n }} {% if n == 1 %}{% if en %}project{% else %}Projekt{% endif %}{% else %}{% if en %}projects{% else %}Projekte{% endif %}{% endif %}</summary>
+        <ul>
+          {% for project in all_projects %}
+            {% assign hit = false %}
+            {% if funder.flag and project[funder.flag] %}{% assign hit = true %}{% endif %}
+            {% unless hit %}
+              {% for phase in project.projects %}
+                {% for alias in funder.aliases %}
+                  {% if phase.foerdergeber contains alias %}{% assign hit = true %}{% break %}{% endif %}
+                {% endfor %}
+                {% if hit %}{% break %}{% endif %}
+              {% endfor %}
+            {% endunless %}
+            {% if hit %}<li><a href="{{ project.url | relative_url }}">{{ project.title }}</a></li>{% endif %}
+          {% endfor %}
+        </ul>
+      </details>
+    </div>
+  </li>
+  {% endfor %}
+</ul>

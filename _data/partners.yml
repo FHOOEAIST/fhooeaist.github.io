@@ -1,0 +1,22 @@
+# Project partners shown on partner.html / partner-en.html
+# (_includes/partners.html). Opt-in only: logos are protected trademarks and
+# names of individuals or small practices are personal data (see the legal
+# note on issue #19), so an entry is rendered only with the date on which the
+# partner agreed to be listed in `consent:`. Remove the entry when the
+# consent is withdrawn. The section is hidden while no entry qualifies.
+#
+#   name      — required
+#   consent   — required to be shown, YYYY-MM-DD
+#   url       — optional website
+#   logo      — optional, only with the partner's permission to use it
+#   projects  — optional list of project page_ids, linked below the name
+#
+# Example:
+#
+# - name: Example GmbH
+#   consent: 2026-10-23
+#   url: https://example.com
+#   logo: /assets/images/partners/example.svg
+#   projects: [projects:bambi]
+
+[]

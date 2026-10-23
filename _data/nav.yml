@@ -11,6 +11,9 @@
     - page_id: team
       label_de: Team
       label_en: Team
+    - page_id: partners
+      label_de: Partner & Fördergeber
+      label_en: Partners & Funders
     - page_id: contact
       label_de: Kontakt
       label_en: Contact
