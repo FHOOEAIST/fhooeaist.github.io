@@ -1,0 +1,65 @@
+# Funding bodies, rendered on partner.html / partner-en.html through
+# _includes/funders.html. The `foerdergeber` of the project phases is free
+# text, so each funder lists the `aliases` that identify it there: a project
+# counts for a funder when any phase's `foerdergeber` contains one of them
+# (case-sensitive, so list spelling variants). `flag` additionally matches a
+# boolean project front-matter field (eu_funded). Funders are sorted by the
+# number of projects; one without any project is left out.
+#
+#   name_de / name_en             — shown name
+#   url                           — funder's website
+#   logo                          — optional; use only the official logo file
+#                                   and observe the funder's logo guidelines.
+#                                   A :lang placeholder is replaced by de / en.
+#   programmes_de / programmes_en — optional note on the programmes involved
+#
+# Contract research ("Auftragsprojekt") is not a funder and has no entry.
+
+- name_de: Österreichische Forschungsförderungsgesellschaft (FFG)
+  name_en: Austrian Research Promotion Agency (FFG)
+  url: https://www.ffg.at/
+  aliases: ["FFG", "Forschungsförderungsgesellschaft", "Fördergesellschaft"]
+  programmes_de: u. a. Basisprogramm, Innovationsscheck, Kleinprojekte, COMET, KIRAS, AI4Green, Digital Health
+  programmes_en: e.g. General Programme, Innovation Voucher, small projects, COMET, KIRAS, AI4Green, Digital Health
+
+- name_de: Land Oberösterreich
+  name_en: Province of Upper Austria
+  url: https://www.land-oberoesterreich.gv.at/
+  aliases: ["Land Oberösterreich", "easy2research", "Easy2Research", "easy2Research", "easy2innovate", "Innovatives OÖ", "TIMed", "OÖ Kooperationsförderung", "Landes Oö"]
+  programmes_de: u. a. easy2research, easy2innovate, Innovatives OÖ 2020, TIMed, AI-Region Upper Austria
+  programmes_en: e.g. easy2research, easy2innovate, Innovative Upper Austria 2020, TIMed, AI-Region Upper Austria
+
+- name_de: Wissenschaftsfonds FWF
+  name_en: Austrian Science Fund (FWF)
+  url: https://www.fwf.ac.at/
+  aliases: ["FWF"]
+  programmes_de: doc.funds.connect
+  programmes_en: doc.funds.connect
+
+- name_de: Europäische Union
+  name_en: European Union
+  url: https://erasmus-plus.ec.europa.eu/
+  logo: /assets/images/projects/eu-funded-:lang.png
+  aliases: ["Erasmus+"]
+  flag: eu_funded
+  programmes_de: Erasmus+
+  programmes_en: Erasmus+
+
+- name_de: Austria Wirtschaftsservice (aws)
+  name_en: Austria Wirtschaftsservice (aws)
+  url: https://www.aws.at/
+  aliases: ["Austria Wirtschaftsservice"]
+
+- name_de: Wirtschaftskammer Oberösterreich
+  name_en: Upper Austrian Chamber of Commerce (WKOÖ)
+  url: https://www.wko.at/ooe
+  aliases: ["WKOÖ"]
+  programmes_de: Technologie-Scheck
+  programmes_en: technology voucher
+
+- name_de: FH Oberösterreich
+  name_en: University of Applied Sciences Upper Austria
+  url: https://www.fh-ooe.at/
+  aliases: ["FH Basisfördermittel"]
+  programmes_de: Basisfördermittel
+  programmes_en: internal base funding
