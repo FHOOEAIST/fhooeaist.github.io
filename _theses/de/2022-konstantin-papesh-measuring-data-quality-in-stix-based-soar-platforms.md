@@ -7,7 +7,7 @@ title: Measuring Data Quality in STIX-based SOAR Platforms
 student: Konstantin Papesh
 thesis_type: master
 categories: [se]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/soc-toolkit
+projects: [projects:soc-toolkit]
 ---
 
 Sicherheitsanalysten verwenden Security Orchestration, Automation, and Response (SOAR) Plattformen, um Schadsoftware zu sezieren und analysieren. Diese Plattformen benötigen externe Dienste um die vorhandenen Daten anzureichern. Oft ist die Qualität neuer Dienste jedoch unklar. Um dieses Problem zu beheben können Metrik aufgestellt werden, welche verschiedene Parameter in Bezug auf Datenqualität erheben.

@@ -7,7 +7,7 @@ title: Elektromyographisches Signal als alternative Eingabemöglichkeit unter An
 student: Rainer Meindl
 thesis_type: bachelor
 categories: [ehealth]
-project_url: https://aist.fh-hagenberg.at/index.php/en/projects/project-psii-rehab-2
+projects: [projects:project-psii-rehab]
 ---
 
 Im Rahmen eines Forschungsprojekts mit der Firma Psii.Rehab stellt sich die Frage ob und wie Biofeedback in Form eines elektromyographischen Signals als Eingabemöglichkeit in einer Applikation verwendet werden kann. Damit soll die Effektivität der Spiegeltherapie verbessert werden. Dies soll eng mit der Virtuellen Realität, mobilen Geräten und Fingertracking zusammenspielen um ein immersiveres Erlebnis zu erzeugen. Daher wird im Rahmen der Arbeit Hardware in Form von Mobile–Virtual Reality Brillen, Fingertrackingsensoren und Elektromyographen evaluiert mit dem Ziel ein hardwareunabhängiges System zu entwickeln, das Android als Zielplattform hat und durch ein elektromyographisches Signal gestützt wird. Wegen diesen Gründen wird das Unity Framework eingesetzt

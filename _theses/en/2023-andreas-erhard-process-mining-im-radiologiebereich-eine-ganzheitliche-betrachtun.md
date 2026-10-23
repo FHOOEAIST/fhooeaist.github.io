@@ -8,7 +8,7 @@ title: Process Mining in Radiology - A Holistic View of Organizational and Data
 student: Andreas Erhard
 thesis_type: master
 categories: [pm, ehealth]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/pica
+projects: [projects:pica]
 ---
 
 In the hospital and radiology sector, the increasing number of people to be treated and costs are a growing problem. It is becoming increasingly important to strive for a more efficient use of resources in order to meet both the needs of the patients and the requirements of the organization. In this context, it is crucial to collect data in a more targeted manner and to make it measurable in order to identify and improve weak points in the processes. Process mining offers a promising possibility for this. By analyzing and optimizing processes on the basis of data collected in information systems, it can help to shorten waiting times for patients and at the same time reduce organizational costs.

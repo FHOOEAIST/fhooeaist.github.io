@@ -8,7 +8,7 @@ title: Influence of depth data on the performance of instance segmentation
 student: Lukas Reithmeier
 thesis_type: bachelor
 categories: [cv, ml]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/projekt-eden
+projects: [projects:projekt-eden]
 ---
 
 Aufzüge sind eine Transportart, die aus dem modernen urbanen Leben nicht mehr wegzudenken ist. Bei Notfäallen in Aufzügen kann ein Notfallschalter betätigt werden, um Hilfe zu rufen. Dies ist nicht immer möglich. Daher entwickelt die Forschungsgruppe AIST ein System zur Notfallerkennung in Aufzügen unter Verwendung von RGB-D Kameras, welche RGB Bilder und Tiefenbilder liefern. Um Personen in unterschiedlichen Posen und verschiedene Objekte zu erkennen und um deren Masken zur Verfolgung über mehrere Kamera Bilder zu verwenden, wird ein Instanzsegmentierungs-Modul mit dem Mask R-CNN Algorithmus zum System hinzugefügt.

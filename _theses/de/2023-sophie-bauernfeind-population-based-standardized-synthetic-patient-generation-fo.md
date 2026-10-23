@@ -8,7 +8,7 @@ title: Population-based Standardized, Synthetic Patient Generation for
 student: Sophie Bauernfeind
 thesis_type: master
 categories: [ehealth, ml]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/pica
+projects: [projects:pica]
 ---
 
 Die weltweiten Auswirkungen der COVID-19-Pandemie haben die Notwendigkeit einer wirksamen Planung der Gesundheitssysteme und der Ressourceneinteilung deutlich gemacht. Die Pandemie hat gezeigt, wie wichtig genaue Simulationen für die Gesundheitssysteme sind, um so effizient wie möglich arbeiten zu können. Den öffentlichen medizinischen Datensätzen mangelt es jedoch oft an der Spezifität für einzelne Krankenhäuser oder Gesundheitsdienstleister, was zu möglichen Unterschieden in der Demografie und den Bedürfnissen der Patientinnen und Patienten führt.

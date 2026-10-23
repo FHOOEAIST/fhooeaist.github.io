@@ -7,7 +7,7 @@ title: Electromyographic Signal as an Alternative Input System for Android
 student: Rainer Meindl
 thesis_type: bachelor
 categories: [ehealth]
-project_url: https://aist.fh-hagenberg.at/index.php/en/projects/project-psii-rehab-2
+projects: [projects:project-psii-rehab]
 ---
 
 The main question of this thesis is how and if electromyography can be used as an Inputsystem on an Android application. This is to be researched as a part of a research project with the company Psii.Rehab, which is tightly corresponding to topics such as \emph{mobile virtual reality} and fingetracking. Thus Hardware has to be evaluated which includes, but is not limited to, mobile virtual reality goggles, fingertrackingsensors and electromyographs with the overall goal to achieve plattform–independency. Since the application uses aspects of virtual reality and should be mostly platform independent, it stands to reason that the Unity Framework should be used.
