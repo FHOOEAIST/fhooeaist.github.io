@@ -8,7 +8,7 @@ title: Influence of depth data on the performance of instance segmentation
 student: Lukas Reithmeier
 thesis_type: bachelor
 categories: [cv, ml]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/projekt-eden
+projects: [projects:projekt-eden]
 ---
 
 Elevators are a vital means of transportation in the modern urban life. If an emergency happens in an elevator a person must press an emergency button calling for help. Since pressing the emergency button is not always possible, the research group AIST is developing a system that detects emergencies in elevators using RGB-D camera footage, compromising both RGB images as well as depth images. The detection of persons in various poses and various different objects as well as the creation of masks from classified persons and objects to track these over the course of several camera frames, it is aimed to add an instance segmentation module using the Mask R-CNN algorithm to this system.

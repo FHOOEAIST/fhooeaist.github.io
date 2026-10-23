@@ -8,7 +8,7 @@ title: An Exploratory Approach for Finding Similarities Within Heterogeneous
 student: Eva-Maria Spitzer
 thesis_type: master
 categories: [ml]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/projekt-kimiku
+projects: [projects:projekt-kimiku]
 ---
 
 Kundenbindungsprogramme sind ein wichtiges Hilfsmittel für Unternehmen, um die Bedürfnisse ihrer Kundinnen und Kunden besser wahrzunehmen und dadurch geeignete Maßnahmen zur Steigerung der Zufriedenheit ergreifen zu können. Für die erfolgreiche Umsetzung solcher Programme werden detaillierte Analysen benötigt, die eine große Menge von Kundendaten voraussetzen. Viele Klein- und Mittelunternehmen haben nur wenig Daten und können folglich nur einen kleinen Datensatz für Analysen verwenden, was zu schlechteren Modellen und ungenaueren Ergebnissen führen kann.

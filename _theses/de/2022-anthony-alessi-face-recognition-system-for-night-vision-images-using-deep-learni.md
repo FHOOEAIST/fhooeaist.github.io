@@ -7,7 +7,7 @@ title: Face Recognition system for Night Vision Images using Deep Learning
 student: Anthony Alessi
 thesis_type: bachelor
 categories: [cv, ml]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/epilepsie-monitoring
+projects: [projects:epilepsie-monitoring]
 ---
 
 Advanced Information Systems and Technology, kurz AIST, ist eine Forschungsgruppe der Fachhochschule Oberösterreich, angesiedelt am Campus Hagenberg, Oberösterreich. Ihre Schwerpunkte liegen in den Bereichen Machine Learning & Data Mining, Computer Vision und eHealth. Die Aufgabe für dieses Praktikum war es, am EpiMon-Projekt mitzuarbeiten.

@@ -9,7 +9,7 @@ title: Process Mining im Radiologiebereich - Eine ganzheitliche Betrachtung der
 student: Andreas Erhard
 thesis_type: master
 categories: [pm, ehealth]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/pica
+projects: [projects:pica]
 ---
 
 Im Krankenhaus- und Radiologiebereich stellen die steigende Anzahlen von zu behandelnden Personen und Kosten ein zunehmendes Problem dar. Es wird immer wichtiger, eine effizientere Nutzung der Ressourcen anzustreben, um sowohl den Bedürfnissen der Pati-enten, als auch den Anforderungen der Organisation gerecht zu werden. Dabei ist es entscheidend, Daten gezielter zu erfassen und messbar zu machen, um Schwachstellen in den Prozessen zu erkennen und zu verbessern. Process Mining bietet hierfür eine vielversprechende Möglichkeit. Durch die Analyse und Optimierung von Prozessen auf Basis der in Informationssystemen gesammelten Daten kann es dazu beitragen, Wartezeiten für Patientinnen und Patienten zu verkürzen und gleichzeitig die Organisationskosten zu senken.

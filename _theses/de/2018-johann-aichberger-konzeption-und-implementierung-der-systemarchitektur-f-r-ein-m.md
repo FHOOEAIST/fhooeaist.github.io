@@ -8,7 +8,7 @@ title: Konzeption und Implementierung der Systemarchitektur für ein Mixed
 student: Johann Aichberger
 thesis_type: bachelor
 categories: [xr, se]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/projekt-rudy-games
+projects: [projects:projekt-rudy-games]
 ---
 
 In den letzten Jahren hat die Einführung vieler neuer Augmented Reality (AR) Devices, darunter zum Beispiel die Microsoft HoloLens, sehr stark zur steigenden Popularität und Verbreitung von AR beigetragen. Gestützt durch Weiterentwicklungen im Hardware- und Softwarebereich, sind seit Kurzem sogar gängige Smartphones dazu in der Lage, eine recht große Teilmenge aktueller AR-Funktionen abzudecken, sodass AR mittlerweile für beinahe jedermann zugänglich ist.

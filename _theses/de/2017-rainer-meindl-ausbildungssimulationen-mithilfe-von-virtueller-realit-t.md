@@ -7,7 +7,7 @@ title: Ausbildungssimulationen mithilfe von Virtueller Realität
 student: Rainer Meindl
 thesis_type: bachelor
 categories: [xr]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/projekt-formelracing
+projects: [projects:projekt-formelracing]
 ---
 
 Moderne Simulationshardware, wie Flugsimulatoren und Fahrsimulatoren sind teuer und platzineffizient. Außerdem ist ihr Potential meist nicht ausgeschöpft, da viele wichtige Merkmale der realen Welt, z.B. Rundumsicht, weniger oder nicht gegeben sind.

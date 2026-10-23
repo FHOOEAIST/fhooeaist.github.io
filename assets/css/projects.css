@@ -389,3 +389,35 @@
   overflow-wrap: anywhere;
   hyphens: auto;
 }
+
+/* ------------------------------------------- publications & theses of a project */
+.project-output {
+  margin-top: 3rem;
+}
+
+.project-output > h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-output-count {
+  padding: 0.05rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--sky-100);
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-bold);
+}
+
+/* year headings sit below the section heading here, so they step down a size */
+.project-output .year-heading {
+  margin: 1.75rem 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.project-output .year-section:first-child .year-heading {
+  margin-top: 0;
+}

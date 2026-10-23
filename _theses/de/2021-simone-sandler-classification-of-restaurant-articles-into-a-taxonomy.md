@@ -7,7 +7,7 @@ title: Classification of Restaurant Articles into a Taxonomy
 student: Simone Sandler
 thesis_type: master
 categories: [ml]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/projekt-voigas
+projects: [projects:projekt-voigas]
 ---
 
 Diese Arbeit beschäftigt sich mit der Klassifizierung von Artikeln aus verschiedenen Restaurants in eine Taxonomie. Die verfügbaren Daten dabei sind der Name des Artikels und eine restaurantinterne Kategorie. Beide Merkmale sind Strings, die vom Restaurantbesitzer bereitgestellt werden und sind daher fehleranfällig.
