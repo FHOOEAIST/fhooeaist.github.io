@@ -1,0 +1,28 @@
+# Open thesis topics, rendered on mitarbeit.html / mitarbeit-en.html through
+# _includes/thesis-topics.html, with the category and thesis-type filter of
+# _includes/listing-filter.html (kind="topics"). While the list is empty the
+# page invites students to propose a topic of their own instead.
+#
+#   title_de / title_en       — topic title
+#   thesis_type               — list: bachelor | master | dissertation
+#   categories                — ids from _data/publication_categories.yml
+#   supervisor                — name shown on the entry
+#   contact                   — e-mail address of the supervisor
+#   project                   — optional page_id of the related project, e.g. projects:bambi
+#   description_de / _en      — Markdown
+#
+# Example:
+#
+# - title_de: Wildtiererkennung in Drohnen-Wärmebildern
+#   title_en: Wildlife detection in drone thermal imagery
+#   thesis_type: [bachelor, master]
+#   categories: [cv, geo]
+#   supervisor: Christoph Praschl
+#   contact: christoph.praschl@fh-hagenberg.at
+#   project: projects:bambi
+#   description_de: |
+#     Ziel der Arbeit ist …
+#   description_en: |
+#     The goal of this thesis is …
+
+[]

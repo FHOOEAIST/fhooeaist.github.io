@@ -1,0 +1,80 @@
+{% comment %}
+Open thesis topics from _data/thesis_topics.yml, filterable by category and
+thesis type (_includes/listing-filter.html with kind="topics"). Expects:
+  include.lang    — "de" or "en"
+  include.contact — address for students who want to propose a topic
+
+Each entry carries data-categories / data-type (both space-separated lists)
+for the filter, and repeats its categories as badges like the theses list.
+Without any topic the section asks for topic proposals instead.
+{% endcomment %}
+{% assign en = false %}{% if include.lang == "en" %}{% assign en = true %}{% endif %}
+{% assign topics = site.data.thesis_topics %}
+{% assign cats = site.data.publication_categories %}
+{% assign projects_page = site.pages | where: "page_id", "projects-index" | where: "lang", include.lang | first %}
+{% assign theses_page = site.pages | where: "page_id", "theses-index" | where: "lang", include.lang | first %}
+{% if en %}{% assign t_filter_by = "Filter by category" %}{% else %}{% assign t_filter_by = "Nach Kategorie filtern" %}{% endif %}
+
+{% if topics.size > 0 %}
+{% include listing-filter.html lang=include.lang kind="topics" %}
+<div class="listing-items topic-list">
+  {% for topic in topics %}
+  {% if en %}{% assign title = topic.title_en | default: topic.title_de %}{% assign description = topic.description_en | default: topic.description_de %}
+  {% else %}{% assign title = topic.title_de | default: topic.title_en %}{% assign description = topic.description_de | default: topic.description_en %}{% endif %}
+  {% assign anchor = "topic-" | append: title | slugify %}
+  <div class="listing-item thesis-entry collapsible" data-type="{{ topic.thesis_type | join: ' ' }}" data-categories="{{ topic.categories | join: ' ' }}">
+    <h3 class="listing-title" id="{{ anchor }}">
+      <button type="button" class="listing-toggle" aria-controls="{{ anchor }}-content">
+        <span class="listing-toggle-text">{{ title }}</span>
+        <span class="listing-toggle-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+      </button>
+    </h3>
+    <p class="thesis-meta">
+      {%- for type in topic.thesis_type -%}
+      <span class="thesis-type thesis-type-{{ type }}">{% if type == "bachelor" %}{% if en %}Bachelor thesis{% else %}Bachelorarbeit{% endif %}{% elsif type == "master" %}{% if en %}Master thesis{% else %}Masterarbeit{% endif %}{% elsif type == "dissertation" %}Dissertation{% endif %}</span>
+      {%- endfor -%}
+    </p>
+    {% if topic.categories.size > 0 %}
+    <p class="publication-categories">
+      {%- for id in topic.categories -%}
+      {%- for cat in cats -%}
+      {%- if cat.id == id -%}
+      {%- if en -%}{%- assign short = cat.short_en -%}{%- assign full = cat.label_en -%}{%- else -%}{%- assign short = cat.short_de -%}{%- assign full = cat.label_de -%}{%- endif -%}
+      <button type="button" class="publication-category" data-category="{{ cat.id }}" title="{{ t_filter_by }}: {{ full | escape }}">{{ short | escape }}</button>
+      {% endif -%}
+      {%- endfor -%}
+      {%- endfor -%}
+    </p>
+    {% endif %}
+    <div class="listing-content" id="{{ anchor }}-content">
+      {{ description | markdownify }}
+      <dl class="topic-facts">
+        {% if topic.supervisor %}
+        <div><dt>{% if en %}Supervisor{% else %}Betreuung{% endif %}</dt><dd>{{ topic.supervisor }}{% if topic.contact %} · <a href="mailto:{{ topic.contact }}?subject={{ title | url_encode }}">{{ topic.contact }}</a>{% endif %}</dd></div>
+        {% endif %}
+        {% if topic.project %}
+        {% assign topic_project = site.projects | where: "page_id", topic.project | where: "lang", include.lang | first %}
+        {% if topic_project %}
+        <div><dt>{% if en %}Project{% else %}Projekt{% endif %}</dt><dd><a href="{{ topic_project.url | relative_url }}">{{ topic_project.title }}</a></dd></div>
+        {% endif %}
+        {% endif %}
+      </dl>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<div class="positions-empty topics-propose">
+  <i class="fas fa-lightbulb" aria-hidden="true"></i>
+  <div>
+    {% if en %}
+    <h3>{% if topics.size > 0 %}Have an idea of your own?{% else %}No topics listed at the moment – propose your own{% endif %}</h3>
+    <p>Most of our theses grow out of running <a href="{{ projects_page.permalink | relative_url }}">research projects</a>. We are happy to discuss your own topic in the areas of eHealth, machine learning &amp; data science or visual computing. Our <a href="{{ theses_page.permalink | relative_url }}">completed theses</a> give an idea of what is possible.</p>
+    {% else %}
+    <h3>{% if topics.size > 0 %}Eine eigene Idee?{% else %}Derzeit keine Themen ausgeschrieben – schlagen Sie ein eigenes vor{% endif %}</h3>
+    <p>Die meisten unserer Abschlussarbeiten entstehen in laufenden <a href="{{ projects_page.permalink | relative_url }}">Forschungsprojekten</a>. Gerne besprechen wir auch Ihr eigenes Thema aus den Bereichen eHealth, Machine Learning &amp; Data Science oder Visual Computing. Einen Eindruck geben die bereits <a href="{{ theses_page.permalink | relative_url }}">betreuten Diplomarbeiten</a>.</p>
+    {% endif %}
+    <a class="btn btn-sm btn-outline" href="mailto:{{ include.contact }}?subject={% if en %}Thesis%20topic{% else %}Thema%20f%C3%BCr%20eine%20Abschlussarbeit{% endif %}"><i class="fas fa-envelope" aria-hidden="true"></i> {% if en %}Get in touch{% else %}Kontakt aufnehmen{% endif %}</a>
+  </div>
+</div>

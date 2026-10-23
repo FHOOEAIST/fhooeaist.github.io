@@ -7,6 +7,7 @@
 {% assign area_ehealth_page = site.pages | where: "page_id", "area:ehealth" | where: "lang", "de" | first %}
 {% assign area_ml_page = site.pages | where: "page_id", "area:ml" | where: "lang", "de" | first %}
 {% assign area_cv_page = site.pages | where: "page_id", "area:cv" | where: "lang", "de" | first %}
+{% assign positions_page = site.pages | where: "page_id", "positions" | where: "lang", "de" | first %}
 
 {% assign n_projects = site.projects | where: "lang", "de" | size %}
 {% assign n_pubs = site.publications | where: "lang", "de" | size %}
@@ -191,12 +192,12 @@
   <div class="container">
     <div class="home-cta">
       <div>
-        <h2>Zusammenarbeit &amp; Diplomarbeiten</h2>
-        <p>Sie interessieren sich für eine Kooperation, ein gemeinsames Forschungsprojekt oder eine Diplomarbeit im Rahmen unserer Forschung? Wir freuen uns über Ihre Nachricht.</p>
+        <h2>Zusammenarbeit, Mitarbeit &amp; Diplomarbeiten</h2>
+        <p>Sie interessieren sich für eine Kooperation, ein gemeinsames Forschungsprojekt, eine Mitarbeit oder eine Diplomarbeit im Rahmen unserer Forschung? Wir freuen uns über Ihre Nachricht.</p>
       </div>
       <div class="hero-actions">
         <a class="btn btn-light" href="{{ contact_page.permalink | relative_url }}">Kontakt aufnehmen</a>
-        <a class="btn btn-ghost-light" href="{{ theses_page.permalink | relative_url }}">Diplomarbeiten</a>
+        <a class="btn btn-ghost-light" href="{{ positions_page.permalink | relative_url }}">Offene Stellen &amp; Themen</a>
       </div>
     </div>
   </div>
