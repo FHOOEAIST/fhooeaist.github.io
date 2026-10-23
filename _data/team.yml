@@ -1,3 +1,19 @@
+# Current team, rendered by team.html / team-en.html (_includes/team-card.html).
+#
+# Required: name, category (professor | project_manager | researcher | student,
+# labels in _data/team_categories.yml). Everything else is optional and left
+# out when missing:
+#   gender         m | f, picks the German form of the category label
+#   role           free text next to the category (e.g. study programme)
+#   email, phone, image, details_url (Pure profile)
+#   interests_de / interests_en   list of research interests, shown as tags
+#                                 (falls back to the other language)
+#   orcid          ORCID iD, e.g. 0000-0002-1825-0097
+#   scholar        Google Scholar user id (the `user=` value of the profile URL)
+#   github         GitHub handle
+#   linkedin       LinkedIn handle (the part after linkedin.com/in/)
+# Profile links and interests should be added by the members themselves.
+#
 members:
   - name: Sophie Bauernfeind MSc
     category: researcher
@@ -99,3 +115,15 @@ members:
     phone: +43 5 0804 22038
     image: /assets/images/team/di_fh_dr_gerald_adam_zwettler_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/gerald-adam-zwettler
+
+# Former members, listed below the team (_includes/team-alumni.html).
+# Opt-in only and without photos: an entry is shown only with the date of
+# the person's consent in `consent:`; remove the entry when consent is
+# withdrawn.
+#   name       required
+#   consent    required to be shown, YYYY-MM-DD
+#   years      optional, e.g. 2015–2021
+#   role_de / role_en   optional, last role in the group
+#   now_de / now_en     optional, current position (only if agreed to)
+#   url                 optional, a link the person chose
+alumni: []

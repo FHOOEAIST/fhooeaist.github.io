@@ -156,6 +156,101 @@
   font-size: 0.7em;
 }
 
+/* research interests (optional) */
+.team-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.team-interests li {
+  padding: 0.05rem 0.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-light);
+  color: var(--color-text-light);
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+/* Pure "Details" link and the optional profile icons share the bottom row */
+.team-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-top: auto;
+  padding-top: 0.6rem;
+}
+
+.team-links .team-details-link {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.team-profiles {
+  display: inline-flex;
+  gap: 0.35rem;
+  margin-left: auto;
+}
+
+.team-profiles a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-light);
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.team-profiles a:hover,
+.team-profiles a:focus-visible {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* opt-in alumni list: names only, no photos */
+.team-alumni {
+  margin-top: 4rem;
+}
+
+.alumni-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.alumni-list li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--color-line-strong);
+  background: var(--color-bg-light);
+}
+
+.alumni-name {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-heading);
+}
+
+.alumni-meta,
+.alumni-now {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
 @media (max-width: 640px) {
   .team-grid {
     grid-template-columns: 1fr;
