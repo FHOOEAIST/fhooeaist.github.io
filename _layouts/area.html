@@ -1,0 +1,180 @@
+---
+layout: default
+---
+{% comment %}
+One research area (forschung-*.html / research-*-en.html). Front matter:
+  area     — id from _data/publication_categories.yml (ehealth | ml | cv);
+             drives every list on the page
+  lead     — intro in the title band
+  icon     — area icon (assets/images/index/*.svg)
+  focus    — list of focus topics, shown below the description
+  contact  — optional e-mail of the contact person in _data/team.yml;
+             defaults to the group contact
+The Markdown body is the area description. Projects are picked by their
+`category` (one id or a list), publications and theses by their
+`categories` list, so nothing has to be maintained here by hand.
+{% endcomment %}
+{% assign en = false %}{% if page.lang == "en" %}{% assign en = true %}{% endif %}
+{% assign area = page.area %}
+{% assign projects_page = site.pages | where: "page_id", "projects-index" | where: "lang", page.lang | first %}
+{% assign pubs_page = site.pages | where: "page_id", "publications-index" | where: "lang", page.lang | first %}
+{% assign theses_page = site.pages | where: "page_id", "theses-index" | where: "lang", page.lang | first %}
+
+{%- comment -%} Running vs. completed, as on the projects listing: by the first phase's end date. {%- endcomment -%}
+{% assign area_projects = site.projects | where: "lang", page.lang | where_exp: "p", "p.category contains area" | sort_natural: "sort_title" %}
+{% assign now_int = site.time | date: "%Y%m%d" | plus: 0 %}
+{% assign active_projects = "" | split: "" %}
+{% assign done_projects = "" | split: "" %}
+{% for project in area_projects %}
+  {% assign is_active = false %}
+  {% for p in project.projects limit:1 %}
+    {% if p.laufzeitEnd %}
+      {% assign end_parts = p.laufzeitEnd | split: "." %}
+      {% assign end_int = end_parts[2] | append: end_parts[1] | append: end_parts[0] | plus: 0 %}
+      {% if end_int >= now_int %}{% assign is_active = true %}{% endif %}
+    {% endif %}
+  {% endfor %}
+  {% if is_active %}
+    {% assign active_projects = active_projects | push: project %}
+  {% else %}
+    {% assign done_projects = done_projects | push: project %}
+  {% endif %}
+{% endfor %}
+
+{% assign area_pubs = site.publications | where: "lang", page.lang | where_exp: "p", "p.categories contains area" | sort: "date" | reverse %}
+{% assign area_theses = site.theses | where: "lang", page.lang | where_exp: "t", "t.categories contains area" | sort: "date" | reverse %}
+
+{% assign contact_email = page.contact | default: "gerald.zwettler@fh-hagenberg.at" %}
+{% assign contact = site.data.team.members | where: "email", contact_email | first %}
+
+{% if en %}{% assign eyebrow = "Research area" %}{% else %}{% assign eyebrow = "Forschungsschwerpunkt" %}{% endif %}
+{% include page-header.html eyebrow=eyebrow title=page.title lead=page.lead %}
+
+<div class="container">
+  <div class="area-intro">
+    <div class="area-text article-body">
+      {{ content }}
+      {% if page.focus %}
+      <h2>{% if en %}Focus topics{% else %}Schwerpunkte{% endif %}</h2>
+      <ul class="area-focus">
+        {% for topic in page.focus %}<li>{{ topic }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+
+    <aside class="area-aside">
+      {% if page.icon %}<img class="area-aside-icon" src="{{ page.icon | relative_url }}" alt="" loading="lazy">{% endif %}
+      <ul class="area-stats">
+        <li><a href="{{ projects_page.permalink | relative_url }}#area={{ area }}"><span class="stat-value">{{ area_projects.size }}</span><span class="stat-label">{% if en %}projects{% else %}Projekte{% endif %}</span></a></li>
+        <li><a href="{{ pubs_page.permalink | relative_url }}#cat={{ area }}"><span class="stat-value">{{ area_pubs.size }}</span><span class="stat-label">{% if en %}publications{% else %}Publikationen{% endif %}</span></a></li>
+        <li><a href="{{ theses_page.permalink | relative_url }}#cat={{ area }}"><span class="stat-value">{{ area_theses.size }}</span><span class="stat-label">{% if en %}theses{% else %}Diplomarbeiten{% endif %}</span></a></li>
+      </ul>
+      <div class="area-contact">
+        <p class="area-contact-label">{% if en %}Contact{% else %}Ansprechperson{% endif %}</p>
+        {% if contact %}
+        <div class="area-contact-person">
+          {% if contact.image %}<img src="{{ contact.image | relative_url }}" alt="{{ contact.name }}" loading="lazy">{% endif %}
+          <div>
+            <p class="area-contact-name">{{ contact.name }}</p>
+            <p><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+            {% if contact.phone %}<p><a href="tel:{{ contact.phone | remove: ' ' }}">{{ contact.phone }}</a></p>{% endif %}
+          </div>
+        </div>
+        {% else %}
+        <p><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+        {% endif %}
+      </div>
+    </aside>
+  </div>
+
+  {% if active_projects.size > 0 %}
+  <section class="project-group">
+    <div class="section-head">
+      <div>
+        <h2>{% if en %}Running projects{% else %}Laufende Projekte{% endif %}</h2>
+        <p>{{ active_projects.size }} {% if en %}projects in progress{% else %}Projekte in Bearbeitung{% endif %}</p>
+      </div>
+    </div>
+    <ul class="project-grid">
+    {% for project in active_projects %}
+      {% assign is_active = true %}
+      {% include project-card.html %}
+    {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if done_projects.size > 0 %}
+  <section class="project-group">
+    <div class="section-head">
+      <div>
+        <h2>{% if en %}Completed projects{% else %}Abgeschlossene Projekte{% endif %}</h2>
+        <p>{{ done_projects.size }} {% if en %}completed projects{% else %}abgeschlossene Projekte{% endif %}</p>
+      </div>
+    </div>
+    {% comment %} Folded to two rows by initProjectCollapse in main.js, as on the projects page. {% endcomment %}
+    <div class="project-collapse" data-project-collapse>
+      <ul class="project-grid complete">
+      {% for project in done_projects %}
+        {% assign is_active = false %}
+        {% include project-card.html %}
+      {% endfor %}
+      </ul>
+    </div>
+    {% if en %}{% assign t_more = "Show all completed projects" %}{% assign t_less = "Show fewer completed projects" %}{% else %}{% assign t_more = "Alle abgeschlossenen Projekte anzeigen" %}{% assign t_less = "Weniger abgeschlossene Projekte anzeigen" %}{% endif %}
+    <div class="project-collapse-bar" data-project-collapse-bar hidden>
+      <button type="button" class="project-collapse-toggle" aria-expanded="false" data-label-more="{{ t_more }}" data-label-less="{{ t_less }}" aria-label="{{ t_more }}" title="{{ t_more }}">
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </button>
+    </div>
+  </section>
+  {% endif %}
+
+  {%- comment -%} Latest output; the full lists are one click away, pre-filtered. Not indexed, the entries are found on their own pages. {%- endcomment -%}
+  <div class="area-output" data-pagefind-ignore>
+    {% if area_pubs.size > 0 %}
+    <section>
+      <div class="section-head">
+        <h2>{% if en %}Recent publications{% else %}Aktuelle Publikationen{% endif %}</h2>
+      </div>
+      <ul class="area-output-list">
+        {% for pub in area_pubs limit: 5 %}
+        <li>
+          <span class="area-output-year">{{ pub.date | date: "%Y" }}</span>
+          <a href="{{ pubs_page.permalink | relative_url }}#{{ pub.permalink | slugify }}">{{ pub.title }}</a>
+          {% if pub.reference %}<span class="area-output-meta">{{ pub.reference | strip_html | truncate: 160 }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      <a class="link-arrow" href="{{ pubs_page.permalink | relative_url }}#cat={{ area }}">{% if en %}All {{ area_pubs.size }} publications{% else %}Alle {{ area_pubs.size }} Publikationen{% endif %} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </section>
+    {% endif %}
+    {% if area_theses.size > 0 %}
+    <section>
+      <div class="section-head">
+        <h2>{% if en %}Recent theses{% else %}Aktuelle Diplomarbeiten{% endif %}</h2>
+      </div>
+      <ul class="area-output-list">
+        {% for thesis in area_theses limit: 5 %}
+        <li>
+          <span class="area-output-year">{{ thesis.date | date: "%Y" }}</span>
+          <a href="{{ theses_page.permalink | relative_url }}#{{ thesis.permalink | slugify }}">{{ thesis.title }}</a>
+          <span class="area-output-meta">{{ thesis.student }}{% if thesis.thesis_type == "bachelor" %} · {% if en %}Bachelor thesis{% else %}Bachelorarbeit{% endif %}{% elsif thesis.thesis_type == "master" %} · {% if en %}Master thesis{% else %}Masterarbeit{% endif %}{% elsif thesis.thesis_type == "dissertation" %} · Dissertation{% endif %}</span>
+        </li>
+        {% endfor %}
+      </ul>
+      <a class="link-arrow" href="{{ theses_page.permalink | relative_url }}#cat={{ area }}">{% if en %}All {{ area_theses.size }} theses{% else %}Alle {{ area_theses.size }} Diplomarbeiten{% endif %} <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </section>
+    {% endif %}
+  </div>
+
+  {% assign other_areas = site.pages | where: "layout", "area" | where: "lang", page.lang %}
+  <nav class="area-others" aria-label="{% if en %}Other research areas{% else %}Weitere Forschungsschwerpunkte{% endif %}">
+    <p class="eyebrow">{% if en %}Other research areas{% else %}Weitere Forschungsschwerpunkte{% endif %}</p>
+    <ul>
+      {% for other in other_areas %}{% if other.area != area %}
+      <li><a href="{{ other.url | relative_url }}">{% if other.icon %}<img src="{{ other.icon | relative_url }}" alt="" loading="lazy">{% endif %}<span>{{ other.title }}</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+      {% endif %}{% endfor %}
+    </ul>
+  </nav>
+</div>
