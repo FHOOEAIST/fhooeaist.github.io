@@ -466,3 +466,15 @@
     padding: 3rem 0;
   }
 }
+
+/* the area heading links to its research area page (_layouts/area.html) */
+.area-tile h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.area-tile h2 a:hover,
+.area-tile h2 a:focus-visible {
+  color: var(--color-primary);
+  text-decoration: underline;
+}

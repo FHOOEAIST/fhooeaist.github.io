@@ -4,6 +4,9 @@
 {% assign team_page = site.pages | where: "page_id", "team" | where: "lang", "en" | first %}
 {% assign news_page = site.pages | where: "page_id", "news" | where: "lang", "en" | first %}
 {% assign contact_page = site.pages | where: "page_id", "contact" | where: "lang", "en" | first %}
+{% assign area_ehealth_page = site.pages | where: "page_id", "area:ehealth" | where: "lang", "en" | first %}
+{% assign area_ml_page = site.pages | where: "page_id", "area:ml" | where: "lang", "en" | first %}
+{% assign area_cv_page = site.pages | where: "page_id", "area:cv" | where: "lang", "en" | first %}
 
 {% assign n_projects = site.projects | where: "lang", "en" | size %}
 {% assign n_pubs = site.publications | where: "lang", "en" | size %}
@@ -78,9 +81,9 @@
         <div class="area-icon">
           <img src="{{ '/assets/images/index/ehealth.svg' | relative_url }}" alt="eHealth Icon" loading="lazy">
         </div>
-        <h2>eHealth</h2>
+        <h2><a href="{{ area_ehealth_page.permalink | relative_url }}">eHealth</a></h2>
         <p>
-          The IT support of integrated care (“eHealth”) enables the definition, analysis and optimization of suitable interfaces, adequate care processes and affordable business models for high-quality care and case management in the healthcare sector. The goal of integrated care is to provide comprehensive, coordinated and continuous services that ensure a seamless care process along the entire care continuum. <em>[according to Hagen Kühn, Wissenschaftszentrum Berlin]</em>
+          We develop software for connected, standards-based healthcare: interoperable solutions based on HL7 FHIR and IHE, process mining in hospitals and radiology, digitally supported integrated care and, increasingly, AI in clinical settings – together with partners from healthcare and industry.
         </p>
         {% assign ehealth_projects = site.projects | where: 'lang', 'en' | where: 'category', 'ehealth' | sort: 'title' %}
         {% if ehealth_projects.size > 0 %}
@@ -107,9 +110,9 @@
         <div class="area-icon">
           <img src="{{ '/assets/images/index/machine-learning.svg' | relative_url }}" alt="Machine Learning Icon" loading="lazy">
         </div>
-        <h2>Machine Learning &amp; Data Science</h2>
+        <h2><a href="{{ area_ml_page.permalink | relative_url }}">Machine Learning &amp; Data Science</a></h2>
         <p>
-          The department of Machine Learning deals with algorithms, that are able to automatically find a domain-specific result based on patterns in data. This includes methods for the classification and identification of subjects in digital information, which are also capable of continuously improving their own result by expanding the data. The basic idea is not to teach algorithms explicitly how to solve a task, but to achieve this automatically using training data.
+          We make data from industry, business and public administration usable: from knowledge bases and predictive maintenance in production and alarm management in critical infrastructure to large language models that relieve experts of text and learning tasks. Explainable, human-centred AI is a focus of its own.
         </p>
         {% assign ml_projects = site.projects | where: 'lang', 'en' | where: 'category', 'ml' | sort: 'title' %}
         {% if ml_projects.size > 0 %}
@@ -136,9 +139,9 @@
         <div class="area-icon">
           <img src="{{ '/assets/images/index/computervision.svg' | relative_url }}" alt="Visual Computing icon" loading="lazy">
         </div>
-        <h2>Visual Computing</h2>
+        <h2><a href="{{ area_cv_page.permalink | relative_url }}">Visual Computing</a></h2>
         <p>
-          Visual Computing covers both the analysis and the generation of visual information. Computer Vision and Image Processing extract semantic information from image content, giving digital systems an ability comparable to human visual perception. Computer Graphics creates and renders digital content, and Mixed Reality combines information from the real world with digital data. Our work spans image acquisition, pre-processing, analysis and visualisation.
+          We work along the whole chain from image acquisition through analysis to visualisation – with a focus on drone-based wildlife monitoring in thermal and RGB imagery and on AI-supported quality inspection and 3D reconstruction in industry, complemented by mixed reality and synthetic training data.
         </p>
         {% assign cv_projects = site.projects | where: 'lang', 'en' | where: 'category', 'cv' | sort: 'title' %}
         {% if cv_projects.size > 0 %}
