@@ -1,6 +1,10 @@
 {% comment %}
 Publications grouped by year, newest first. Expects:
-  include.lang — "de" or "en"
+  include.lang    — "de" or "en"
+  include.items   — optional subset of site.publications (default: all of the
+                    language), e.g. the publications of one project
+  include.project — optional page_id of the project page the list sits on;
+                    its own link is left out of the "Project" line
 
 Title and reference (authors, venue) are always visible. Only the details —
 DOI, external link, abstract — collapse, and an entry without any of them
@@ -8,20 +12,30 @@ renders as a plain card without a toggle.
 
 Each entry exposes its `categories:` list as a space-separated `data-categories`
 attribute (plus data-year) for the filter in _includes/listing-filter.html, and repeats them
-as badges that double as a shortcut into that category. The entries of a year
+as badges that double as a shortcut into that category (on the publications
+page a button for the filter, elsewhere a link into the filtered page). An
+entry's `projects:` list (project page_ids) is shown as links to those
+projects. The entries of a year
 sit in a `.year-section` (initYearSections in assets/js/main.js): every year
 shows two entries and a "show more" button.
 {% endcomment %}
 
 {% assign cats = site.data.publication_categories %}
-{% assign pubs = site.publications | where: "lang", include.lang | sort: "date" | reverse %}
+{% if include.items %}
+    {% assign pubs = include.items | sort: "date" | reverse %}
+{% else %}
+    {% assign pubs = site.publications | where: "lang", include.lang | sort: "date" | reverse %}
+{% endif %}
+{% assign pubs_page = site.pages | where: "page_id", "publications-index" | where: "lang", include.lang | first %}
 
 {% if include.lang == "de" %}
     {% assign t_filter_by = "Nach Kategorie filtern" %}
     {% assign t_details = "Details" %}
+    {% assign t_project = "Projekt" %}
 {% else %}
     {% assign t_filter_by = "Filter by category" %}
     {% assign t_details = "Details" %}
+    {% assign t_project = "Project" %}
 {% endif %}
 
 {% comment %} One section per year (group_by_exp keeps the newest-first
@@ -64,6 +78,7 @@ _includes/year-more.html. {% endcomment %}
         {% if pub.reference %}
         <p class="publication-meta">{{ pub.reference }}</p>
         {% endif %}
+        {% include project-links.html ids=pub.projects lang=include.lang skip=include.project label=t_project %}
         {% if pub.categories.size > 0 %}
         <p class="publication-categories">
             {%- for id in pub.categories -%}
@@ -74,12 +89,20 @@ _includes/year-more.html. {% endcomment %}
             {%- else -%}
             {%- assign short = cat.short_en -%}{%- assign full = cat.label_en -%}
             {%- endif -%}
+            {%- if include.items -%}
+            <a
+                class="publication-category"
+                href="{{ pubs_page.permalink | relative_url }}#cat={{ cat.id }}"
+                title="{{ t_filter_by }}: {{ full | escape }}"
+            >{{ short | escape }}</a>
+            {%- else -%}
             <button
                 type="button"
                 class="publication-category"
                 data-category="{{ cat.id }}"
                 title="{{ t_filter_by }}: {{ full | escape }}"
             >{{ short | escape }}</button>
+            {%- endif %}
             {% endif -%}
             {%- endfor -%}
             {%- endfor -%}

@@ -14,49 +14,5 @@ page_id: theses-index
 
 <div class="container">
   {% include listing-filter.html lang=page.lang kind="theses" %}
-  {% assign cats = site.data.publication_categories %}
-  {% assign t_filter_by = "Filter by category" %}
-  <div class="listing-items">
-    {% assign en_theses = site.theses | where: "lang", "en" | sort: "date" | reverse %}
-    {% comment %} One section per year, newest first; each shows two entries
-    and a "show more" button (_includes/year-more.html, initYearSections in
-    main.js). {% endcomment %}
-    {% assign by_year = en_theses | group_by_exp: "item", "item.date | date: '%Y'" %}
-    {% for group in by_year %}
-      {% assign thesis_year = group.name %}
-      <section class="year-section" data-year="{{ thesis_year }}">
-      <h2 class="year-heading">{{ thesis_year }}</h2>
-      <div class="year-items">
-      {% for thesis in group.items %}
-      <div class="listing-item thesis-entry collapsible" data-year="{{ thesis_year }}" data-type="{{ thesis.thesis_type }}" data-categories="{{ thesis.categories | join: ' ' }}">
-        {% assign anchor = thesis.permalink | slugify %}
-        <h3 class="listing-title" id="{{ anchor }}">
-          <button type="button" class="listing-toggle" aria-controls="{{ anchor }}-content">
-            <span class="listing-toggle-text">{{ thesis.title }}</span>
-            <span class="listing-toggle-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
-          </button>
-        </h3>
-        <p class="thesis-meta"><i class="fas fa-user-graduate" aria-hidden="true"></i> {{ thesis.student }}{% if thesis.thesis_type %}<span class="thesis-type thesis-type-{{ thesis.thesis_type }}">{% if thesis.thesis_type == "bachelor" %}Bachelor thesis{% elsif thesis.thesis_type == "master" %}Master thesis{% elsif thesis.thesis_type == "dissertation" %}Dissertation{% endif %}</span>{% endif %}</p>
-        {% if thesis.categories.size > 0 %}
-        <p class="publication-categories">
-          {%- for id in thesis.categories -%}
-          {%- for cat in cats -%}
-          {%- if cat.id == id -%}
-          <button type="button" class="publication-category" data-category="{{ cat.id }}" title="{{ t_filter_by }}: {{ cat.label_en | escape }}">{{ cat.short_en | escape }}</button>
-          {% endif -%}
-          {%- endfor -%}
-          {%- endfor -%}
-        </p>
-        {% endif %}
-        <div class="listing-content" id="{{ anchor }}-content">
-          {{ thesis.content }}
-        </div>
-      </div>
-      {% endfor %}
-      </div>
-      {% assign extra = group.size | minus: 2 %}
-      {% include year-more.html lang="en" extra=extra %}
-      </section>
-    {% endfor %}
-  </div>
+  {% include thesis-list.html lang=page.lang %}
 </div>

@@ -7,7 +7,7 @@ title: Face Recognition system for Night Vision Images using Deep Learning
 student: Anthony Alessi
 thesis_type: bachelor
 categories: [cv, ml]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/epilepsie-monitoring
+projects: [projects:epilepsie-monitoring]
 ---
 
 Advanced Information Systems and Technology, or AIST for short, is a research group of the University of Applied Sciences Upper Austria, located at the Campus Hagenberg, Upper Austria. Their main focus lies on Machine Learning & Data Mining, Computer Vision and eHealth [1]. For this internship, the task was to work on the EpiMon project.

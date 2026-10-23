@@ -8,6 +8,7 @@ reference: 'Praschl C., Markoff H., Maschek A., Jantsch W., Wohlfahrt S., Jørge
   A., Mogensen C., Skadhauge M., Beery S., Ørsted M., Schedl D. “The BAMBI Dataset:
   Multimodal Nadir UAV-Recordings of Forest Wildlife“, NeurIPS 2026 – Evaluations
   and Datasets Track.'
+projects: [projects:bambi]
 categories: [cv, geo]
 not_duplicate_of: [pub:the-bambi-dataset-multimodal-nadir-uav-recordings-of-forest-wildlife]  # same dataset, also presented (non-archival) at CV4Animals @ CVPR 2026
 external_url: https://github.com/bambi-eco/Dataset

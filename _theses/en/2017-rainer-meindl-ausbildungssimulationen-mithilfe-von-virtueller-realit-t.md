@@ -7,7 +7,7 @@ title: Trainingssimulations using Virtual Reality
 student: Rainer Meindl
 thesis_type: bachelor
 categories: [xr]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/projekt-formelracing
+projects: [projects:projekt-formelracing]
 ---
 
 Modern simulators are inefficient in terms of cost as well as space. Furthermore it is not reaching its full potential since plenty of characteristics of the real world, like proper Field–of–View, are implemented baldy, or not at all.

@@ -8,7 +8,7 @@ title: An Exploratory Approach for Finding Similarities Within Heterogeneous
 student: Eva-Maria Spitzer
 thesis_type: master
 categories: [ml]
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/projekt-kimiku
+projects: [projects:projekt-kimiku]
 ---
 
 Customer loyalty programs are an essential tool for enterprises to get a better understanding of their customer’s needs and to take appropriate actions to increase their satisfaction. A successful realisation of such programs requires detailed analyses, assuming a lot of customer data. However, many Small and Medium-Sized Enterprises have little amounts of data. Thus, they can only use small data sets for analyses, which can lead to bad models and inaccurate results.
