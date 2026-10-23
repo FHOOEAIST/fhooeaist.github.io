@@ -11,6 +11,9 @@
     - page_id: team
       label_de: Team
       label_en: Team
+    - page_id: positions
+      label_de: Mitarbeit
+      label_en: Join us
     - page_id: contact
       label_de: Kontakt
       label_en: Contact

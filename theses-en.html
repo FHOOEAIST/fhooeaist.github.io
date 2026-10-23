@@ -7,7 +7,10 @@ page_id: theses-index
 ---
 
 {% capture theses_lead %}The research group AIST offers students the opportunity to deal with their diploma theses (Bachelor, Master) in the context of research projects in a practical way and thus to deal with the respective topic area more intensively. The practical support is provided by a research assistant (in addition to the assessor from the University of Applied Sciences).{% endcapture %}
-{% include page-header.html eyebrow="Teaching & Research" title="Theses" lead=theses_lead %}
+{% assign positions_page = site.pages | where: "page_id", "positions" | where: "lang", "en" | first %}
+{% assign n_topics = site.data.thesis_topics | size %}
+{% capture theses_meta %}<a class="btn btn-sm" href="{{ positions_page.permalink | relative_url }}#topics"><i class="fas fa-lightbulb" aria-hidden="true"></i> {% if n_topics > 0 %}{{ n_topics }} open topics{% else %}Open topics &amp; own proposals{% endif %}</a>{% endcapture %}
+{% include page-header.html eyebrow="Teaching & Research" title="Theses" lead=theses_lead meta=theses_meta %}
 
 <div class="container">
   {% include listing-filter.html lang=page.lang kind="theses" %}

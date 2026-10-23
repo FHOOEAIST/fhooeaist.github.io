@@ -1,22 +1,26 @@
 {% comment %}
 Filter bar for the year-grouped listings (publications, theses). Expects:
   include.lang — "de" or "en"
-  include.kind — "publications" (category + year) or "theses" (category + year + type)
+  include.kind — "publications" (category + year), "theses" (category + year + type)
+                 or "topics" (open thesis topics from _data/thesis_topics.yml:
+                 category + type; categories without a topic are left out)
 
 Each control is an ARIA listbox (the native <select> cannot style its open
 menu). Options and counts are generated here, so the taxonomy in
 _data/publication_categories.yml stays the single source of truth. The
 behaviour lives in assets/js/main.js (initListingFilter): entries are
-`.listing-item[data-year]`, optionally with `data-categories` / `data-type`, and the chosen
+`.listing-item[data-categories]`, optionally with `data-year` / `data-type` (a
+space-separated list, like the categories), and the chosen
 values are mirrored into the hash as `#cat=...&year=...`.
 {% endcomment %}
 
-{% if include.kind == "theses" %}
-    {% assign all_items = site.theses | where: "lang", include.lang %}
+{% if include.kind == "topics" %}
+    {% assign all_items = site.data.thesis_topics %}
+{% elsif include.kind == "theses" %}
+    {% assign all_items = site.theses | where: "lang", include.lang | sort: "date" | reverse %}
 {% else %}
-    {% assign all_items = site.publications | where: "lang", include.lang %}
+    {% assign all_items = site.publications | where: "lang", include.lang | sort: "date" | reverse %}
 {% endif %}
-{% assign all_items = all_items | sort: "date" | reverse %}
 {% assign n_all = all_items | size %}
 {% assign by_year = all_items | group_by_exp: "item", "item.date | date: '%Y'" %}
 {% assign cats = site.data.publication_categories %}
@@ -28,7 +32,9 @@ values are mirrored into the hash as `#cat=...&year=...`.
     {% assign t_all_years = "Alle Jahre" %}
     {% assign t_type = "Art" %}
     {% assign t_all_types = "Alle Arten" %}
-    {% if include.kind == "theses" %}
+    {% if include.kind == "topics" %}
+        {% assign t_results = "{n} von {total} Themen" %}
+    {% elsif include.kind == "theses" %}
         {% assign t_results = "{n} von {total} Diplomarbeiten" %}
     {% else %}
         {% assign t_results = "{n} von {total} Publikationen" %}
@@ -40,7 +46,9 @@ values are mirrored into the hash as `#cat=...&year=...`.
     {% assign t_all_years = "All years" %}
     {% assign t_type = "Type" %}
     {% assign t_all_types = "All types" %}
-    {% if include.kind == "theses" %}
+    {% if include.kind == "topics" %}
+        {% assign t_results = "{n} of {total} topics" %}
+    {% elsif include.kind == "theses" %}
         {% assign t_results = "{n} of {total} theses" %}
     {% else %}
         {% assign t_results = "{n} of {total} publications" %}
@@ -69,6 +77,7 @@ values are mirrored into the hash as `#cat=...&year=...`.
             </li>
             {% for cat in cats %}
             {% assign matching = all_items | where_exp: "p", "p.categories contains cat.id" %}
+            {% if include.kind == "topics" and matching.size == 0 %}{% continue %}{% endif %}
             {% if include.lang == "de" %}{% assign cat_label = cat.label_de %}{% else %}{% assign cat_label = cat.label_en %}{% endif %}
             <li id="opt-cat-{{ cat.id }}" role="option" data-value="{{ cat.id }}" aria-selected="false">
                 <i class="fa-solid fa-check" aria-hidden="true"></i>
@@ -79,6 +88,7 @@ values are mirrored into the hash as `#cat=...&year=...`.
         </ul>
     </div>
 
+    {% unless include.kind == "topics" %}
     <span class="cat-filter-label" id="filterLabel-year">{{ t_year }}</span>
     <div class="cat-filter-control cat-filter-control--compact" data-filter-key="year">
         <button
@@ -107,8 +117,9 @@ values are mirrored into the hash as `#cat=...&year=...`.
             {% endfor %}
         </ul>
     </div>
+    {% endunless %}
 
-    {% if include.kind == "theses" %}
+    {% if include.kind == "theses" or include.kind == "topics" %}
     {% assign type_ids = "bachelor|master|dissertation" | split: "|" %}
     {% if include.lang == "de" %}
         {% assign type_labels = "Bachelorarbeit|Masterarbeit|Dissertation" | split: "|" %}
@@ -135,7 +146,7 @@ values are mirrored into the hash as `#cat=...&year=...`.
                 <span class="cat-filter-count">{{ n_all }}</span>
             </li>
             {% for type_id in type_ids %}
-            {% assign matching = all_items | where: "thesis_type", type_id %}
+            {% assign matching = all_items | where_exp: "t", "t.thesis_type contains type_id" %}
             {% if matching.size > 0 %}
             <li id="opt-type-{{ type_id }}" role="option" data-value="{{ type_id }}" aria-selected="false">
                 <i class="fa-solid fa-check" aria-hidden="true"></i>

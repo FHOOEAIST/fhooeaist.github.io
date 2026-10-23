@@ -1,0 +1,36 @@
+# Open positions, rendered on mitarbeit.html / mitarbeit-en.html through
+# _includes/open-positions.html. While the list is empty the page shows a
+# note that unsolicited applications are welcome instead.
+#
+# A position whose `deadline` has passed is hidden automatically, so an
+# expired entry does no harm until someone gets round to deleting it.
+#
+#   title_de / title_en       — job title
+#   type                      — researcher | phd | student | internship
+#   hours_de / hours_en       — optional, e.g. "30 h/Woche" / "30 h/week"
+#   start_de / start_en       — optional, e.g. "ab sofort" / "immediately"
+#   deadline                  — optional, YYYY-MM-DD; shown, and used to hide the entry afterwards
+#   categories                — optional, ids from _data/publication_categories.yml
+#   description_de / _en      — Markdown
+#   url                       — optional, the full job ad (e.g. the FH OÖ job portal)
+#   contact                   — optional e-mail address, defaults to the group contact
+#
+# Example:
+#
+# - title_de: Wissenschaftliche*r Mitarbeiter*in Computer Vision
+#   title_en: Research associate computer vision
+#   type: researcher
+#   hours_de: 30–40 h/Woche
+#   hours_en: 30–40 h/week
+#   start_de: ab sofort
+#   start_en: immediately
+#   deadline: 2026-12-31
+#   categories: [cv, ml]
+#   description_de: |
+#     Mitarbeit im Projekt …
+#   description_en: |
+#     You will work on …
+#   url: https://…
+#   contact: christoph.praschl@fh-hagenberg.at
+
+[]
