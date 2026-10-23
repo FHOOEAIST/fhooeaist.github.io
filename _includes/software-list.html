@@ -1,0 +1,70 @@
+{% comment %}
+Software, datasets and models from _data/software.yml, one section per type
+(datasets, software, models; a type without entries is left out). Expects
+include.lang ("de" or "en").
+
+Each card links its repository, documentation, DOI and licence, the related
+project page and the publication to cite (looked up by page_id; unknown ids
+are skipped).
+{% endcomment %}
+{% assign en = false %}{% if include.lang == "en" %}{% assign en = true %}{% endif %}
+{% assign cats = site.data.publication_categories %}
+{% assign pubs_page = site.pages | where: "page_id", "publications-index" | where: "lang", include.lang | first %}
+{% assign type_ids = "dataset|software|model" | split: "|" %}
+{% if en %}
+  {% assign type_labels = "Datasets|Software|Models" | split: "|" %}
+  {% assign type_single = "Dataset|Software|Model" | split: "|" %}
+{% else %}
+  {% assign type_labels = "Datensätze|Software|Modelle" | split: "|" %}
+  {% assign type_single = "Datensatz|Software|Modell" | split: "|" %}
+{% endif %}
+
+{% for type_id in type_ids %}
+{% assign entries = site.data.software | where: "type", type_id %}
+{% if entries.size > 0 %}
+{% assign type_index = forloop.index0 %}
+<section class="software-section" id="{{ type_id }}">
+  <div class="section-head">
+    <div>
+      <h2>{{ type_labels[type_index] }}</h2>
+    </div>
+  </div>
+  <ul class="software-grid">
+    {% for item in entries %}
+    {% if en %}{% assign description = item.description_en | default: item.description_de %}{% else %}{% assign description = item.description_de | default: item.description_en %}{% endif %}
+    <li class="software-card">
+      <div class="software-head">
+        <span class="software-type software-type-{{ item.type }}">{{ type_single[type_index] }}</span>
+        {% if item.language %}<span class="software-language">{{ item.language }}</span>{% endif %}
+      </div>
+      <h3>{% if item.repo %}<a href="{{ item.repo }}" target="_blank" rel="noopener">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</h3>
+      {% if description %}<div class="software-description">{{ description | markdownify }}</div>{% endif %}
+      {% if item.categories.size > 0 %}
+      <p class="publication-categories">
+        {%- for id in item.categories -%}{%- for cat in cats -%}{%- if cat.id == id -%}
+        <span class="publication-category">{% if en %}{{ cat.short_en }}{% else %}{{ cat.short_de }}{% endif %}</span>
+        {% endif -%}{%- endfor -%}{%- endfor -%}
+      </p>
+      {% endif %}
+      <dl class="software-facts">
+        {% if item.license %}<div><dt>{% if en %}Licence{% else %}Lizenz{% endif %}</dt><dd>{{ item.license }}</dd></div>{% endif %}
+        {% if item.doi %}<div><dt>DOI</dt><dd><a href="https://doi.org/{{ item.doi }}" target="_blank" rel="noopener">{{ item.doi }}</a></dd></div>{% endif %}
+        {% if item.project %}
+        {% assign item_project = site.projects | where: "page_id", item.project | where: "lang", include.lang | first %}
+        {% if item_project %}<div><dt>{% if en %}Project{% else %}Projekt{% endif %}</dt><dd><a href="{{ item_project.url | relative_url }}">{{ item_project.title }}</a></dd></div>{% endif %}
+        {% endif %}
+        {% if item.publication %}
+        {% assign item_pub = site.publications | where: "page_id", item.publication | where: "lang", include.lang | first %}
+        {% if item_pub %}<div><dt>{% if en %}Please cite{% else %}Zitieren{% endif %}</dt><dd><a href="{{ pubs_page.permalink | relative_url }}#{{ item_pub.permalink | slugify }}">{{ item_pub.title }}</a>{% if item_pub.date %} ({{ item_pub.date | date: "%Y" }}){% endif %}</dd></div>{% endif %}
+        {% endif %}
+      </dl>
+      <div class="software-links">
+        {% if item.repo %}<a class="btn btn-sm" href="{{ item.repo }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>{% endif %}
+        {% if item.docs %}<a class="btn btn-sm btn-outline" href="{{ item.docs }}" target="_blank" rel="noopener"><i class="fas fa-book" aria-hidden="true"></i> {% if en %}Documentation{% else %}Dokumentation{% endif %}</a>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endfor %}
