@@ -14,6 +14,7 @@ version; tiles-en.html is the English twin. Styles: assets/css/home-tiles.css.
 {% assign area_ml_page = site.pages | where: "page_id", "area:ml" | where: "lang", "de" | first %}
 {% assign area_cv_page = site.pages | where: "page_id", "area:cv" | where: "lang", "de" | first %}
 {% assign positions_page = site.pages | where: "page_id", "positions" | where: "lang", "de" | first %}
+{% assign software_page = site.pages | where: "page_id", "software" | where: "lang", "de" | first %}
 {% assign history_page = site.pages | where: "page_id", "history" | where: "lang", "de" | first %}
 
 {% assign n_projects = site.projects | where: "lang", "de" | size %}
@@ -200,7 +201,7 @@ version; tiles-en.html is the English twin. Styles: assets/css/home-tiles.css.
       <li><a href="{{ pubs_page.permalink | relative_url }}"><i class="fas fa-book-open" aria-hidden="true"></i><span>Publikationen</span><small>{{ n_pubs }} Beiträge</small></a></li>
       <li><a href="{{ theses_page.permalink | relative_url }}"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Diplomarbeiten</span><small>{{ n_theses }} betreute Arbeiten</small></a></li>
       <li><a href="{{ history_page.permalink | relative_url }}"><i class="fas fa-clock-rotate-left" aria-hidden="true"></i><span>Geschichte</span><small>Von den Anfängen bis heute</small></a></li>
-      <li><a href="https://github.com/FHOOEAIST" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span><small>Open-Source-Software</small></a></li>
+      <li><a href="{{ software_page.permalink | relative_url }}"><i class="fas fa-code" aria-hidden="true"></i><span>Software &amp; Daten</span><small>Open Source &amp; Datensätze</small></a></li>
       <li><a href="{{ contact_page.permalink | relative_url }}"><i class="fas fa-envelope" aria-hidden="true"></i><span>Kontakt</span><small>Campus Hagenberg</small></a></li>
     </ul>
   </div>
