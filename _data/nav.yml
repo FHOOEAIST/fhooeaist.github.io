@@ -24,6 +24,15 @@
   label_de: Projekte
   label_en: Projects
   subitems:
+    - page_id: area:ehealth
+      label_de: eHealth
+      label_en: eHealth
+    - page_id: area:ml
+      label_de: Machine Learning & Data Science
+      label_en: Machine Learning & Data Science
+    - page_id: area:cv
+      label_de: Visual Computing
+      label_en: Visual Computing
     - href: https://github.com/FHOOEAIST
       label_de: GitHub
       label_en: GitHub
