@@ -203,14 +203,3 @@ a.partner-tile:focus-visible img {
     animation-duration: calc(var(--partner-count, 100) * 3.4s) !important;
   }
 }
-
-/* A white logo made for dark backgrounds (logo_dark_bg in _data/partners.yml). */
-.partner-tile-dark {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-}
-
-.partner-tile-dark img {
-  filter: none;
-  opacity: 0.9;
-}
