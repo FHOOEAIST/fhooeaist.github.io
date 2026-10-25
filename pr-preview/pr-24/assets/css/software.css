@@ -10,6 +10,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 1.25rem;
+  align-items: start;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -67,18 +68,15 @@
   color: var(--color-text);
 }
 
-.software-card h3 {
-  margin: 0 0 0.5rem;
+.software-card .listing-title {
+  margin: 0 0 0.35rem;
   font-size: 1.15rem;
 }
 
-.software-card h3 a {
-  color: var(--color-heading);
-  text-decoration: none;
-}
-
-.software-card h3 a:hover {
-  color: var(--color-primary);
+/* unfolded card: same accent as an opened publication entry */
+.software-card.open {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-md);
 }
 
 .software-description {
@@ -101,7 +99,7 @@
 }
 
 .software-facts {
-  margin: 1rem 0 0;
+  margin: 0.75rem 0 0;
   font-size: 0.88rem;
 }
 
@@ -123,12 +121,16 @@
   overflow-wrap: anywhere;
 }
 
+.software-docs {
+  margin: 1rem 0 0;
+}
+
 .software-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
   margin-top: auto;
-  padding-top: 1.25rem;
+  padding-top: 1rem;
 }
 
 @media (max-width: 640px) {
