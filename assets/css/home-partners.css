@@ -204,19 +204,21 @@ a.partner-tile:focus-visible img {
   to   { transform: translateX(-50%); }
 }
 
-/* No motion: a scrollable row of the first list. */
+/* Keep the carousel moving even with "reduce motion": main.css shortens every
+   animation to 0.01ms there, which would make the track jump. */
 @media (prefers-reduced-motion: reduce) {
-  .partner-marquee {
-    overflow-x: auto;
-    -webkit-mask-image: none;
-    mask-image: none;
+  .partner-marquee .partner-track {
+    animation-duration: 160s !important;
   }
+}
 
-  .partner-track {
-    animation: none;
-  }
+/* A white logo made for dark backgrounds (logo_dark_bg in _data/partners.yml). */
+.partner-tile-dark {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
 
-  .partner-list[aria-hidden="true"] {
-    display: none;
-  }
+.partner-tile-dark img {
+  filter: none;
+  opacity: 0.9;
 }

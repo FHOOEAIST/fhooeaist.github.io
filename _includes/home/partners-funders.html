@@ -16,7 +16,7 @@ Styles: assets/css/home-partners.css.
       <div>
         <p class="eyebrow">{% if en %}Funding{% else %}Förderung{% endif %}</p>
         <h2>{% if en %}Our funders{% else %}Unsere Fördergeber{% endif %}</h2>
-        <p>{% if en %}Our research is made possible by public funding bodies – with the number of funded projects, which you can expand.{% else %}Unsere Forschung wird durch öffentliche Fördergeber ermöglicht – mit der Zahl der geförderten Projekte, die Sie aufklappen können.{% endif %}</p>
+        <p>{% if en %}Our research is made possible by public funding bodies.{% else %}Unsere Forschung wird durch öffentliche Fördergeber ermöglicht.{% endif %}</p>
       </div>
     </div>
     {% include funders.html lang=include.lang %}
@@ -40,7 +40,7 @@ Styles: assets/css/home-partners.css.
       <ul class="partner-list"{% if copy == 2 %} aria-hidden="true"{% endif %}>
         {% for partner in partners %}
         <li>
-          {% if partner.url %}<a class="partner-tile" href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name | escape }}"{% if copy == 2 %} tabindex="-1"{% endif %}>{% else %}<span class="partner-tile" title="{{ partner.name | escape }}">{% endif %}
+          {% if partner.url %}<a class="partner-tile{% if partner.logo and partner.logo_dark_bg %} partner-tile-dark{% endif %}" href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name | escape }}"{% if copy == 2 %} tabindex="-1"{% endif %}>{% else %}<span class="partner-tile{% if partner.logo and partner.logo_dark_bg %} partner-tile-dark{% endif %}" title="{{ partner.name | escape }}">{% endif %}
             {% if partner.logo %}<img src="{{ partner.logo | relative_url }}" alt="{{ partner.name | escape }}" loading="lazy">{% else %}<span class="partner-name">{{ partner.name }}</span>{% endif %}
           {% if partner.url %}</a>{% else %}</span>{% endif %}
         </li>
