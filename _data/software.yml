@@ -38,6 +38,17 @@
   project: projects:bambi
   publication: pub:reconstructionless-airborne-radiance-fields
 
+- name: BAMBI QGIS Plugin
+  type: software
+  categories: [cv, geo]
+  language: Python
+  description_de: QGIS-Plugin, das Wildtiere in Drohnenvideos und -fotos (Wärmebild und RGB) erkennt, verfolgt und über ein digitales Höhenmodell georeferenziert und die Ergebnisse als Kartenlayer lädt – mit Werkzeugen für Annotation, Auswertung von Zählflügen und Export, etwa für GBIF.
+  description_en: QGIS plugin that detects, tracks and geo-references wildlife in drone videos and photos (thermal and RGB) via a digital elevation model and loads the results as map layers – with tools for annotation, survey analytics and export, e.g. to GBIF.
+  repo: https://github.com/bambi-eco/Bambi-QGIS
+  docs: https://github.com/bambi-eco/Bambi-QGIS/tree/main/docs
+  license: MIT
+  project: projects:bambi
+
 - name: Imaging
   type: software
   categories: [cv]
