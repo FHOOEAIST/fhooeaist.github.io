@@ -5,8 +5,8 @@ For every funder, the projects of that language whose phases name it in
 `foerdergeber` (any of its `aliases`) or that set its `flag` are collected;
 funders are listed by number of projects, each with its projects folded into
 a <details> that opens as an overlay, so all cards keep the same size.
-Funders without a project are left out. No logos: every card has the same
-shape (the EU emblem belongs on the project pages, see eu_funded).
+Funders without a project are left out. A funder's logo sits left of its
+name.
 {% endcomment %}
 {% assign en = false %}{% if include.lang == "en" %}{% assign en = true %}{% endif %}
 {% assign all_projects = site.projects | where: "lang", include.lang | sort_natural: "sort_title" %}
@@ -44,8 +44,13 @@ shape (the EU emblem belongs on the project pages, see eu_funded).
   {% if en %}{% assign name = funder.name_en | default: funder.name_de %}{% assign programmes = funder.programmes_en %}{% else %}{% assign name = funder.name_de %}{% assign programmes = funder.programmes_de %}{% endif %}
   <li class="funder-card">
     <div class="funder-body">
-      <h3>{% if funder.url %}<a href="{{ funder.url }}" target="_blank" rel="noopener">{{ name }}</a>{% else %}{{ name }}{% endif %}</h3>
-      {% if programmes %}<p class="funder-programmes">{{ programmes }}</p>{% endif %}
+      <div class="funder-head">
+        {% if funder.logo %}<img class="funder-logo" src="{{ funder.logo | relative_url }}" alt="" loading="lazy">{% endif %}
+        <div>
+          <h3>{% if funder.url %}<a href="{{ funder.url }}" target="_blank" rel="noopener">{{ name }}</a>{% else %}{{ name }}{% endif %}</h3>
+          {% if programmes %}<p class="funder-programmes">{{ programmes }}</p>{% endif %}
+        </div>
+      </div>
       <details class="funder-projects">
         <summary>{{ n }} {% if n == 1 %}{% if en %}project{% else %}Projekt{% endif %}{% else %}{% if en %}projects{% else %}Projekte{% endif %}{% endif %}</summary>
         <ul>
