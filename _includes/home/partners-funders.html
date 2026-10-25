@@ -1,0 +1,53 @@
+{% comment %}
+Funders and partners on the home page, below "Collaboration & theses" in both
+designs. Expects include.lang ("de" or "en"). Funders: _includes/funders.html
+(_data/funders.yml); partners: an endless logo carousel from
+_data/partners.yml, each tile linking to the partner's website (a text tile
+stands in until the partner has a logo). The list is rendered twice so the
+CSS animation can loop seamlessly; the copy is hidden from assistive tech.
+Styles: assets/css/home-partners.css.
+{% endcomment %}
+{% assign en = false %}{% if include.lang == "en" %}{% assign en = true %}{% endif %}
+{% assign partners = site.data.partners | where_exp: "p", "p.hide != true" | sort_natural: "name" %}
+
+<section class="section home-funders" id="{% if en %}funders{% else %}foerdergeber{% endif %}">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">{% if en %}Funding{% else %}Förderung{% endif %}</p>
+        <h2>{% if en %}Our funders{% else %}Unsere Fördergeber{% endif %}</h2>
+        <p>{% if en %}Our research is made possible by public funding bodies – with the number of funded projects, which you can expand.{% else %}Unsere Forschung wird durch öffentliche Fördergeber ermöglicht – mit der Zahl der geförderten Projekte, die Sie aufklappen können.{% endif %}</p>
+      </div>
+    </div>
+    {% include funders.html lang=include.lang %}
+  </div>
+</section>
+
+{% if partners.size > 0 %}
+<section class="section section-tint home-partners" id="partner" data-pagefind-ignore>
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">{% if en %}Partners{% else %}Partner{% endif %}</p>
+        <h2>{% if en %}Who we work with{% else %}Mit wem wir zusammenarbeiten{% endif %}</h2>
+        <p>{% if en %}We carry out most projects together with companies, hospitals and research institutions.{% else %}Die meisten Projekte setzen wir gemeinsam mit Unternehmen, Kliniken und Forschungseinrichtungen um.{% endif %}</p>
+      </div>
+    </div>
+  </div>
+  <div class="partner-marquee" role="region" aria-label="{% if en %}Project partners{% else %}Projektpartner{% endif %}">
+    <div class="partner-track">
+      {% for copy in (1..2) %}
+      <ul class="partner-list"{% if copy == 2 %} aria-hidden="true"{% endif %}>
+        {% for partner in partners %}
+        <li>
+          {% if partner.url %}<a class="partner-tile" href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name | escape }}"{% if copy == 2 %} tabindex="-1"{% endif %}>{% else %}<span class="partner-tile" title="{{ partner.name | escape }}">{% endif %}
+            {% if partner.logo %}<img src="{{ partner.logo | relative_url }}" alt="{{ partner.name | escape }}" loading="lazy">{% else %}<span class="partner-name">{{ partner.name }}</span>{% endif %}
+          {% if partner.url %}</a>{% else %}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
