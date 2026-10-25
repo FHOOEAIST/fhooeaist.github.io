@@ -226,10 +226,18 @@ Abstract (Markdown)...
 
 # Partners & Funders
 
-The *Partners & Funders* page ([`partner.html`](partner.html) / [`partner-en.html`](partner-en.html), linked under *About*) is generated from the projects' `foerdergeber` and two data files:
+Funders and partners are shown on the home page, below *Collaboration & theses* (both `site_design` variants), from [`_includes/home/partners-funders.html`](_includes/home/partners-funders.html):
 
-- [`_data/funders.yml`](_data/funders.yml) – one entry per funding body with the `aliases` that identify it in the free-text `foerdergeber` of the project phases (this merges spelling variants such as "FFG Basisprogramm" / "Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm"), an optional `flag` matching a project field (`eu_funded`), name, URL, programmes and an optional `logo`. Each funder is shown with the number of its projects and a foldable list of them; a project that matches no alias (e.g. contract research) is simply not counted. Logos must be the official files and follow the funder's logo guidelines.
-- [`_data/partners.yml`](_data/partners.yml) – **opt-in only**: logos are trademarks and the names of individuals or small practices are personal data, so a partner is listed only with the date of its consent in `consent:`. Until then the page points to the project pages, which already name the partners.
+- [`_data/funders.yml`](_data/funders.yml) – one entry per funding body with the `aliases` that identify it in the free-text `foerdergeber` of the project phases (this merges spelling variants such as "FFG Basisprogramm" / "Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm"), an optional `flag` matching a project field (`eu_funded`), name, URL and programmes. Each funder is a card of the same size with the number of its projects, which opens the list of them as an overlay; a project that matches no alias (e.g. contract research) is simply not counted. The cards carry no logos (the EU emblem is shown on the project pages).
+- [`_data/partners.yml`](_data/partners.yml) – the project partners (companies and institutions, no private individuals) for the endless logo carousel; each tile links to the partner's `url`. A partner without `logo` is shown as a text tile. `hide: true` leaves a partner out. Logos are trademarks and need the partners' consent (see issue #19).
+
+To crawl the logos, run from the repository root (needs network access, standard library only):
+
+```bash
+python3 scripts/fetch_partner_logos.py
+```
+
+It looks for the logo on each partner's start page, saves it to `assets/images/partners/` and adds the `logo:` line to the data file. Review every file before committing; a wrong pick is replaced by hand.
 
 # Team
 
