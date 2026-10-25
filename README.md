@@ -165,7 +165,7 @@ icon: /assets/images/index/ehealth.svg
 lead: One-sentence summary shown in the title band.
 focus:                   # focus topics, shown as tags
   - Interoperabilität auf Basis von HL7 FHIR und IHE
-contact: jane.doe@fh-hagenberg.at   # optional, a member of _data/team.yml; defaults to the group contact
+contact: jane.doe@fh-hagenberg.at   # optional, a member of _data/team.yml; no contact box without it
 ---
 
 Area description (Markdown)...
