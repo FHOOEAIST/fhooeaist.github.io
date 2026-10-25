@@ -229,7 +229,7 @@ Abstract (Markdown)...
 Funders and partners are shown on the home page, below *Collaboration & theses* (both `site_design` variants), from [`_includes/home/partners-funders.html`](_includes/home/partners-funders.html):
 
 - [`_data/funders.yml`](_data/funders.yml) – one entry per funding body with the `aliases` that identify it in the free-text `foerdergeber` of the project phases (this merges spelling variants such as "FFG Basisprogramm" / "Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm"), an optional `flag` matching a project field (`eu_funded`), name, URL and programmes. Each funder is a card of the same size with the number of its projects, which opens the list of them as an overlay; a project that matches no alias (e.g. contract research) is simply not counted. The cards carry no logos (the EU emblem is shown on the project pages).
-- [`_data/partners.yml`](_data/partners.yml) – the project partners (companies and institutions, no private individuals) for the endless logo carousel; each tile links to the partner's `url`. A partner without `logo` is shown as a text tile. `hide: true` leaves a partner out. Logos are trademarks and need the partners' consent (see issue #19).
+- [`_data/partners.yml`](_data/partners.yml) – the project partners (companies and institutions, no private individuals) for the endless logo carousel; each tile links to the partner's `url`. A partner without `logo` (or with `logo: false`, meaning no usable logo was found) is shown as a text tile; `logo_dark_bg: true` puts a white logo on a dark tile. `hide: true` leaves a partner out. Logos are trademarks and need the partners' consent (see issue #19).
 
 To crawl the logos, run from the repository root (needs network access, standard library only):
 
@@ -237,7 +237,7 @@ To crawl the logos, run from the repository root (needs network access, standard
 python3 scripts/fetch_partner_logos.py
 ```
 
-It looks for the logo on each partner's start page, saves it to `assets/images/partners/` and adds the `logo:` line to the data file. Review every file before committing; a wrong pick is replaced by hand.
+It looks for the logo on each partner's start page (skipping entries that already have a `logo`, including `logo: false`), saves it to `assets/images/partners/` and adds the `logo:` line to the data file. Review every file before committing; a wrong pick is replaced by hand.
 
 # Team
 
