@@ -1,22 +1,169 @@
-# Project partners shown on partner.html / partner-en.html
-# (_includes/partners.html). Opt-in only: logos are protected trademarks and
-# names of individuals or small practices are personal data (see the legal
-# note on issue #19), so an entry is rendered only with the date on which the
-# partner agreed to be listed in `consent:`. Remove the entry when the
-# consent is withdrawn. The section is hidden while no entry qualifies.
+# Project partners, shown as the infinite logo carousel on the home page
+# (_includes/home/partners-funders.html). Collected from the free-text
+# `partner` of the project phases, de-duplicated and split into single
+# organisations. Private individuals and FH OÖ's own units are left out.
 #
-#   name      — required
-#   consent   — required to be shown, YYYY-MM-DD
-#   url       — optional website
-#   logo      — optional, only with the partner's permission to use it
-#   projects  — optional list of project page_ids, linked below the name
+#   name  — required; shown as text tile until a logo exists, and as alt text
+#   url   — partner's website; the tile links there
+#   logo  — optional, set by scripts/fetch_partner_logos.py
+#           (/assets/images/partners/<file>)
+#   hide  — optional, true leaves the partner out (e.g. consent withdrawn)
 #
-# Example:
+# Logos are trademarks: see the legal note on issue #19 before publishing
+# them, and remove or hide an entry when a partner objects.
 #
-# - name: Example GmbH
-#   consent: 2026-10-23
-#   url: https://example.com
-#   logo: /assets/images/partners/example.svg
-#   projects: [projects:bambi]
+# Entries without `url` could not be identified with certainty; add the
+# website and rerun the logo script for them.
 
-[]
+- name: 506 Data & Performance GmbH
+  url: https://506.ai/
+- name: AGES – Österreichische Agentur für Gesundheit und Ernährungssicherheit
+  url: https://www.ages.at/
+- name: Aicher IT-Consulting GmbH
+- name: Airmate
+- name: Amido Handelsgesellschaft
+- name: Apro Kassensysteme GmbH
+- name: ATOS Ambulanz Mobile
+- name: Aximote
+  url: https://www.aximote.com/
+- name: Black Tusk
+- name: BlueDynamics Auersperg-Castell KG
+  url: https://bluedynamics.com/
+- name: bluesource – mobile solutions gmbh
+  url: https://www.bluesource.at/
+- name: Büro für Wildökologie und Forstwirtschaft e.U.
+- name: Bundesministerium für Soziales, Gesundheit, Pflege und Konsumentenschutz
+  url: https://www.sozialministerium.at/
+- name: Cadus Innovation GmbH
+- name: Calpana business consulting GmbH
+  url: https://www.calpana.com/
+- name: CAS – Computer Anwendungs Systeme GmbH
+- name: Catchgoal GmbH
+- name: CGM Clinical (CompuGroup Medical)
+  url: https://www.cgm.com/
+- name: CHASE – COMET Center Linz
+  url: https://www.chasecenter.at/
+- name: cloudflight GmbH
+  url: https://www.cloudflight.io/
+- name: COM&TEC
+- name: cortEXPlore
+- name: Credi2 GmbH
+  url: https://www.credi2.com/
+- name: Doka
+  url: https://www.doka.com/
+- name: Doppel-N Marketing GmbH
+- name: eBuddies GmbH
+- name: ENGEL AUSTRIA GmbH
+  url: https://www.engelglobal.com/
+- name: Ennacon environment nature consulting KG
+- name: FACC Operations GmbH
+  url: https://www.facc.com/
+- name: Formelracing
+- name: HAKOM
+  url: https://www.hakom.at/
+- name: hello again GmbH
+  url: https://www.helloagain.com/
+- name: Hermes Bootsbau GmbH
+- name: Hochschule Karlsruhe (HKA)
+  url: https://www.h-ka.de/
+- name: HIVE
+- name: hokify GmbH
+  url: https://hokify.at/
+- name: HSE 365
+- name: Immotech OP GmbH (Dronetech)
+- name: Innoflow
+- name: Intelligent Automation GmbH
+- name: ITPRO – Consulting & Software GmbH
+- name: Johannes Kepler Universität Linz
+  url: https://www.jku.at/
+- name: karriere.at
+  url: https://www.karriere.at/
+- name: Kepler Universitätsklinikum
+  url: https://www.kepleruniklinikum.at/
+- name: KU Leuven
+  url: https://www.kuleuven.be/
+- name: Kunstuniversität Linz
+  url: https://www.kunstuni-linz.at/
+- name: Kuratorium für Verkehrssicherheit (KFV)
+  url: https://www.kfv.at/
+- name: Landesjagdverband Niederösterreich
+  url: https://www.noejagdverband.at/
+- name: Landesjagdverband Oberösterreich
+  url: https://www.ooeljv.at/
+- name: Landesjagdverband Tirol
+  url: https://www.tjv.at/
+- name: LICA Life Care GmbH
+- name: Lietz GmbH
+- name: LIqua – Linzer Institut für qualitative Analysen
+- name: LMNOP group GmbH
+- name: Medizinische Universität Graz
+  url: https://www.medunigraz.at/
+- name: mittag.at
+  url: https://www.mittag.at/
+- name: mobile agreements GmbH (mogree)
+  url: https://www.mogree.com/
+- name: Monto Tech GmbH
+- name: Moonshot25
+- name: Mox Innovations GmbH
+- name: Nationalpark Hohe Tauern
+  url: https://hohetauern.at/
+- name: Nextpart Security Intelligence GmbH
+- name: OÖ Gesundheitsholding – MIT Medizininformatik und IT
+  url: https://www.ooeg.at/
+- name: Österreichisches Institut für angewandte Telekommunikation (ÖIAT)
+  url: https://www.oiat.at/
+- name: Own3d Media GmbH
+  url: https://www.own3d.tv/
+- name: PIELab
+- name: Progast+
+- name: psii.rehab
+  url: https://psii.rehab/
+- name: Realsim
+- name: Redem GmbH
+  url: https://www.redem.io/
+- name: RICO Elastomere Projecting GmbH
+  url: https://www.rico.at/
+- name: RO-RA Aviation Systems GmbH
+- name: rudy games GmbH
+  url: https://www.rudygames.com/
+- name: Safetydrain Designduschen GmbH
+- name: Sclable
+  url: https://sclable.com/
+- name: Sendance
+- name: Software Competence Center Hagenberg (SCCH)
+  url: https://www.scch.at/
+- name: Soggiorno
+- name: Spectory
+- name: STEINBAUER Performance Austria GmbH
+  url: https://www.steinbauer.cc/
+- name: Stringnet
+- name: team Technology Management GmbH
+- name: tekom Europe e.V.
+  url: https://www.technical-communication.org/
+- name: text-it GmbH
+- name: Tiani Spirit GmbH
+  url: https://www.tiani-spirit.com/
+- name: Treetop Medical GmbH
+- name: TrueSize
+- name: UIA
+- name: Umweltdata GmbH
+- name: Università degli Studi di Padova
+  url: https://www.unipd.it/
+- name: Universitatea POLITEHNICA din București
+  url: https://upb.ro/
+- name: University of Limerick
+  url: https://www.ul.ie/
+- name: University of Twente
+  url: https://www.utwente.nl/
+- name: VIEW Promotion GmbH
+- name: ViewCopter e.U.
+- name: voidsy gmbh
+  url: https://www.voidsy.com/
+- name: VR Dimension e.U.
+- name: Wako3D
+- name: Weigl Control GmbH
+- name: WIFI Oberösterreich
+  url: https://www.wifi-ooe.at/
+- name: X-Net Services GmbH
+  url: https://www.x-net.at/
+- name: Xylem Science and Technology Management GmbH

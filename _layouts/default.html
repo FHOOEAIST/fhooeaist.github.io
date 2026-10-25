@@ -62,6 +62,9 @@
             href="{{ page.css | prepend: '/assets/css/' | append: '.css' | relative_url }}"
         />
         {% endif %}
+        {% if page.page_id == 'home' %}
+        <link rel="stylesheet" href="{{ '/assets/css/home-partners.css' | relative_url }}" />
+        {% endif %}
         {% if site.site_design == 'tiles' %}
         <link rel="stylesheet" href="{{ '/assets/css/theme-tiles.css' | relative_url }}" />
         {% if page.page_id == 'home' %}
