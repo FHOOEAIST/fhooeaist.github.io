@@ -35,7 +35,7 @@ Styles: assets/css/home-partners.css.
     </div>
   </div>
   <div class="partner-marquee" role="region" aria-label="{% if en %}Project partners{% else %}Projektpartner{% endif %}">
-    <div class="partner-track">
+    <div class="partner-track" style="--partner-count: {{ partners.size }}">
       {% for copy in (1..2) %}
       <ul class="partner-list"{% if copy == 2 %} aria-hidden="true"{% endif %}>
         {% for partner in partners %}

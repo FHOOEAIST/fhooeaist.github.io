@@ -7,6 +7,7 @@
 #   url   — partner's website; the tile links there
 #   logo  — optional, set by scripts/fetch_partner_logos.py
 #           (/assets/images/partners/<file>); check every crawled logo
+#           false: no usable logo found, the script skips the entry
 #   logo_dark_bg — true for a light (white) logo: shown on a dark tile
 #   hide  — optional, true leaves the partner out (e.g. consent withdrawn)
 #
@@ -23,14 +24,22 @@
   url: https://www.ages.at/
   logo: /assets/images/partners/ages-oesterreichische-agentur-fuer-gesundheit-und-ernaehrung.png
 - name: Aicher IT-Consulting GmbH
+  url: https://www.aicher-consulting.at/
+  logo: /assets/images/partners/aicher-it-consulting-gmbh.png
 - name: Airmate
 - name: Amido Handelsgesellschaft
+  url: https://www.amido.at/
+  logo: /assets/images/partners/amido-handelsgesellschaft.png
 - name: Apro Kassensysteme GmbH
+  url: https://www.apro.at/
+  logo: /assets/images/partners/apro-kassensysteme-gmbh.png
 - name: ATOS Ambulanz Mobile
 - name: Aximote
   url: https://www.aximote.com/
   logo: /assets/images/partners/aximote.png
 - name: Black Tusk
+  url: https://www.blacktusk.at/de/
+  logo: /assets/images/partners/black-tusk.png
 - name: BlueDynamics Auersperg-Castell KG
   url: https://bluedynamics.com/
   logo: /assets/images/partners/bluedynamics-auersperg-castell-kg.svg
@@ -38,6 +47,8 @@
   url: https://www.bluesource.at/
   logo: /assets/images/partners/bluesource-mobile-solutions-gmbh.svg
 - name: Büro für Wildökologie und Forstwirtschaft e.U.
+  url: https://www.wildoekologie.at/
+  logo: false
 - name: Bundesministerium für Soziales, Gesundheit, Pflege und Konsumentenschutz
   url: https://www.sozialministerium.at/
   logo: /assets/images/partners/bundesministerium-fuer-soziales-gesundheit-pflege-und-konsum.png
@@ -46,7 +57,12 @@
   url: https://www.calpana.com/
   logo: /assets/images/partners/calpana-business-consulting-gmbh.png
 - name: CAS – Computer Anwendungs Systeme GmbH
+  url: https://cas.at/
+  logo: /assets/images/partners/cas-computer-anwendungs-systeme-gmbh.svg
+  logo_dark_bg: true
 - name: Catchgoal GmbH
+  url: https://www.catchgoal.com/
+  logo: /assets/images/partners/catchgoal-gmbh.png
 - name: CGM Clinical (CompuGroup Medical)
   url: https://www.cgm.com/
   logo: /assets/images/partners/cgm-clinical-compugroup-medical.svg
@@ -57,17 +73,29 @@
   url: https://www.cloudflight.io/
   logo: /assets/images/partners/cloudflight-gmbh.png
 - name: COM&TEC
+  url: https://www.comtec-italia.org/
+  logo: /assets/images/partners/comandtec.png
 - name: cortEXPlore
+  url: https://www.cortexplore.com/
+  logo: false
 - name: Credi2 GmbH
   url: https://www.credi2.com/
   logo: /assets/images/partners/credi2-gmbh.svg
 - name: Doka
   url: https://www.doka.com/
+  logo: false
 - name: Doppel-N Marketing GmbH
+  url: https://doppel-n.at/
+  logo: /assets/images/partners/doppel-n-marketing-gmbh.png
 - name: eBuddies GmbH
+  url: https://www.ebuddies.eu/
+  logo: /assets/images/partners/ebuddies-gmbh.jpg
 - name: ENGEL AUSTRIA GmbH
   url: https://www.engelglobal.com/
+  logo: false
 - name: Ennacon environment nature consulting KG
+  url: https://www.ennacon.at/
+  logo: false
 - name: FACC Operations GmbH
   url: https://www.facc.com/
   logo: /assets/images/partners/facc-operations-gmbh.png
@@ -79,11 +107,12 @@
 - name: hello again GmbH
   url: https://www.helloagain.com/
   logo: /assets/images/partners/hello-again-gmbh.svg
-- name: Hermes Bootsbau GmbH
+- name: Hermes Bootbau OG
+  url: https://www.hermes-bootbau.at/
+  logo: false
 - name: Hochschule Karlsruhe (HKA)
   url: https://www.h-ka.de/
   logo: /assets/images/partners/hochschule-karlsruhe-hka.svg
-- name: HIVE
 - name: hokify GmbH
   url: https://hokify.at/
   logo: /assets/images/partners/hokify-gmbh.svg
@@ -91,8 +120,13 @@
 - name: HSE 365
 - name: Immotech OP GmbH (Dronetech)
 - name: Innoflow
+  url: https://www.innoflow.at/
+  logo: /assets/images/partners/innoflow.png
+  logo_dark_bg: true
 - name: Intelligent Automation GmbH
 - name: ITPRO – Consulting & Software GmbH
+  url: https://www.itpro.at/de/
+  logo: /assets/images/partners/itpro-consulting-and-software-gmbh.svg
 - name: Johannes Kepler Universität Linz
   url: https://www.jku.at/
   logo: /assets/images/partners/johannes-kepler-universitaet-linz.svg
@@ -105,6 +139,7 @@
   logo: /assets/images/partners/kepler-universitaetsklinikum.png
 - name: KU Leuven
   url: https://www.kuleuven.be/
+  logo: false
 - name: Kunstuniversität Linz
   url: https://www.kunstuni-linz.at/
   logo: /assets/images/partners/kunstuniversitaet-linz.png
@@ -122,9 +157,15 @@
   url: https://www.tjv.at/
   logo: /assets/images/partners/landesjagdverband-tirol.png
 - name: LICA Life Care GmbH
+  url: https://www.lica.at/
+  logo: false
 - name: Lietz GmbH
 - name: LIqua – Linzer Institut für qualitative Analysen
-- name: LMNOP group GmbH
+  url: https://www.liqua.net/liq/
+  logo: false
+- name: Vereinsplaner GmbH (formerly LMNOP group)
+  url: https://vereinsplaner.at/
+  logo: /assets/images/partners/vereinsplaner-gmbh-formerly-lmnop-group.webp
 - name: Medizinische Universität Graz
   url: https://www.medunigraz.at/
   logo: /assets/images/partners/medizinische-universitaet-graz.svg
@@ -132,8 +173,9 @@
   url: https://www.mittag.at/
   logo: /assets/images/partners/mittag-at.png
 - name: mobile agreements GmbH (mogree)
-  url: https://www.mogree.com/
 - name: Monto Tech GmbH
+  url: https://www.montotech.com/en
+  logo: /assets/images/partners/monto-tech-gmbh.svg
 - name: Moonshot25
 - name: Mox Innovations GmbH
 - name: Nationalpark Hohe Tauern
@@ -149,16 +191,23 @@
 - name: Own3d Media GmbH
   url: https://www.own3d.tv/
   logo: /assets/images/partners/own3d-media-gmbh.svg
-- name: PIELab
 - name: Progast+
+  url: https://progastplus.at/
+  logo: /assets/images/partners/progast.png
 - name: psii.rehab
-  url: https://psii.rehab/
 - name: Realsim
+  url: https://www.realsim.info/
+  logo: /assets/images/partners/realsim.png
+  logo_dark_bg: true
 - name: Redem GmbH
   url: https://www.redem.io/
+  logo: false
 - name: RICO Elastomere Projecting GmbH
   url: https://www.rico.at/
+  logo: false
 - name: RO-RA Aviation Systems GmbH
+  url: https://www.ro-ra.com/
+  logo: /assets/images/partners/ro-ra-aviation-systems-gmbh.svg
 - name: rudy games GmbH
   url: https://www.rudygames.com/
   logo: /assets/images/partners/rudy-games-gmbh.png
@@ -167,22 +216,37 @@
   url: https://sclable.com/
   logo: /assets/images/partners/sclable.svg
 - name: Sendance
+  url: https://www.sendance.at/
+  logo: /assets/images/partners/sendance.png
 - name: Software Competence Center Hagenberg (SCCH)
   url: https://www.scch.at/
+  logo: false
 - name: Soggiorno
+  url: https://soggiorno.at/
+  logo: /assets/images/partners/soggiorno.webp
 - name: Spectory
 - name: STEINBAUER Performance Austria GmbH
   url: https://www.steinbauer.cc/
+  logo: false
 - name: Stringnet
+  url: https://www.stringnet.art/
+  logo: false
 - name: team Technology Management GmbH
 - name: tekom Europe e.V.
   url: https://www.technical-communication.org/
+  logo: false
 - name: text-it GmbH
+  url: https://www.text-it.at/
+  logo: /assets/images/partners/text-it-gmbh.svg
 - name: Tiani Spirit GmbH
 - name: Treetop Medical GmbH
+  url: https://www.treetop-medical.com/
+  logo: /assets/images/partners/treetop-medical-gmbh.svg
 - name: TrueSize
 - name: UIA
 - name: Umweltdata GmbH
+  url: https://umweltdata.at/
+  logo: /assets/images/partners/umweltdata-gmbh.png
 - name: Università degli Studi di Padova
   url: https://www.unipd.it/
   logo: /assets/images/partners/universita-degli-studi-di-padova.png
@@ -199,11 +263,17 @@
   logo_dark_bg: true
 - name: VIEW Promotion GmbH
 - name: ViewCopter e.U.
+  url: https://www.view-copter.at/
+  logo: false
 - name: voidsy gmbh
   url: https://www.voidsy.com/
   logo: /assets/images/partners/voidsy-gmbh.png
 - name: VR Dimension e.U.
+  url: https://vrdimension.at/
+  logo: /assets/images/partners/vr-dimension-e-u.png
 - name: Wako3D
+  url: https://www.wako3d.com/en
+  logo: /assets/images/partners/wako3d.svg
 - name: Weigl Control GmbH
 - name: WIFI Oberösterreich
   url: https://www.wifi-ooe.at/
@@ -212,3 +282,5 @@
   url: https://www.x-net.at/
   logo: /assets/images/partners/x-net-services-gmbh.svg
 - name: Xylem Science and Technology Management GmbH
+  url: https://www.xylem-technologies.com/
+  logo: /assets/images/partners/xylem-science-and-technology-management-gmbh.png
