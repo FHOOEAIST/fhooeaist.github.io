@@ -39,6 +39,9 @@
     - page_id: software
       label_de: Software & Daten
       label_en: Software & Data
+    - href: https://github.com/FHOOEAIST
+      label_de: GitHub
+      label_en: GitHub
 
 - page_id: publications-index
   label_de: Publikationen
