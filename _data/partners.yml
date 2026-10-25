@@ -6,9 +6,9 @@
 #   name  — required; alt text of the logo
 #   url   — partner's website; the tile links there
 #   logo  — required to be shown (partners without a logo are left out); set by scripts/fetch_partner_logos.py
-#           (/assets/images/partners/<file>); check every crawled logo
+#           (/assets/images/partners/<file>); check every crawled logo;
+#           white logos for dark backgrounds are recoloured to black
 #           false: no usable logo found, the script skips the entry
-#   logo_dark_bg — true for a light (white) logo: shown on a dark tile
 #   hide  — optional, true leaves the partner out (e.g. consent withdrawn)
 #
 # Logos are trademarks: see the legal note on issue #19 before publishing
@@ -59,7 +59,6 @@
 - name: Cadus Innovation GmbH
   url: https://www.cadus.at/
   logo: /assets/images/partners/cadus-innovation-gmbh.png
-  logo_dark_bg: true
 - name: Calpana business consulting GmbH
   url: https://www.calpana.com/
   logo: /assets/images/partners/calpana-business-consulting-gmbh.png
@@ -93,7 +92,6 @@
 - name: Doppel-N Marketing GmbH
   url: https://doppel-n.at/
   logo: /assets/images/partners/doppel-n-marketing-gmbh.svg
-  logo_dark_bg: true
 - name: eBuddies GmbH
   url: https://www.ebuddies.eu
   logo: /assets/images/partners/ebuddies-gmbh.jpg
@@ -110,7 +108,6 @@
 - name: HAKOM
   url: https://www.hakom.at/
   logo: /assets/images/partners/hakom.svg
-  logo_dark_bg: true
 - name: hello again GmbH
   url: https://www.helloagain.com/
   logo: /assets/images/partners/hello-again-gmbh.svg
@@ -123,7 +120,6 @@
 - name: hokify GmbH
   url: https://hokify.at/
   logo: /assets/images/partners/hokify-gmbh.svg
-  logo_dark_bg: true
 - name: HSE 365
   url: https://www.hse365.at/de/Unternehmen
   logo: /assets/images/partners/hse-365.png
@@ -141,7 +137,6 @@
 - name: Johannes Kepler Universität Linz
   url: https://www.jku.at/
   logo: /assets/images/partners/johannes-kepler-universitaet-linz.svg
-  logo_dark_bg: true
 - name: karriere.at
   url: https://www.karriere.at/
   logo: /assets/images/partners/karriere-at.svg
@@ -160,7 +155,6 @@
 - name: Landesjagdverband Niederösterreich
   url: https://www.noejagdverband.at/
   logo: /assets/images/partners/landesjagdverband-niederoesterreich.svg
-  logo_dark_bg: true
 - name: Landesjagdverband Oberösterreich
   url: https://www.ooeljv.at/
   logo: /assets/images/partners/landesjagdverband-oberoesterreich.svg
@@ -201,7 +195,6 @@
 - name: Nextpart Security Intelligence GmbH
   url: https://www.netpart.de/
   logo: /assets/images/partners/nextpart-security-intelligence-gmbh.svg
-  logo_dark_bg: true
 - name: OÖ Gesundheitsholding – MIT Medizininformatik und IT
   url: https://www.ooeg.at/
   logo: /assets/images/partners/ooe-gesundheitsholding-mit-medizininformatik-und-it.svg
@@ -218,7 +211,6 @@
 - name: Realsim
   url: https://www.realsim.info/
   logo: /assets/images/partners/realsim.png
-  logo_dark_bg: true
 - name: Redem GmbH
   url: https://www.redem.io/
   logo: /assets/images/partners/redem-gmbh.png
@@ -278,15 +270,13 @@
   logo: /assets/images/partners/universita-degli-studi-di-padova.png
 - name: Universitatea POLITEHNICA din București
   url: https://upb.ro/
-  logo: /assets/images/partners/universitatea-politehnica-din-bucuresti.webp
-  logo_dark_bg: true
+  logo: /assets/images/partners/universitatea-politehnica-din-bucuresti.png
 - name: University of Limerick
   url: https://www.ul.ie/
   logo: /assets/images/partners/university-of-limerick.svg
 - name: University of Twente
   url: https://www.utwente.nl/
   logo: /assets/images/partners/university-of-twente.svg
-  logo_dark_bg: true
 - name: VIEW Promotion GmbH
   url: https://www.view-elevator.at/
   logo: /assets/images/partners/view-promotion-gmbh.png

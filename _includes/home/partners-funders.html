@@ -40,7 +40,7 @@ Styles: assets/css/home-partners.css.
       <ul class="partner-list"{% if copy == 2 %} aria-hidden="true"{% endif %}>
         {% for partner in partners %}
         <li>
-          {% if partner.url %}<a class="partner-tile{% if partner.logo_dark_bg %} partner-tile-dark{% endif %}" href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name | escape }}"{% if copy == 2 %} tabindex="-1"{% endif %}>{% else %}<span class="partner-tile{% if partner.logo_dark_bg %} partner-tile-dark{% endif %}" title="{{ partner.name | escape }}">{% endif %}
+          {% if partner.url %}<a class="partner-tile" href="{{ partner.url }}" target="_blank" rel="noopener" title="{{ partner.name | escape }}"{% if copy == 2 %} tabindex="-1"{% endif %}>{% else %}<span class="partner-tile" title="{{ partner.name | escape }}">{% endif %}
             <img src="{{ partner.logo | relative_url }}" alt="{{ partner.name | escape }}" loading="lazy">
           {% if partner.url %}</a>{% else %}</span>{% endif %}
         </li>
