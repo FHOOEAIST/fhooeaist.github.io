@@ -83,13 +83,13 @@
   logo: /assets/images/partners/comandtec.svg
 - name: cortEXPlore
   url: https://www.cortexplore.com/
-  logo: false
+  logo: /assets/images/partners/cortexplore.png
 - name: Credi2 GmbH
   url: https://www.credi2.com/
   logo: /assets/images/partners/credi2-gmbh.svg
 - name: Doka
   url: https://www.doka.com/at/index
-  logo: false
+  logo: /assets/images/partners/doka.png
 - name: Doppel-N Marketing GmbH
   url: https://doppel-n.at/
   logo: /assets/images/partners/doppel-n-marketing-gmbh.svg
@@ -99,7 +99,7 @@
   logo: /assets/images/partners/ebuddies-gmbh.jpg
 - name: ENGEL AUSTRIA GmbH
   url: https://www.engelglobal.com/
-  logo: false
+  logo: /assets/images/partners/engel-austria-gmbh.png
 - name: Ennacon environment nature consulting KG
   url: https://www.ennacon.at/
   logo: /assets/images/partners/ennacon-environment-nature-consulting-kg.jpg
