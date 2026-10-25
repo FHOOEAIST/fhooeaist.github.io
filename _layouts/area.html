@@ -8,8 +8,8 @@ One research area (forschung-*.html / research-*-en.html). Front matter:
   lead     — intro in the title band
   icon     — area icon (assets/images/index/*.svg)
   focus    — list of focus topics, shown below the description
-  contact  — optional e-mail of the contact person in _data/team.yml;
-             defaults to the group contact
+  contact  — optional e-mail of the area's contact person in _data/team.yml;
+             without it the sidebar shows no contact box
 The Markdown body is the area description. Projects are picked by their
 `category` (one id or a list), publications and theses by their
 `categories` list, so nothing has to be maintained here by hand.
@@ -44,8 +44,7 @@ The Markdown body is the area description. Projects are picked by their
 {% assign area_pubs = site.publications | where: "lang", page.lang | where_exp: "p", "p.categories contains area" | sort: "date" | reverse %}
 {% assign area_theses = site.theses | where: "lang", page.lang | where_exp: "t", "t.categories contains area" | sort: "date" | reverse %}
 
-{% assign contact_email = page.contact | default: "gerald.zwettler@fh-hagenberg.at" %}
-{% assign contact = site.data.team.members | where: "email", contact_email | first %}
+{% if page.contact %}{% assign contact = site.data.team.members | where: "email", page.contact | first %}{% endif %}
 
 {% if en %}{% assign eyebrow = "Research area" %}{% else %}{% assign eyebrow = "Forschungsschwerpunkt" %}{% endif %}
 {% include page-header.html eyebrow=eyebrow title=page.title lead=page.lead %}
@@ -65,10 +64,11 @@ The Markdown body is the area description. Projects are picked by their
     <aside class="area-aside">
       {% if page.icon %}<img class="area-aside-icon" src="{{ page.icon | relative_url }}" alt="" loading="lazy">{% endif %}
       <ul class="area-stats">
-        <li><a href="{{ projects_page.permalink | relative_url }}#area={{ area }}"><span class="stat-value">{{ area_projects.size }}</span><span class="stat-label">{% if en %}projects{% else %}Projekte{% endif %}</span></a></li>
-        <li><a href="{{ pubs_page.permalink | relative_url }}#cat={{ area }}"><span class="stat-value">{{ area_pubs.size }}</span><span class="stat-label">{% if en %}publications{% else %}Publikationen{% endif %}</span></a></li>
-        <li><a href="{{ theses_page.permalink | relative_url }}#cat={{ area }}"><span class="stat-value">{{ area_theses.size }}</span><span class="stat-label">{% if en %}theses{% else %}Diplomarbeiten{% endif %}</span></a></li>
+        <li><a href="{{ projects_page.permalink | relative_url }}#area={{ area }}"><span class="stat-value">{{ area_projects.size }}</span><span class="stat-label">{% if en %}projects{% else %}Projekte{% endif %}</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+        <li><a href="{{ pubs_page.permalink | relative_url }}#cat={{ area }}"><span class="stat-value">{{ area_pubs.size }}</span><span class="stat-label">{% if en %}publications{% else %}Publikationen{% endif %}</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+        <li><a href="{{ theses_page.permalink | relative_url }}#cat={{ area }}"><span class="stat-value">{{ area_theses.size }}</span><span class="stat-label">{% if en %}theses{% else %}Diplomarbeiten{% endif %}</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
       </ul>
+      {% if page.contact %}
       <div class="area-contact">
         <p class="area-contact-label">{% if en %}Contact{% else %}Ansprechperson{% endif %}</p>
         {% if contact %}
@@ -81,9 +81,10 @@ The Markdown body is the area description. Projects are picked by their
           </div>
         </div>
         {% else %}
-        <p><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+        <p><a href="mailto:{{ page.contact }}">{{ page.contact }}</a></p>
         {% endif %}
       </div>
+      {% endif %}
     </aside>
   </div>
 
