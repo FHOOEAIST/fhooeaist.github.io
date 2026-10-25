@@ -26,6 +26,7 @@ import argparse
 import html.parser
 import re
 import sys
+import unicodedata
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -49,10 +50,13 @@ def slugify(name):
     s = name.lower()
     for a, b in (("ä", "ae"), ("ö", "oe"), ("ü", "ue"), ("ß", "ss"), ("&", "and")):
         s = s.replace(a, b)
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-")[:60]
 
 
 def fetch(url):
+    # Percent-encode non-ASCII characters (e.g. "logo_weiß.png"), keep the rest.
+    url = urllib.parse.quote(url, safe=":/?#[]@!$&'()*+,;=%~")
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
     with urllib.request.urlopen(req, timeout=20) as r:
         return r.geturl(), r.headers.get_content_type(), r.read()
