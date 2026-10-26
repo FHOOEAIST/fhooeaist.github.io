@@ -8,12 +8,6 @@ area: cv
 css: projects
 icon: /assets/images/index/computervision.svg
 lead: Von der Bildaufnahme über die Analyse bis zur Visualisierung – vom drohnengestützten Wildtier-Monitoring bis zur KI-gestützten Qualitätsprüfung in der Industrie.
-focus:
-  - Drohnengestütztes Wildtier-Monitoring in Wärmebild- und RGB-Aufnahmen
-  - Objekterkennung, Tracking und Georeferenzierung
-  - KI-gestützte Qualitätsprüfung und zerstörungsfreie Prüfverfahren
-  - 3D-Rekonstruktion und digitale Zwillinge
-  - Synthetische Trainingsdaten und Mixed Reality
 ---
 
 Visual Computing umfasst bei AIST die gesamte Kette von der Bildaufnahme über die Analyse bis zur Visualisierung. Ein sichtbarer Schwerpunkt ist das drohnengestützte Wildtier-Monitoring: In BAMBI, Thumper und Pumbaa werden Wildtiere und Kadaver in Wärmebild- und RGB-Aufnahmen aus der Luft erkannt, verfolgt und georeferenziert. Daraus sind unter anderem der öffentlich verfügbare BAMBI-Datensatz und Verfahren zur synthetischen Erzeugung von Trainingsdaten entstanden.
