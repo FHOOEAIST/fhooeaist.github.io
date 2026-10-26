@@ -150,7 +150,7 @@ in [`_plugins/project_sort_title.rb`](_plugins/project_sort_title.rb) as
 
 ## Research Areas
 
-Each research area has its own page (DE + EN, shared `page_id: area:<id>`): `forschung-ehealth.md`, `forschung-ml.md`, `forschung-cv.md` and their `-en` twins. They are linked from the *Projects* menu and from the area tiles on the home page. All of them use [`_layouts/area.html`](_layouts/area.html), which fills in the running/completed projects (by `category`), the number of publications and theses and the latest five of each (by `categories`) automatically – only the text is maintained by hand:
+Each research area has its own page (DE + EN, shared `page_id: area:<id>`): `forschung-ehealth.md`, `forschung-ml.md`, `forschung-cv.md` and their `-en` twins. They are linked from the *Projects* menu and from the area tiles on the home page. All of them use [`_layouts/area.html`](_layouts/area.html), which fills in the running/completed projects (by `category`), the number of publications and theses and the latest five of each (by `categories`) automatically – only the text (and optionally a curated list of focus topics) is maintained by hand:
 
 ```yaml
 ---
@@ -163,8 +163,8 @@ area: ehealth            # id from _data/publication_categories.yml
 css: projects            # project cards and the area styles
 icon: /assets/images/index/ehealth.svg
 lead: One-sentence summary shown in the title band.
-focus:                   # focus topics, shown as tags
-  - Interoperabilität auf Basis von HL7 FHIR und IHE
+focus:                   # optional, focus topics curated by the area lead, shown as tags
+  - …
 contact: jane.doe@fh-hagenberg.at   # optional, a member of _data/team.yml; no contact box without it
 ---
 
