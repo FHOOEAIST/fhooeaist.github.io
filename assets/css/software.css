@@ -10,7 +10,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 1.25rem;
-  align-items: start;
+  /* cards of a row share its height; the link row is pushed to the bottom
+     (margin-top: auto), so the buttons line up across the row */
+  align-items: stretch;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -85,6 +87,16 @@
 
 .software-description > :last-child {
   margin-bottom: 0;
+}
+
+/* the area badges and the link row form the bottom of the card, so both
+   line up across a grid row whatever the length of the titles above */
+.software-card > .publication-categories {
+  margin-top: auto;
+}
+
+.software-card > .publication-categories ~ .software-links {
+  margin-top: 0;
 }
 
 /* badges here only label the areas, they are not filter shortcuts */
