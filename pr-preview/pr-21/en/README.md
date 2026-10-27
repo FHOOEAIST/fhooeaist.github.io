@@ -266,6 +266,25 @@ The *Join us* page ([`mitarbeit.html`](mitarbeit.html) / [`mitarbeit-en.html`](m
 
 The theses pages and the call to action at the bottom of the home page link to this page.
 
+# Software & Data
+
+The *Software & Data* page ([`software.html`](software.html) / [`software-en.html`](software-en.html), linked under *Projects* and from the home page) lists reusable outputs from [`_data/software.yml`](_data/software.yml), grouped into datasets, software and models. The fields are documented at the top of that file:
+
+```yaml
+- name: BAMBI Dataset
+  type: dataset                 # dataset | software | model
+  categories: [cv, geo]         # ids from _data/publication_categories.yml
+  language: Python              # optional
+  description_de: …
+  description_en: …
+  repo: https://github.com/bambi-eco/Dataset
+  docs: https://…               # optional
+  doi: 10.5281/zenodo.1234567   # optional, DOI of the software/data itself
+  license: CC-BY-4.0, MIT
+  project: projects:bambi       # optional, links the project page
+  publication: pub:the-bambi-dataset-…   # optional, shown as "Please cite"
+```
+
 # Partners & Funders
 
 Funders and partners are shown on the home page, below *Collaboration & theses* (both `site_design` variants), from [`_includes/home/partners-funders.html`](_includes/home/partners-funders.html):
