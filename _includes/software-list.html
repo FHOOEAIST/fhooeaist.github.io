@@ -5,9 +5,9 @@ include.lang ("de" or "en").
 
 Each card is collapsible like the publication entries (initCollapsibles in
 assets/js/main.js): folded it shows the type and language, the name, the
-area badges and the repository button; unfolded it adds the description,
-licence, DOI, the related project page, the publication to cite (looked up
-by page_id; unknown ids are skipped) and the documentation link.
+area badges and the repository and documentation buttons; unfolded it adds
+the description, licence, DOI, the related project page and the publication
+to cite (looked up by page_id; unknown ids are skipped).
 {% endcomment %}
 {% assign en = false %}{% if include.lang == "en" %}{% assign en = true %}{% endif %}
 {% assign cats = site.data.publication_categories %}
@@ -67,11 +67,11 @@ by page_id; unknown ids are skipped) and the documentation link.
           {% if item_pub %}<div><dt>{% if en %}Please cite{% else %}Zitieren{% endif %}</dt><dd><a href="{{ pubs_page.permalink | relative_url }}#{{ item_pub.permalink | slugify }}">{{ item_pub.title }}</a>{% if item_pub.date %} ({{ item_pub.date | date: "%Y" }}){% endif %}</dd></div>{% endif %}
           {% endif %}
         </dl>
-        {% if item.docs %}<p class="software-docs"><a class="btn btn-sm btn-outline" href="{{ item.docs }}" target="_blank" rel="noopener"><i class="fas fa-book" aria-hidden="true"></i> {% if en %}Documentation{% else %}Dokumentation{% endif %}</a></p>{% endif %}
       </div>
-      {% if item.repo %}
+      {% if item.repo or item.docs %}
       <div class="software-links">
-        <a class="btn btn-sm" href="{{ item.repo }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>
+        {% if item.repo %}<a class="btn btn-sm" href="{{ item.repo }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>{% endif %}
+        {% if item.docs %}<a class="btn btn-sm btn-outline" href="{{ item.docs }}" target="_blank" rel="noopener"><i class="fas fa-book" aria-hidden="true"></i> {% if en %}Documentation{% else %}Dokumentation{% endif %}</a>{% endif %}
       </div>
       {% endif %}
     </li>
