@@ -70,6 +70,26 @@
   license: MPL-2.0
   publication: pub:analysing-and-transforming-graph-structures-the-graph-transformation-framework
 
+- name: Amaru
+  type: software
+  categories: [se, ml]
+  language: Java
+  description_de: Framework für Genetic Improvement von Programmen in Truffle-Sprachen auf der GraalVM, kombiniert mit Pattern Mining über die gefundenen Lösungen. Das Repository enthält die in der Dissertation von Oliver Krauss verwendete Version zur Replikation.
+  description_en: Framework for genetic improvement of programs in Truffle languages on the GraalVM, combined with pattern mining over the solutions found. The repository holds the version used in Oliver Krauss's dissertation, for replication.
+  repo: https://github.com/oliver-krauss/amaru
+  license: MPL-2.0
+  publication: pub:amaru-a-framework-for-combining-genetic-improvement-with-pattern-mining
+
+- name: HeuristicLabConnector
+  type: software
+  categories: [se, ml]
+  language: Java, C#
+  description_de: Verbindet die Optimierungsumgebung HeuristicLab über einen Broker mit Compilern und Interpretern in anderen Sprachen, etwa Java über Amaru, um nicht-funktionale Eigenschaften von Code zu optimieren.
+  description_en: Connects the HeuristicLab optimization environment through a broker to compilers and interpreters in other languages, such as Java via Amaru, to optimize non-functional properties of code.
+  repo: https://github.com/oliver-krauss/heuristiclabconnector
+  license: "MPL-2.0; HeuristicLab: GPL-3.0"
+  publication: pub:integrating-heuristiclab-with-compilers-and-interpreters-for-non-functional-code
+
 - name: ProcessMiningOnFHIR
   type: software
   categories: [ehealth, pm]
