@@ -24,6 +24,7 @@ members:
     image: /assets/images/team/sophie_bauernfeind_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/sophie-bauernfeind
     orcid: 0009-0005-5290-3900
+    github: SophieBauernfeind
   - name: FH-Prof. Univ.-Doz. DI Dr. Ulrich Bodenhofer
     category: professor
     gender: m
@@ -47,6 +48,8 @@ members:
     email: mert.dalkilic@fh-hagenberg.at
     image: /assets/images/team/mert_dalkilic_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/mert-ismail-dalkilic/
+    orcid: 0009-0001-8542-5176
+    github: medalkilic
   - name: Martin Hanreich MSc
     category: researcher
     gender: m
@@ -65,6 +68,7 @@ members:
     orcid: 0000-0002-8136-2606
     scholar: MoKRFRYAAAAJ
     github: oliver-krauss
+    linkedin: oliver-krauss
   - name: Helga Billensteiner MSc
     category: researcher
     gender: f
@@ -115,6 +119,8 @@ members:
     image: /assets/images/team/sebastian_pritz_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/sebastian-pritz
     orcid: 0009-0002-1028-5444
+    github: SebastianPritzFH
+    linkedin: sebastian-pritz-490b74250
   - name: Simone Sandler MSc
     category: researcher
     gender: f
@@ -123,6 +129,7 @@ members:
     image: /assets/images/team/simone_sandler_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/simone-sandler
     orcid: 0000-0001-8919-7804
+    github: simonesan
   - name: Dipl.-Ing. Natasha Trajkovska MSc
     category: researcher
     gender: f
@@ -139,6 +146,7 @@ members:
     details_url: https://pure.fh-ooe.at/en/persons/gerald-adam-zwettler
     orcid: 0000-0002-4966-6853
     scholar: QGD2wrAAAAAJ
+    linkedin: gerald-zwettler-59b3a8104
 
 # Former members, listed below the team (_includes/team-alumni.html).
 # Opt-in only and without photos: an entry is shown only with the date of
