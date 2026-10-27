@@ -106,6 +106,7 @@ members:
     orcid: 0000-0002-9711-4818
     scholar: OYctnhsAAAAJ
     github: cpraschl
+    linkedin: christophpraschl
   - name: Sebastian Pritz MSc
     category: researcher
     gender: m
@@ -128,6 +129,7 @@ members:
     email: natasha.trajkovska@fh-hagenberg.at
     image: /assets/images/team/dipl_ing_natasha_trajkovska_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/natasha-trajkovska
+    orcid: 0000-0001-8265-9041
   - name: DI (FH) Dr. Gerald Adam Zwettler MSc
     category: professor
     gender: m
