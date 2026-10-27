@@ -121,16 +121,18 @@
   overflow-wrap: anywhere;
 }
 
-.software-docs {
-  margin: 1rem 0 0;
-}
-
 .software-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
   margin-top: auto;
   padding-top: 1rem;
+}
+
+/* narrower than the tiles theme's button padding, so the repository and
+   documentation buttons fit next to each other in a three-column card */
+.software-links .btn.btn-sm {
+  padding-inline: 0.9rem;
 }
 
 @media (max-width: 640px) {
