@@ -148,6 +148,29 @@ W rather than lumping every such project together under P. That key is computed
 in [`_plugins/project_sort_title.rb`](_plugins/project_sort_title.rb) as
 `sort_title`; nothing needs to be added to a project's front matter.
 
+## Research Areas
+
+Each research area has its own page (DE + EN, shared `page_id: area:<id>`): `forschung-ehealth.md`, `forschung-ml.md`, `forschung-cv.md` and their `-en` twins. They are linked from the *Projects* menu and from the area tiles on the home page. All of them use [`_layouts/area.html`](_layouts/area.html), which fills in the running/completed projects (by `category`), the number of publications and theses and the latest five of each (by `categories`) automatically – only the text (and optionally a curated list of focus topics) is maintained by hand:
+
+```yaml
+---
+layout: area
+lang: de
+title: eHealth
+page_id: area:ehealth
+permalink: /forschung/ehealth/
+area: ehealth            # id from _data/publication_categories.yml
+css: projects            # project cards and the area styles
+icon: /assets/images/index/ehealth.svg
+lead: One-sentence summary shown in the title band.
+focus:                   # optional, focus topics curated by the area lead, shown as tags
+  - …
+contact: jane.doe@fh-hagenberg.at   # optional, a member of _data/team.yml; no contact box without it
+---
+
+Area description (Markdown)...
+```
+
 ## Publications
 
 Research papers, shown grouped by year with a category filter.
@@ -222,6 +245,34 @@ project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/pica  # optional
 ---
 
 Abstract (Markdown)...
+```
+
+# Open Positions & Thesis Topics
+
+The *Join us* page ([`mitarbeit.html`](mitarbeit.html) / [`mitarbeit-en.html`](mitarbeit-en.html), linked under *About*) is generated from two data files; both are documented with a full example in their header comment:
+
+- [`_data/positions.yml`](_data/positions.yml) – open positions (`title_de/_en`, `type`: `researcher` | `phd` | `student` | `internship`, optional `hours_*`, `start_*`, `deadline`, `description_*`, `url`, `contact`). A position whose `deadline` has passed is hidden automatically. With no open position the page invites unsolicited applications instead.
+- [`_data/thesis_topics.yml`](_data/thesis_topics.yml) – open thesis topics (`title_de/_en`, `thesis_type` as a list, `categories` from the publication taxonomy, `supervisor`, `contact`, optional `project` page_id, `description_*`). They get the same category / type filter as the theses page; with no topic the page asks students to propose their own.
+
+The theses pages and the call to action at the bottom of the home page link to this page.
+
+# Software & Data
+
+The *Software & Data* page ([`software.html`](software.html) / [`software-en.html`](software-en.html), linked under *Projects* and from the home page) lists reusable outputs from [`_data/software.yml`](_data/software.yml), grouped into datasets, software and models. The fields are documented at the top of that file:
+
+```yaml
+- name: BAMBI Dataset
+  type: dataset                 # dataset | software | model
+  categories: [cv, geo]         # ids from _data/publication_categories.yml
+  language: Python              # optional
+  description_de: …
+  description_en: …
+  repo: https://github.com/bambi-eco/Dataset
+  docs: https://…               # optional
+  doi: 10.5281/zenodo.1234567   # optional, DOI of the software/data itself
+  license: CC-BY-4.0, MIT
+  project: projects:bambi       # optional, links the project page
+  publication: pub:the-bambi-dataset-…   # optional, shown as "Please cite"
 ```
 
 # Partners & Funders

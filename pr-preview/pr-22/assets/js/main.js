@@ -530,9 +530,11 @@
   }
 
   /* ----------------------------------------------------- listing filter */
-  // Publications and theses: one listbox per facet (category, year, type).
-  // "cat" matches against the entry's space-separated data-categories list,
-  // every other facet against data-<key>. An entry is shown when it matches
+  // Publications, theses and open thesis topics: one listbox per facet
+  // (category, year, type). "cat" matches against the entry's space-separated
+  // data-categories list, every other facet against data-<key>, which may be
+  // a space-separated list as well (a topic for bachelor and master
+  // students). An entry is shown when it matches
   // every facet; year headings without visible entries are hidden. State is
   // mirrored into the hash (#cat=ml&year=2024).
   function initListingFilter() {
@@ -540,7 +542,7 @@
     if (!root) return;
 
     var resultsEl = root.querySelector(".cat-filter-results");
-    var items = Array.prototype.slice.call(document.querySelectorAll(".listing-item[data-year]"));
+    var items = Array.prototype.slice.call(document.querySelectorAll(".listing-item[data-categories]"));
     var sections = Array.prototype.slice.call(document.querySelectorAll(".year-section"));
     var boxes = {};
 
@@ -552,7 +554,7 @@
     function matches(item, key, value) {
       if (value === "all") return true;
       if (key === "cat") return item.catList.indexOf(value) !== -1;
-      return item.getAttribute("data-" + key) === value;
+      return (item.getAttribute("data-" + key) || "").split(" ").indexOf(value) !== -1;
     }
 
     function apply() {
