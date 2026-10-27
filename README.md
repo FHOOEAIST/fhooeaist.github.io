@@ -148,6 +148,29 @@ W rather than lumping every such project together under P. That key is computed
 in [`_plugins/project_sort_title.rb`](_plugins/project_sort_title.rb) as
 `sort_title`; nothing needs to be added to a project's front matter.
 
+## Research Areas
+
+Each research area has its own page (DE + EN, shared `page_id: area:<id>`): `forschung-ehealth.md`, `forschung-ml.md`, `forschung-cv.md` and their `-en` twins. They are linked from the *Projects* menu and from the area tiles on the home page. All of them use [`_layouts/area.html`](_layouts/area.html), which fills in the running/completed projects (by `category`), the number of publications and theses and the latest five of each (by `categories`) automatically – only the text (and optionally a curated list of focus topics) is maintained by hand:
+
+```yaml
+---
+layout: area
+lang: de
+title: eHealth
+page_id: area:ehealth
+permalink: /forschung/ehealth/
+area: ehealth            # id from _data/publication_categories.yml
+css: projects            # project cards and the area styles
+icon: /assets/images/index/ehealth.svg
+lead: One-sentence summary shown in the title band.
+focus:                   # optional, focus topics curated by the area lead, shown as tags
+  - …
+contact: jane.doe@fh-hagenberg.at   # optional, a member of _data/team.yml; no contact box without it
+---
+
+Area description (Markdown)...
+```
+
 ## Publications
 
 Research papers, shown grouped by year with a category filter.
