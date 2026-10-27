@@ -71,7 +71,7 @@ to cite (looked up by page_id; unknown ids are skipped).
       {% if item.repo or item.docs %}
       <div class="software-links">
         {% if item.repo %}<a class="btn btn-sm" href="{{ item.repo }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>{% endif %}
-        {% if item.docs %}<a class="btn btn-sm btn-outline" href="{{ item.docs }}" target="_blank" rel="noopener"><i class="fas fa-book" aria-hidden="true"></i> {% if en %}Documentation{% else %}Dokumentation{% endif %}</a>{% endif %}
+        {% if item.docs %}<a class="btn btn-sm" href="{{ item.docs }}" target="_blank" rel="noopener"><i class="fas fa-book" aria-hidden="true"></i> {% if en %}Documentation{% else %}Dokumentation{% endif %}</a>{% endif %}
       </div>
       {% endif %}
     </li>
