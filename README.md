@@ -247,6 +247,15 @@ project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/pica  # optional
 Abstract (Markdown)...
 ```
 
+# Open Positions & Thesis Topics
+
+The *Join us* page ([`mitarbeit.html`](mitarbeit.html) / [`mitarbeit-en.html`](mitarbeit-en.html), linked under *About*) is generated from two data files; both are documented with a full example in their header comment:
+
+- [`_data/positions.yml`](_data/positions.yml) – open positions (`title_de/_en`, `type`: `researcher` | `phd` | `student` | `internship`, optional `hours_*`, `start_*`, `deadline`, `description_*`, `url`, `contact`). A position whose `deadline` has passed is hidden automatically. With no open position the page invites unsolicited applications instead.
+- [`_data/thesis_topics.yml`](_data/thesis_topics.yml) – open thesis topics (`title_de/_en`, `thesis_type` as a list, `categories` from the publication taxonomy, `supervisor`, `contact`, optional `project` page_id, `description_*`). They get the same category / type filter as the theses page; with no topic the page asks students to propose their own.
+
+The theses pages and the call to action at the bottom of the home page link to this page.
+
 # Partners & Funders
 
 Funders and partners are shown on the home page, below *Collaboration & theses* (both `site_design` variants), from [`_includes/home/partners-funders.html`](_includes/home/partners-funders.html):
