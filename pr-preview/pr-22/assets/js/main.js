@@ -760,6 +760,37 @@
     }
   }
 
+  /* -------------------------------------------- funder project overlays */
+  // The project list of a funder card opens as an overlay
+  // (assets/css/home-partners.css): keep one open at a time and close it on
+  // a click outside or Escape.
+  function initFunderOverlays() {
+    var all = document.querySelectorAll(".funder-projects");
+    if (!all.length) return;
+    all.forEach(function (d) {
+      d.addEventListener("toggle", function () {
+        if (!d.open) return;
+        all.forEach(function (o) {
+          if (o !== d) o.open = false;
+        });
+      });
+    });
+    document.addEventListener("click", function (e) {
+      all.forEach(function (d) {
+        if (d.open && !d.contains(e.target)) d.open = false;
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      all.forEach(function (d) {
+        if (d.open) {
+          d.open = false;
+          d.querySelector("summary").focus();
+        }
+      });
+    });
+  }
+
   /* --------------------------------------------------------------- boot */
   function boot() {
     initHeader();
@@ -770,6 +801,7 @@
     initProjectCollapse();
     initListingFilter();
     initHeroWaves();
+    initFunderOverlays();
   }
 
   if (document.readyState === "loading") {
