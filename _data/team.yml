@@ -12,7 +12,9 @@
 #   scholar        Google Scholar user id (the `user=` value of the profile URL)
 #   github         GitHub handle
 #   linkedin       LinkedIn handle (the part after linkedin.com/in/)
-# Profile links and interests should be added by the members themselves.
+# Profile links and interests are up to the members themselves: the links
+# pre-filled from Pure, the ORCID registry, Google Scholar and GitHub are
+# for each member to check, change or remove.
 #
 members:
   - name: Sophie Bauernfeind MSc
@@ -21,6 +23,7 @@ members:
     email: sophie.bauernfeind@fh-hagenberg.at
     image: /assets/images/team/sophie_bauernfeind_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/sophie-bauernfeind
+    orcid: 0009-0005-5290-3900
   - name: FH-Prof. Univ.-Doz. DI Dr. Ulrich Bodenhofer
     category: professor
     gender: m
@@ -28,6 +31,10 @@ members:
     phone: +43 5 0804 22321
     image: /assets/images/team/fh_prof_univ_doz_di_dr_ulrich_bodenhofer.jpg
     details_url: https://pure.fh-ooe.at/en/persons/ulrich-bodenhofer
+    orcid: 0000-0001-6859-8828
+    scholar: DCuv7OEAAAAJ
+    github: UBod
+    linkedin: ulrichbodenhofer
   - name: Harald Brunner
     category: student
     gender: m
@@ -47,6 +54,7 @@ members:
     phone: +43 5 0804 27118
     image: /assets/images/team/martin_hanreich_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/martin-hanreich
+    orcid: 0009-0007-8855-8445
   - name: FH-Assistenzprof. Dr. Oliver Krauss MSc
     category: professor
     gender: m
@@ -54,6 +62,9 @@ members:
     phone: +43 5 0804 27195
     image: /assets/images/team/fh_assistenzprof_dr_oliver_krauss_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/oliver-krauss
+    orcid: 0000-0002-8136-2606
+    scholar: MoKRFRYAAAAJ
+    github: oliver-krauss
   - name: Helga Billensteiner MSc
     category: researcher
     gender: f
@@ -81,6 +92,10 @@ members:
     phone: +43 5 0804 27143
     image: /assets/images/team/fh_assistenzprof_andreas_pointner_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/andreas-manfred-pointner
+    orcid: 0000-0001-8642-1161
+    scholar: GdUUKKUAAAAJ
+    github: pointan
+    linkedin: pointan
   - name: FH-Assistenzprof. Christoph Praschl MSc
     category: project_manager
     gender: m
@@ -88,6 +103,9 @@ members:
     phone: +43 5 0804 27150
     image: /assets/images/team/fh_assistenzprof_christoph_praschl_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/christoph-praschl
+    orcid: 0000-0002-9711-4818
+    scholar: OYctnhsAAAAJ
+    github: cpraschl
   - name: Sebastian Pritz MSc
     category: researcher
     gender: m
@@ -95,6 +113,7 @@ members:
     phone: +43 5 0804 27196
     image: /assets/images/team/sebastian_pritz_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/sebastian-pritz
+    orcid: 0009-0002-1028-5444
   - name: Simone Sandler MSc
     category: researcher
     gender: f
@@ -102,6 +121,7 @@ members:
     phone: +43 5 0804 27135
     image: /assets/images/team/simone_sandler_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/simone-sandler
+    orcid: 0000-0001-8919-7804
   - name: Dipl.-Ing. Natasha Trajkovska MSc
     category: researcher
     gender: f
@@ -115,6 +135,8 @@ members:
     phone: +43 5 0804 22038
     image: /assets/images/team/di_fh_dr_gerald_adam_zwettler_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/gerald-adam-zwettler
+    orcid: 0000-0002-4966-6853
+    scholar: QGD2wrAAAAAJ
 
 # Former members, listed below the team (_includes/team-alumni.html).
 # Opt-in only and without photos: an entry is shown only with the date of
