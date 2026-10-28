@@ -148,14 +148,130 @@ members:
     scholar: QGD2wrAAAAAJ
     linkedin: gerald-zwettler-59b3a8104
 
-# Former members, listed below the team (_includes/team-alumni.html).
-# Opt-in only and without photos: an entry is shown only with the date of
-# the person's consent in `consent:`; remove the entry when consent is
-# withdrawn.
-#   name       required
-#   consent    required to be shown, YYYY-MM-DD
-#   years      optional, e.g. 2015–2021
+# Former members, listed below the team (_includes/team-alumni.html) in the
+# order of this list (by last name). Remove people who rejoin the team.
+#   name                required
+#   image               optional, 3:4 portrait (assets/images/team/alumni/);
+#                       without one a placeholder is shown
+#   years               optional, e.g. 2015–2021
 #   role_de / role_en   optional, last role in the group
-#   now_de / now_en     optional, current position (only if agreed to)
-#   url                 optional, a link the person chose
-alumni: []
+#   now_de / now_en     optional, current position
+#   url                 optional, e.g. a profile page
+alumni:
+  - name: Florian Abraham
+    image: /assets/images/team/alumni/abraham_florian.jpg
+  - name: Selina Adlberger
+    image: /assets/images/team/alumni/adlberger_selina.jpg
+  - name: Johann Aichberger
+    image: /assets/images/team/alumni/aichberger_johann.jpg
+  - name: Philipp Aichinger
+    image: /assets/images/team/alumni/aichinger_philipp.jpg
+  - name: Philipp Aldea
+    image: /assets/images/team/alumni/aldea_philipp.jpg
+  - name: Anthony Alessi
+    image: /assets/images/team/alumni/alessi_anthony.jpg
+  - name: Josef Altmann
+    image: /assets/images/team/alumni/altmann_josef.jpg
+  - name: M. Angermaier
+    image: /assets/images/team/alumni/angermaier_m.jpg
+  - name: Nicolas Arvanitidis
+  - name: David Baumgartner
+    image: /assets/images/team/alumni/baumgartner_david.jpg
+  - name: Mügem Boral
+  - name: Clara Diesenreiter
+    image: /assets/images/team/alumni/diesenreiter_clara.jpg
+  - name: Daniel Dorfmeister
+    image: /assets/images/team/alumni/dorfmeister_daniel.jpg
+  - name: Mimoun El Asri
+    image: /assets/images/team/alumni/elasri_mimoun.jpg
+  - name: Andreas Erhard
+    image: /assets/images/team/alumni/erhard_andreas.jpg
+  - name: Stefan Freilinger
+    image: /assets/images/team/alumni/freilinger_stefan.jpg
+  - name: Alexander Freller
+    image: /assets/images/team/alumni/freller_alexander.jpg
+  - name: Lisa-Maria Freller
+    image: /assets/images/team/alumni/freller_lisa-maria.jpg
+  - name: Julian Haas
+    image: /assets/images/team/alumni/haas_julian.jpg
+  - name: Hacker
+    image: /assets/images/team/alumni/hacker_unknown.jpg
+  - name: Emmanuel Helm
+    image: /assets/images/team/alumni/helm_emmanuel.jpg
+  - name: Oliver Hiesl
+    image: /assets/images/team/alumni/hiesl_oliver.jpg
+  - name: Sebastian Huber
+    image: /assets/images/team/alumni/huber_sebastian.jpg
+  - name: Dmitry Ivanov
+    image: /assets/images/team/alumni/ivanov_dmitry.jpg
+  - name: Francesca Kaschnig
+    image: /assets/images/team/alumni/kaschnig_francesca.jpg
+  - name: Stefan Kastenhofer
+    image: /assets/images/team/alumni/kastenhofer_stefan.jpg
+  - name: Thomas Kniplitsch
+    image: /assets/images/team/alumni/kniplitsch_thomas.jpg
+  - name: Alpkan Kocaslan
+  - name: Jessica Köberle
+    image: /assets/images/team/alumni/koeberle_jessica.jpg
+  - name: Kevin Liendorfer
+    image: /assets/images/team/alumni/liendorfer_kevin.jpg
+  - name: Anna Lin
+    image: /assets/images/team/alumni/lin_anna.jpg
+  - name: Benito Lo Bue
+    image: /assets/images/team/alumni/lobue_benito.jpg
+  - name: Toon Lodts
+    image: /assets/images/team/alumni/lodts_toon.jpg
+  - name: Elisabeth Mayrhuber
+    image: /assets/images/team/alumni/mayrhuber_elisabeth.jpg
+  - name: Rainer Meindl
+    image: /assets/images/team/alumni/meindl_rainer.jpg
+  - name: Monika Moser
+    image: /assets/images/team/alumni/moser_monika.jpg
+  - name: Karen O’Brien
+    image: /assets/images/team/alumni/obrien_karen.jpg
+  - name: Yuta Ono
+    image: /assets/images/team/alumni/ono_yuta.jpg
+  - name: Konstantin Papesh
+    image: /assets/images/team/alumni/papesh_konstantin.jpg
+  - name: Benjamin Pils
+    image: /assets/images/team/alumni/pils_benjamin.jpg
+  - name: Jonathan Ponschab
+    image: /assets/images/team/alumni/ponschab_jonathan.jpg
+  - name: Anna Reichhardt
+    image: /assets/images/team/alumni/reichhardt_anna.jpg
+  - name: Lukas Reithmeier
+    image: /assets/images/team/alumni/reithmeier_lukas.jpg
+  - name: Joselyn Romero
+    image: /assets/images/team/alumni/romero_joselyn.jpg
+  - name: Andreas Schuler
+    image: /assets/images/team/alumni/schuler_andreas.jpg
+  - name: Jacqueline Schwebach
+    image: /assets/images/team/alumni/schwebach_jacqueline.jpg
+  - name: Eva-Maria Spitzer
+    image: /assets/images/team/alumni/spitzer_eva-maria.jpg
+  - name: Norbert Stefanski
+    image: /assets/images/team/alumni/stefanski_norbert.jpg
+  - name: Alex Stelzhammer
+    image: /assets/images/team/alumni/stelzhammer_alex.jpg
+  - name: Michael Stradner
+    image: /assets/images/team/alumni/stradner_michael.jpg
+  - name: Melani Strasser
+    image: /assets/images/team/alumni/strasser_melani.jpg
+  - name: Thomas Stüttler
+    image: /assets/images/team/alumni/stuettler_thomas.jpg
+  - name: Daniel Stütz
+    image: /assets/images/team/alumni/stuetz_daniel.jpg
+  - name: Clemens Tögel
+    image: /assets/images/team/alumni/toegel_clemens.jpg
+  - name: Barbara Traxler
+    image: /assets/images/team/alumni/traxler_barbara.jpg
+  - name: Mitch van den Broek
+    image: /assets/images/team/alumni/vandenbroek_mitch.jpg
+  - name: Daniel Wilfing
+    image: /assets/images/team/alumni/wilfing_daniel.jpg
+  - name: Michael Würflinger
+    image: /assets/images/team/alumni/wuerflinger_michael.jpg
+  - name: Stefan Zeitlhofer
+    image: /assets/images/team/alumni/zeitlhofer_stefan.jpg
+  - name: Samuel Zühlke
+    image: /assets/images/team/alumni/zuehlke_samuel.jpg

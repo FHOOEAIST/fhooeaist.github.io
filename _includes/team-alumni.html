@@ -1,20 +1,19 @@
 {% comment %}
-Alumni list below the current team, from `alumni:` in _data/team.yml.
-Expects include.lang ("de" or "en").
+Alumni list below the current team, from `alumni:` in _data/team.yml, in
+the order of that list (by last name). Expects include.lang ("de" or "en").
 
-Opt-in only, names without photos (GDPR, see issue #16): an entry is shown
-only when it records the date of the person's consent in `consent:`, so a
-name added without asking never reaches the page. The whole section is left
-out while nobody has opted in.
+Each entry is a compact card: the portrait (or a placeholder) next to the
+name and the optional years, last role and current position. The whole
+section is left out while the list is empty.
 {% endcomment %}
 {% assign en = false %}{% if include.lang == "en" %}{% assign en = true %}{% endif %}
-{% assign alumni = site.data.team.alumni | where_exp: "a", "a.consent" | sort: "name" %}
+{% assign alumni = site.data.team.alumni %}
 {% if alumni.size > 0 %}
 <section class="team-alumni" id="alumni">
   <div class="section-head">
     <div>
       <h2>Alumni</h2>
-      <p>{% if en %}Former members of the research group who agreed to be listed here.{% else %}Ehemalige Mitglieder der Forschungsgruppe, die einer Nennung hier zugestimmt haben.{% endif %}</p>
+      <p>{% if en %}Former members of the research group.{% else %}Ehemalige Mitglieder der Forschungsgruppe.{% endif %}</p>
     </div>
   </div>
   <ul class="alumni-list">
@@ -22,9 +21,18 @@ out while nobody has opted in.
     {% if en %}{% assign last_role = person.role_en | default: person.role_de %}{% assign now = person.now_en | default: person.now_de %}
     {% else %}{% assign last_role = person.role_de | default: person.role_en %}{% assign now = person.now_de | default: person.now_en %}{% endif %}
     <li>
-      <span class="alumni-name">{% if person.url %}<a href="{{ person.url }}" target="_blank" rel="noopener">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</span>
-      {% if person.years or last_role %}<span class="alumni-meta">{% if person.years %}{{ person.years }}{% endif %}{% if person.years and last_role %} · {% endif %}{{ last_role }}</span>{% endif %}
-      {% if now %}<span class="alumni-now">{% if en %}Now:{% else %}Heute:{% endif %} {{ now }}</span>{% endif %}
+      <span class="alumni-image">
+        {% if person.image %}
+        <img src="{{ person.image | relative_url }}" alt="{{ person.name }}" loading="lazy">
+        {% else %}
+        <i class="fas fa-user" aria-hidden="true"></i>
+        {% endif %}
+      </span>
+      <span class="alumni-text">
+        <span class="alumni-name">{% if person.url %}<a href="{{ person.url }}" target="_blank" rel="noopener">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</span>
+        {% if person.years or last_role %}<span class="alumni-meta">{% if person.years %}{{ person.years }}{% endif %}{% if person.years and last_role %} · {% endif %}{{ last_role }}</span>{% endif %}
+        {% if now %}<span class="alumni-now">{% if en %}Now:{% else %}Heute:{% endif %} {{ now }}</span>{% endif %}
+      </span>
     </li>
     {% endfor %}
   </ul>
