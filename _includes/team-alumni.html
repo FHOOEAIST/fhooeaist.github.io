@@ -1,10 +1,12 @@
 {% comment %}
-Alumni list below the current team, from `alumni:` in _data/team.yml, in
-the order of that list (by last name). Expects include.lang ("de" or "en").
+Former staff ("Ehemalige Mitarbeiter*innen") below the current team, from
+`alumni:` in _data/team.yml, in the order of that list (by last name).
+Expects include.lang ("de" or "en").
 
 Each entry is a compact card: the portrait (or a placeholder) next to the
-name and the optional years, last role and current position. The whole
-section is left out while the list is empty.
+name and the optional years, last role and current position. The grid is
+folded to two rows like the completed projects (initProjectCollapse in
+assets/js/main.js). The whole section is left out while the list is empty.
 {% endcomment %}
 {% assign en = false %}{% if include.lang == "en" %}{% assign en = true %}{% endif %}
 {% assign alumni = site.data.team.alumni %}
@@ -12,29 +14,37 @@ section is left out while the list is empty.
 <section class="team-alumni" id="alumni">
   <div class="section-head">
     <div>
-      <h2>Alumni</h2>
-      <p>{% if en %}Former members of the research group.{% else %}Ehemalige Mitglieder der Forschungsgruppe.{% endif %}</p>
+      <h2>{% if en %}Former staff{% else %}Ehemalige Mitarbeiter*innen{% endif %}</h2>
+      <p>{% if en %}{{ alumni.size }} former members of the research group{% else %}{{ alumni.size }} ehemalige Mitglieder der Forschungsgruppe{% endif %}</p>
     </div>
   </div>
-  <ul class="alumni-list">
-    {% for person in alumni %}
-    {% if en %}{% assign last_role = person.role_en | default: person.role_de %}{% assign now = person.now_en | default: person.now_de %}
-    {% else %}{% assign last_role = person.role_de | default: person.role_en %}{% assign now = person.now_de | default: person.now_en %}{% endif %}
-    <li>
-      <span class="alumni-image">
-        {% if person.image %}
-        <img src="{{ person.image | relative_url }}" alt="{{ person.name }}" loading="lazy">
-        {% else %}
-        <i class="fas fa-user" aria-hidden="true"></i>
-        {% endif %}
-      </span>
-      <span class="alumni-text">
-        <span class="alumni-name">{% if person.url %}<a href="{{ person.url }}" target="_blank" rel="noopener">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</span>
-        {% if person.years or last_role %}<span class="alumni-meta">{% if person.years %}{{ person.years }}{% endif %}{% if person.years and last_role %} · {% endif %}{{ last_role }}</span>{% endif %}
-        {% if now %}<span class="alumni-now">{% if en %}Now:{% else %}Heute:{% endif %} {{ now }}</span>{% endif %}
-      </span>
-    </li>
-    {% endfor %}
-  </ul>
+  <div class="project-collapse" data-project-collapse>
+    <ul class="alumni-list">
+      {% for person in alumni %}
+      {% if en %}{% assign last_role = person.role_en | default: person.role_de %}{% assign now = person.now_en | default: person.now_de %}
+      {% else %}{% assign last_role = person.role_de | default: person.role_en %}{% assign now = person.now_de | default: person.now_en %}{% endif %}
+      <li>
+        <span class="alumni-image">
+          {% if person.image %}
+          <img src="{{ person.image | relative_url }}" alt="{{ person.name }}" loading="lazy">
+          {% else %}
+          <i class="fas fa-user" aria-hidden="true"></i>
+          {% endif %}
+        </span>
+        <span class="alumni-text">
+          <span class="alumni-name">{% if person.url %}<a href="{{ person.url }}" target="_blank" rel="noopener">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</span>
+          {% if person.years or last_role %}<span class="alumni-meta">{% if person.years %}{{ person.years }}{% endif %}{% if person.years and last_role %} · {% endif %}{{ last_role }}</span>{% endif %}
+          {% if now %}<span class="alumni-now">{% if en %}Now:{% else %}Heute:{% endif %} {{ now }}</span>{% endif %}
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% if en %}{% assign t_more = "Show all former staff" %}{% assign t_less = "Show fewer former staff" %}{% else %}{% assign t_more = "Alle ehemaligen Mitarbeiter*innen anzeigen" %}{% assign t_less = "Weniger ehemalige Mitarbeiter*innen anzeigen" %}{% endif %}
+  <div class="project-collapse-bar" data-project-collapse-bar hidden>
+    <button type="button" class="project-collapse-toggle" aria-expanded="false" data-label-more="{{ t_more }}" data-label-less="{{ t_less }}" aria-label="{{ t_more }}" title="{{ t_more }}">
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </button>
+  </div>
 </section>
 {% endif %}
