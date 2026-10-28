@@ -228,15 +228,15 @@
   color: var(--color-white);
 }
 
-/* opt-in alumni list: names only, no photos */
+/* alumni: compact cards, portrait next to the name */
 .team-alumni {
   margin-top: 4rem;
 }
 
 .alumni-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 0.75rem 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.75rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -244,20 +244,51 @@
 
 .alumni-list li {
   display: flex;
-  flex-direction: column;
-  padding: 0.75rem 1rem;
-  border-left: 3px solid var(--color-line-strong);
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.6rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+}
+
+.alumni-image {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: var(--border-radius);
   background: var(--color-bg-light);
+  color: var(--color-line-strong);
+  font-size: 1.25rem;
+}
+
+.alumni-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.alumni-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .alumni-name {
   font-weight: var(--font-weight-bold);
+  font-size: 0.95rem;
   color: var(--color-heading);
 }
 
 .alumni-meta,
 .alumni-now {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--color-text-light);
 }
 
