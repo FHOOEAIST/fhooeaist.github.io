@@ -325,18 +325,18 @@ members:
 
 ### Alumni
 
-Former members can be listed below the team (`alumni:` in the same file, [`_includes/team-alumni.html`](_includes/team-alumni.html)) – **opt-in only and without photos** (GDPR). An entry is rendered only when it records the date of the person's consent; remove it when consent is withdrawn. The section is hidden while the list is empty.
+Former staff are listed below the team under "Ehemalige Mitarbeiter*innen" / "Former staff" (`alumni:` in the same file, [`_includes/team-alumni.html`](_includes/team-alumni.html)) as compact cards with their portrait, in the order of the list (keep it sorted by last name), folded to two rows like the completed projects. Portraits are 3:4 JPEGs in `assets/images/team/alumni/`; an entry without `image` gets a placeholder. Remove people from the list when they rejoin the team. The section is hidden while the list is empty.
 
 ```yaml
 alumni:
   - name: Max Mustermann
-    consent: 2026-10-23        # required, otherwise the entry is not shown
+    image: /assets/images/team/alumni/mustermann_max.jpg   # optional
     years: 2015–2021           # optional
     role_de: Wissenschaftlicher Mitarbeiter   # optional, last role in the group
     role_en: Research associate
-    now_de: Data Scientist bei …              # optional, only if the person agreed
+    now_de: Data Scientist bei …              # optional, current position
     now_en: Data scientist at …
-    url: https://…                            # optional, a link the person chose
+    url: https://…                            # optional
 ```
 
 ---
