@@ -315,7 +315,7 @@ members:
 
 ### Alumni
 
-Former members are listed below the team (`alumni:` in the same file, [`_includes/team-alumni.html`](_includes/team-alumni.html)) as compact cards with their portrait, in the order of the list (keep it sorted by last name). Portraits are 3:4 JPEGs in `assets/images/team/alumni/`; an entry without `image` gets a placeholder. Remove people from the list when they rejoin the team. The section is hidden while the list is empty.
+Former staff are listed below the team under "Ehemalige Mitarbeiter*innen" / "Former staff" (`alumni:` in the same file, [`_includes/team-alumni.html`](_includes/team-alumni.html)) as compact cards with their portrait, in the order of the list (keep it sorted by last name), folded to two rows like the completed projects. Portraits are 3:4 JPEGs in `assets/images/team/alumni/`; an entry without `image` gets a placeholder. Remove people from the list when they rejoin the team. The section is hidden while the list is empty.
 
 ```yaml
 alumni:

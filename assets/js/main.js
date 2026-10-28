@@ -351,17 +351,22 @@
   }
 
   /* --------------------------------------------------- project collapse */
-  // Projects page: the grid of completed projects starts folded to its first
-  // two rows, the third fading out; the chevron button below unfolds it.
+  // Folded grids (completed projects, area pages, former staff on the team
+  // page): every [data-project-collapse] wrapper starts folded to the first
+  // two rows of the grid inside it, the third fading out; the chevron button
+  // in the [data-project-collapse-bar] right after it unfolds it.
   // Row breaks are measured (the grid is auto-fill, so the row count depends
   // on the viewport and on the area filter) and re-measured on resize and
   // after filtering. Two rows or fewer: nothing to fold, no button.
   function initProjectCollapse() {
-    var wrap = document.querySelector("[data-project-collapse]");
-    var bar = document.querySelector("[data-project-collapse-bar]");
-    if (!wrap || !bar) return;
+    document.querySelectorAll("[data-project-collapse]").forEach(initCollapse);
+  }
+
+  function initCollapse(wrap) {
+    var bar = wrap.nextElementSibling;
+    if (!bar || !bar.hasAttribute("data-project-collapse-bar")) return;
     var toggle = bar.querySelector(".project-collapse-toggle");
-    var grid = wrap.querySelector(".project-grid");
+    var grid = wrap.firstElementChild;
     if (!toggle || !grid) return;
 
     var ROWS_SHOWN = 2;
@@ -370,7 +375,7 @@
     var collapsedHeight = 0;
 
     function measure() {
-      var cards = Array.prototype.slice.call(grid.querySelectorAll(".project-card:not([hidden])"));
+      var cards = Array.prototype.slice.call(grid.children).filter(function (item) { return !item.hidden; });
       var rows = [];
       cards.forEach(function (card) {
         var top = card.offsetTop;
@@ -416,7 +421,7 @@
       render();
       if (!expanded) {
         // folding a long grid can leave the visitor far below it
-        var group = wrap.closest("[data-project-group]") || wrap;
+        var group = wrap.closest("[data-project-group], section") || wrap;
         if (group.getBoundingClientRect().top < 0) group.scrollIntoView();
       }
     });
