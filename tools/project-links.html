@@ -14,7 +14,8 @@ else a suggestion: a project whose name occurs in the title or abstract,
 or failing that the project whose description is most similar to the entry's
 title and abstract (TF-IDF), weighted by runtime and area. "Download" saves the choices
 as project_links.json; scripts/apply_project_links.py writes them into the
-front matter of the DE and EN files. Only rendered in PR previews and local
+front matter of the DE and EN files. "Upload" loads such a file again, so a
+state can be passed between computers for a second check. Only rendered in PR previews and local
 builds, never in production.
 {% endcomment %}
 {% if site.preview or jekyll.environment != "production" %}
@@ -22,7 +23,7 @@ builds, never in production.
 {% assign theses = site.theses | where: "lang", "de" | sort: "date" | reverse %}
 {% assign projects = site.projects | where: "lang", "de" | sort_natural: "sort_title" %}
 
-{% include page-header.html eyebrow="Werkzeug · nur in der PR-Vorschau" title="Projekt-Zuordnung" lead="Ordne jeder Publikation und Diplomarbeit ihr Projekt zu (höchstens eines). Vorausgewählt ist die bestehende Zuordnung oder ein Vorschlag: der Projektname im Titel oder Abstract, sonst das Projekt mit der ähnlichsten Beschreibung, gewichtet nach Laufzeit und Bereich. Die Auswahl wird im Browser zwischengespeichert; „Herunterladen“ speichert sie als project_links.json für scripts/apply_project_links.py." %}
+{% include page-header.html eyebrow="Werkzeug · nur in der PR-Vorschau" title="Projekt-Zuordnung" lead="Ordne jeder Publikation und Diplomarbeit ihr Projekt zu (höchstens eines). Vorausgewählt ist die bestehende Zuordnung oder ein Vorschlag: der Projektname im Titel oder Abstract, sonst das Projekt mit der ähnlichsten Beschreibung, gewichtet nach Laufzeit und Bereich. Die Auswahl wird im Browser zwischengespeichert; „Herunterladen“ speichert sie als project_links.json für scripts/apply_project_links.py, „Hochladen“ lädt eine solche Datei wieder (z. B. von einem anderen Rechner zum Gegenprüfen)." %}
 
 <div class="container" data-pagefind-ignore>
   <div class="pl-toolbar">
@@ -40,6 +41,8 @@ builds, never in production.
     <div class="pl-actions">
       <button type="button" class="btn btn-sm btn-outline" data-action="accept">Alle möglichen übernehmen</button>
       <button type="button" class="btn btn-sm btn-outline" data-action="reset">Zurücksetzen</button>
+      <button type="button" class="btn btn-sm btn-outline" data-action="upload"><i class="fas fa-upload" aria-hidden="true"></i> Hochladen</button>
+      <input type="file" accept=".json,application/json" data-upload hidden>
       <button type="button" class="btn btn-sm" data-action="download"><i class="fas fa-download" aria-hidden="true"></i> Herunterladen</button>
     </div>
   </div>
@@ -299,6 +302,37 @@ builds, never in production.
     a.href = URL.createObjectURL(blob);
     a.download = "project_links.json";
     document.body.appendChild(a); a.click(); a.remove();
+  });
+
+  // Loads a downloaded project_links.json (e.g. from another computer). Every
+  // entry in the file replaces the current choice; entries the file does not
+  // mention keep theirs, unknown entries and projects are skipped.
+  var upload = document.querySelector("[data-upload]");
+  document.querySelector('[data-action="upload"]').addEventListener("click", function () { upload.click(); });
+  upload.addEventListener("change", function () {
+    var file = upload.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function () {
+      var data;
+      try { data = JSON.parse(reader.result); } catch (e) { data = null; }
+      upload.value = "";
+      if (!data || typeof data !== "object" || Array.isArray(data)) {
+        alert("Die Datei ist keine gültige project_links.json.");
+        return;
+      }
+      var known = {}, applied = 0, skipped = 0;
+      items.forEach(function (it) { known[it.id] = it; });
+      Object.keys(data).forEach(function (id) {
+        var it = known[id], value = data[id] || "";
+        if (!it || (value && !byId[value])) { skipped++; return; }
+        it.value = value;
+        applied++;
+      });
+      store(); render();
+      alert(applied + " Einträge übernommen" + (skipped ? ", " + skipped + " unbekannte übersprungen." : "."));
+    };
+    reader.readAsText(file);
   });
 
   render();
