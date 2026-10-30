@@ -12,6 +12,15 @@ projects:
     partner: Aximote
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ml
+team:
+  - member: christoph-praschl
+    role: lead
+  - member: gerald-zwettler
+    role: professor
+  - member: helga-billensteiner
+    role: researcher
+  - member: mert-dalkilic
+    role: researcher
 ---
 
 ## AAOS Eco+Maintenance

@@ -13,6 +13,13 @@ projects:
       Universität Linz, Kunstuniversität Linz
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – KIRAS
 category: ml
+team:
+  - member: ulrich-bodenhofer
+    role: professor
+  - member: natasha-trajkovska
+    role: researcher
+  - member: josef-altmann
+    role: researcher
 ---
 
 ## iReduce

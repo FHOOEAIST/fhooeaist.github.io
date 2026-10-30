@@ -12,6 +12,13 @@ projects:
     partner: VIEW Promotion GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: cv
+team:
+  - member: oliver-krauss
+    role: lead
+  - member: gerald-zwettler
+    role: professor
+  - member: rainer-meindl
+    role: researcher
 ---
 
 ## EDEN – Emergency Detection for Elevator Networks

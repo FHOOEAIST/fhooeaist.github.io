@@ -12,6 +12,17 @@ projects:
     partner: CALPANA business consulting GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ml
+team:
+  - member: oliver-krauss
+    role: lead
+  - member: simone-sandler
+    role: researcher
+  - member: sebastian-pritz
+    role: researcher
+  - member: samuel-zuehlke
+    role: researcher
+  - member: lisa-maria-freller
+    role: researcher
 ---
 
 ## Loop
