@@ -5,6 +5,7 @@ permalink: /publications/model-verification-in-graph-databases-and-its-applicati
 date: 2022-12-31
 title: Model Verification in Graph Databases and its Application in Neo4j
 categories: [se]
+projects: [projects:projekt-aicher]
 reference: Praschl C., Pointner A., Krauss O., Helm E., Schuler A. “Model Verification
   in Graph Databases and its Application in Neo4j.” Proceedings of the 34th European
   Modeling and Simulation Symposium EMSS2022, Rom, Italy (2022).

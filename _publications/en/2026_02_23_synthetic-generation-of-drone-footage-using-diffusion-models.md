@@ -7,4 +7,5 @@ title: Syntethic Generation of Drone Footage using Diffusion Models
 reference: Praschl C., Karbasch M., Schedl D. “Syntethic Generation of Drone Footage
   using Diffusion Models“, Eurocast 2026.
 categories: [cv, ml, geo]
+projects: [projects:thumper]
 ---

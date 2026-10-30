@@ -10,6 +10,7 @@ reference: Praschl C., Kaiser R., Zwettler G. (2023). Generative Adversarial Net
   Structures. In Proceedings of the 18th International Joint Conference on Computer
   Vision, Imaging and Computer Graphics Theory and Applications – VISAPP.
 categories: [cv, ml, geo]
+projects: [projects:alpinio20]
 doi: https://doi.org/10.5220/0011607100003417
 ---
 

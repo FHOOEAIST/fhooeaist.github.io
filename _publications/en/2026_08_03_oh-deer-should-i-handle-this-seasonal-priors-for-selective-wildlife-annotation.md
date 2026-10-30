@@ -9,6 +9,7 @@ reference: Markoff H., Praschl C., Jørgensen A., Mogensen C., Skadhauge M., Bee
   S., Ørsted M., Schedl D. “Oh Deer, How Should I Handle This? Seasonal Priors for Selective
   Wildlife Fine-Grained Annotation“, CV4E Workshop @ ECCV 2026.
 categories: [cv, ml, geo]
+projects: [projects:thumper]
 external_url: https://arxiv.org/abs/2608.02762
 ---
 

@@ -7,6 +7,7 @@ title: Modeling Wildlife Accident Risk with Gaussian Mixture Models
 reference: 'Praschl C., Schedl D., Stöckl A. “Modeling Wildlife Accident Risk with
   Gaussian Mixture Models“, In: Lecture Notes in Computer Science. Volume 15173 2025.'
 categories: [ml, geo]
+projects: [projects:thumper]
 doi: https://doi.org/10.1007/978-3-031-82957-4_5
 ---
 

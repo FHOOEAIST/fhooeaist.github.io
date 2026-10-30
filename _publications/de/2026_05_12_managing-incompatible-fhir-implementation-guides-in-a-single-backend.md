@@ -8,6 +8,7 @@ reference: 'Krauss O., Pointner A., Praschl C. “Managing Incompatible FHIR Imp
   Guides in a Single Backend: Namespace-Based Storage in Neo4j and Multi-Profile Delivery“,
   DHealth 2026.'
 categories: [ehealth, se]
+projects: [projects:pair]
 doi: https://doi.org/10.3233/SHTI260085
 ---
 

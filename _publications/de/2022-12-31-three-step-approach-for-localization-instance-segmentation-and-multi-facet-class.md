@@ -10,6 +10,7 @@ reference: Praschl C., Zwettler G. Three-Step Approach for Localization, Instanc
   Proceedings of the 11th International Conference on Pattern Recognition Applications
   and Methods. 2022.
 categories: [cv, ml]
+projects: [projects:projekt-woodmaster-plus]
 doi: https://doi.org/10.5220/0010892100003122
 ---
 

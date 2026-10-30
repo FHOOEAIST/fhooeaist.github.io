@@ -35,10 +35,3 @@ In this project the real world outdoor position was determinated with sensors to
 ## Realsimulator
 
 In this project a car was expanded with additionals sensors so it can be used for training simulations in the real vehicle without any real danger. The sensors are used to make the real world interactions available in the virtual environment.
-
-
-## Papers
-
-### 2018 – Towards Retooling The Microsoft HoloLens As Outdoor AR And MR Device
-Proceedings of the 30th European Modeling and Simulation Symposium EMSS2018, Budapest, Ungarn, 2018C. Praschl, O. Krauss, G. Zwettler
-

@@ -9,5 +9,6 @@ reference: Bordag N., Nagy B.M., Zügner E., Ludwig H., Foris V., Nagarj C.,
   Lange T.J., Eichmann T.O., Hoetzenecker K., Pieber T., Olschewski H., Olschewski A.
   "Lipid Ratios for Diagnosis and Prognosis of Pulmonary Hypertension". Am. J. Respir. Crit. Care Med., 211(7):1264–1276, 2025.
 categories: [ehealth, ml]
+projects: [projects:metabolomics-lunge]
 doi: https://doi.org/10.1164/rccm.202407-1345OC
 ---

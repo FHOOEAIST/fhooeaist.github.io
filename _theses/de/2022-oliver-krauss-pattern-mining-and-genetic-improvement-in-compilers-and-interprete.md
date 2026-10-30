@@ -7,6 +7,7 @@ title: 'Pattern Mining and Genetic Improvement in Compilers and Interpreters'
 student: Oliver Krauss
 thesis_type: dissertation
 categories: [se, ml]
+projects: [projects:hcai-2]
 ---
 
 Dissertation an der Johannes Kepler Universität Linz. [Volltext](https://epub.jku.at/obvulihs/content/titleinfo/7728352)

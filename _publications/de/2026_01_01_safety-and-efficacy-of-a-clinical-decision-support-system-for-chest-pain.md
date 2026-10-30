@@ -10,4 +10,5 @@ reference: Bernert L., Krauss O., Praschl C., Sandler S., Trajkovska N., Haider 
   system for chest pain in a tertiary care emergency department“, European Emergency
   Medicine Congress 2026.
 categories: [ehealth]
+projects: [projects:treetop-medical]
 ---

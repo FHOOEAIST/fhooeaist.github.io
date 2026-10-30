@@ -9,6 +9,7 @@ reference: Pointner A., Praschl C., Krauss O., Schuler A., Helm E., Zwettler G. 
   of 29. International Conference in Central Europe on Computer Graphics, Visualization
   and Computer Vision.
 categories: [cv]
+projects: [projects:projekt-aicher]
 doi: https://doi.org/10.24132/CSRN.2021.3101.2
 ---
 

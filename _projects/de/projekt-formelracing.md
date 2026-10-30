@@ -33,10 +33,3 @@ In diesem Projekt wird mithilfe zusätzlicher Sensoren die reale außerräumlich
 ## Realsimulator
 
 In diesem Projekt wurde ein Auto um Sensoren erweitert, sodass eine reale Trainingsumgebung für eine virtuelle Trainingssituation ohne realer Gefahren ermöglicht wird. Dabei wird mithilfe der Sensoren die reale Interaktion mit dem Fahrzeug in der virtuellen Welt verfügbar gemacht.
-
-
-## Papers
-
-### 2018 – Towards Retooling The Microsoft HoloLens As Outdoor AR And MR Device
-Proceedings of the 30th European Modeling and Simulation Symposium EMSS2018, Budapest, Ungarn, 2018C. Praschl, O. Krauss, G. Zwettler
-

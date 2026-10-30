@@ -8,6 +8,7 @@ reference: 'Praschl C., Coucke V., Maschek A., Schedl D. “Stay Local or Go Glo
   Geo-Referenced Bounding Boxes for Tracking Wildlife in Thermal Drone Videos“, IET
   Computer Vision 2026.'
 categories: [cv, ml, geo]
+projects: [projects:thumper]
 doi: https://doi.org/10.1049/cvi2.70077
 ---
 

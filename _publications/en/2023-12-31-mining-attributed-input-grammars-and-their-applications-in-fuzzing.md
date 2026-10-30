@@ -8,6 +8,7 @@ reference: Pointner A. „Mining Attributed Input Grammars and their Application
   Fuzzing,“ 2023 IEEE Conference on Software Testing, Verification and Validation
   (ICST), Dublin, Ireland, 2023, pp. 493-495.
 categories: [se]
+projects: [projects:ag-fuzzer]
 doi: https://doi.org/10.1109/ICST57152.2023.00059
 ---
 

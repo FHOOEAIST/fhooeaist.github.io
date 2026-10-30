@@ -9,6 +9,7 @@ reference: 'Helm E., et al. „FHIR2BPMN: Delivering Actionable Knowledge by Tra
   Between Clinical Pathways and Executable Models.“ Healthcare of the Future 2022.
   IOS Press, 2022. 9-14.'
 categories: [ehealth, pm]
+projects: [projects:projekt-msbpmn]
 doi: https://doi.org/10.3233/SHTI220311
 ---
 

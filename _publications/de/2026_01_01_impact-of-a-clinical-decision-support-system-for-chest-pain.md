@@ -10,4 +10,5 @@ reference: Bernert L., Krauss O., Praschl C., Sandler S., Trajkovska N., Haider 
   chest pain in a tertiary care emergency department“, 25th International Conference
   on Emergency Medicine 2026.
 categories: [ehealth]
+projects: [projects:treetop-medical]
 ---
