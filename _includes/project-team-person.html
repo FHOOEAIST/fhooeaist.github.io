@@ -1,0 +1,52 @@
+{% comment %}
+One person in the team box of a project page (_includes/project-team.html).
+Expects:
+  include.person    — a resolved team entry (_plugins/project_team.rb): the
+                      _data/team.yml entry plus role, years, contact, former
+  include.en        — true on the English page
+  include.team_url  — URL of the team page, the card links to the person there
+  include.featured  — optional, the contact person: larger, e-mail and phone
+                      written out
+
+Former staff (alumni entries) get a "former" marker and no contact details.
+{% endcomment %}
+{% assign person = include.person %}
+{% assign en = include.en %}
+{% assign role = site.data.project_roles | where: "id", person.role | first %}
+{% if role %}
+  {% if en %}{% assign role_label = role.label_en %}
+  {% elsif person.gender == "f" %}{% assign role_label = role.label_de_f %}
+  {% elsif person.gender == "m" %}{% assign role_label = role.label_de_m %}
+  {% else %}{% assign role_label = role.label_de %}{% endif %}
+{% else %}
+  {% assign role_label = person.role %}
+{% endif %}
+{% if person.former %}
+  {% assign person_url = include.team_url | append: "#alumni-" | append: person.id %}
+{% else %}
+  {% assign person_url = include.team_url | append: "#member-" | append: person.id %}
+{% endif %}
+<div class="team-person{% if include.featured %} is-featured{% endif %}{% if person.former %} is-former{% endif %}">
+  <a class="team-person-photo" href="{{ person_url }}" tabindex="-1" aria-hidden="true">
+    {% if person.image %}
+    <img src="{{ person.image | relative_url }}" alt="" loading="lazy">
+    {% else %}
+    <i class="fas fa-user"></i>
+    {% endif %}
+  </a>
+  <div class="team-person-text">
+    <a class="team-person-name" href="{{ person_url }}">{{ person.name }}</a>
+    <span class="team-person-role">{{ role_label }}{% if person.years %} · {{ person.years }}{% endif %}</span>
+    {% if person.former %}
+    <span class="team-person-former">{% if en %}Former staff{% else %}Ehemalig{% endif %}</span>
+    {% elsif include.featured %}
+    {% if person.email %}<a class="team-person-contact" href="mailto:{{ person.email }}"><i class="fas fa-envelope" aria-hidden="true"></i>{{ person.email }}</a>{% endif %}
+    {% if person.phone %}<a class="team-person-contact" href="tel:{{ person.phone | remove: ' ' }}"><i class="fas fa-phone" aria-hidden="true"></i>{{ person.phone }}</a>{% endif %}
+    {% elsif person.email or person.phone %}
+    <span class="team-person-icons">
+      {% if person.email %}<a href="mailto:{{ person.email }}" title="{{ person.email }}" aria-label="{% if en %}Email{% else %}E-Mail{% endif %} – {{ person.name }}"><i class="fas fa-envelope" aria-hidden="true"></i></a>{% endif %}
+      {% if person.phone %}<a href="tel:{{ person.phone | remove: ' ' }}" title="{{ person.phone }}" aria-label="{% if en %}Phone{% else %}Telefon{% endif %} – {{ person.name }}"><i class="fas fa-phone" aria-hidden="true"></i></a>{% endif %}
+    </span>
+    {% endif %}
+  </div>
+</div>

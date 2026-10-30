@@ -1,0 +1,61 @@
+{% comment %}
+The "Team" box at the side of a project page (_layouts/project.html), built
+from the project's `team:` lists as resolved by _plugins/project_team.rb
+(page.team_groups, page.team_contact). Expects include.en.
+
+The contact person comes first, highlighted. Each group (one per distinct
+team; several only when phases have their own `team:`, latest first, with a
+phase heading) shows its first few people as cards; the rest are folded
+behind a row of small portraits with "+N", GitHub style.
+{% endcomment %}
+{% assign en = include.en %}
+{% assign team_page = site.pages | where: "page_id", "team" | where: "lang", site.active_lang | first %}
+{% assign team_url = team_page.permalink | relative_url %}
+{% assign shown = 5 %}
+<aside class="project-team" aria-labelledby="project-team-title">
+  <h2 class="project-team-title" id="project-team-title">Team</h2>
+
+  {% if page.team_contact %}
+  <div class="project-team-contact">
+    <p class="project-team-label">{% if en %}Contact{% else %}Ansprechperson{% endif %}</p>
+    {% include project-team-person.html person=page.team_contact en=en team_url=team_url featured=true %}
+  </div>
+  {% endif %}
+
+  {% for group in page.team_groups %}
+  {% if group.members.size > 0 %}
+  <div class="project-team-group">
+    {% if group.phases %}
+    <p class="project-team-label">
+      {%- if group.phases.size > 1 %}{% if en %}Phases{% else %}Phasen{% endif %} {{ group.phases | join: ", " }}
+      {%- else %}{% assign phase_index = group.phases[0] | minus: 1 %}{% assign phase = page.projects[phase_index] %}Phase {{ group.phases[0] }}{% if phase.title and phase.title != page.title %} · {{ phase.title }}{% endif %}
+      {%- endif -%}
+    </p>
+    {% endif %}
+    <div class="project-team-list">
+      {% for person in group.members limit: shown %}
+      {% include project-team-person.html person=person en=en team_url=team_url %}
+      {% endfor %}
+    </div>
+    {% if group.members.size > shown %}
+    {% assign rest = group.members.size | minus: shown %}
+    <details class="project-team-more">
+      <summary aria-label="{% if en %}Show {{ rest }} more{% else %}{{ rest }} weitere anzeigen{% endif %}">
+        <span class="project-team-avatars" aria-hidden="true">
+          {% for person in group.members offset: shown limit: 6 %}
+          <span class="project-team-avatar" title="{{ person.name }}">{% if person.image %}<img src="{{ person.image | relative_url }}" alt="" loading="lazy">{% else %}<i class="fas fa-user"></i>{% endif %}</span>
+          {% endfor %}
+        </span>
+        <span class="project-team-count">+{{ rest }}</span>
+      </summary>
+      <div class="project-team-list">
+        {% for person in group.members offset: shown %}
+        {% include project-team-person.html person=person en=en team_url=team_url %}
+        {% endfor %}
+      </div>
+    </details>
+    {% endif %}
+  </div>
+  {% endif %}
+  {% endfor %}
+</aside>

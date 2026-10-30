@@ -40,7 +40,14 @@ css: projects
   </div>
 </div>
 
-<div class="container container-narrow">
+{%- comment -%}
+  With a `team:` list the page widens to make room for the team box at the
+  side (below the text on narrow screens); without one it stays as before.
+{%- endcomment -%}
+{% assign has_team = false %}
+{% if page.team_contact or page.team_groups.size > 0 %}{% assign has_team = true %}{% endif %}
+
+<div class="container{% unless has_team %} container-narrow{% endunless %}">
   <article class="project-article">
     {%- comment -%}
       Split content by <hr /> which is what Jekyll converts --- to
@@ -54,6 +61,7 @@ css: projects
       {% assign projects_count = 0 %}
     {% endif %}
 
+    {% if has_team %}<div class="project-body">{% endif %}
     <div class="entry-content article-body">
       {% for proj in page.projects %}
       <section class="project-section">
@@ -122,6 +130,10 @@ css: projects
         {% endfor %}
       {% endif %}
     </div>
+    {% if has_team %}
+      {% include project-team.html en=en %}
+    </div>
+    {% endif %}
 
     {%- comment -%}
       Output of the project: publications and theses whose `projects:` list

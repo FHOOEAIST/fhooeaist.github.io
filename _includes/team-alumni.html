@@ -23,7 +23,7 @@ assets/js/main.js). The whole section is left out while the list is empty.
       {% for person in alumni %}
       {% if en %}{% assign last_role = person.role_en | default: person.role_de %}{% assign now = person.now_en | default: person.now_de %}
       {% else %}{% assign last_role = person.role_de | default: person.role_en %}{% assign now = person.now_de | default: person.now_en %}{% endif %}
-      <li>
+      <li{% if person.id %} id="alumni-{{ person.id }}"{% endif %}>
         <span class="alumni-image">
           {% if person.image %}
           <img src="{{ person.image | relative_url }}" alt="{{ person.name }}" loading="lazy">

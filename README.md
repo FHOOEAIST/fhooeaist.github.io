@@ -139,6 +139,30 @@ Markdown description for Bambi 2...
 > single file describe multi-phase projects. The listing uses `laufzeitEnd`
 > to decide whether a project is still active.
 
+### Project Team
+
+A project can list who works (or worked) on it. The page then shows a **Team** box at the side (below the text on narrow screens) with each person's portrait, name and role in the project, linked to their card on the team page; the contact person comes first with e-mail and phone. A project without a `team:` list shows no box.
+
+```yaml
+team:                                # same block in the DE and the EN file
+  - member: christoph-praschl        # `id` of a member or alumni entry in _data/team.yml
+    role: lead                       # id from _data/project_roles.yml
+    contact: true                    # optional: shown first as the contact person
+  - member: andreas-pointner
+    role: senior_researcher
+  - member: sebastian-pritz
+    role: researcher
+    years: 2021–2023                 # optional, if the person was only on it for a while
+```
+
+- **Roles** (`lead`, `professor`, `senior_researcher`, `researcher`, `phd_student`, `student_assistant`) and their DE/EN labels live in [`_data/project_roles.yml`](_data/project_roles.yml); German labels are gendered by the member's `gender`. The box sorts by role (in the order of that file), then by last name.
+- **Contact person:** the entry with `contact: true`, otherwise the first `lead` who is still on the team.
+- **Former staff** (ids from `alumni:`) are shown with their years and a "former" marker, without contact details.
+- **Phases:** an entry of the `projects:` list can carry its own `team:` when the team changed; phases without one use the project-level list. If the phases end up with different teams, the box shows one group per team, latest phase first.
+- **Long teams:** the first five people of a group are shown as cards, the rest behind a row of small portraits with "+N".
+
+The ids are resolved by [`_plugins/project_team.rb`](_plugins/project_team.rb), which warns during the build about unknown member or role ids and about a project whose DE and EN files list different teams.
+
 ### Ordering
 
 Both sections of the projects listing (active and completed) are sorted
@@ -306,11 +330,12 @@ It looks for the logo on each partner's start page (skipping entries that alread
 
 Team members are listed from [`_data/team.yml`](_data/team.yml). Each member carries a `category:` (`professor` | `project_manager` | `researcher` | `student`, labels in [`_data/team_categories.yml`](_data/team_categories.yml)) that is shown after the name, and a `gender:` (`m` | `f`) that picks the German form of that label (neutral fallback without it); an optional `role:` (e.g. the study programme of a student employee) is shown next to it.
 
-All further fields are optional and only rendered when present (cards: [`_includes/team-card.html`](_includes/team-card.html)). Profile links and interests are meant to be added by each member themselves:
+Every member (and alumni entry) also has an `id:`, a slug of the name that stays the same when the name changes; project pages refer to people by it (see *Project Team* above), and the team page gives each card the anchor `#member-<id>` (`#alumni-<id>` for former staff). All further fields are optional and only rendered when present (cards: [`_includes/team-card.html`](_includes/team-card.html)). Profile links and interests are meant to be added by each member themselves:
 
 ```yaml
 members:
   - name: Jane Doe MSc
+    id: jane-doe                    # stable key, used by the projects' `team:` lists
     category: researcher
     gender: f
     email: jane.doe@fh-hagenberg.at
