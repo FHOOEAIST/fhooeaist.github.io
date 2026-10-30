@@ -13,6 +13,15 @@ projects:
       Systems GmbH
     foerdergeber: Land Oberösterreich – AI-Region Upper Austria 2024
 category: cv
+team:
+  - member: gerald-zwettler
+    role: professor
+  - member: ulrich-bodenhofer
+    role: professor
+  - member: martin-hanreich
+    role: researcher
+  - member: harald-brunner
+    role: student_assistant
 ---
 
 ## FLARE

@@ -12,6 +12,9 @@ projects:
     partner: mobile agreements GmbH
     foerdergeber: Austrian Research Promotion Agency FFG – Basisprogramm
 category: cv
+team:
+  - member: oliver-krauss
+    role: professor
 ---
 
 ## Project: Predictive Innovation

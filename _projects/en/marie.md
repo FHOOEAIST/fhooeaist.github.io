@@ -13,6 +13,13 @@ projects:
     foerdergeber: Land Oberösterreich – programme for developing future-oriented
       research fields at Upper Austrian non-university research institutions
 category: ml
+team:
+  - member: gerald-zwettler
+    role: professor
+  - member: oliver-krauss
+    role: professor
+  - member: mert-dalkilic
+    role: researcher
 ---
 
 ## MARIE - Mobile Robotic Assistance for Office Environments

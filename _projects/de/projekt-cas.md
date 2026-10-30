@@ -12,6 +12,13 @@ projects:
     partner: CAS – Computer Anwendungs Systeme GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ehealth
+team:
+  - member: emmanuel-helm
+    role: lead
+  - member: andreas-pointner
+    role: senior_researcher
+  - member: anna-lin
+    role: researcher
 ---
 
 ## REPO – Radiology E-health PlatfOrm

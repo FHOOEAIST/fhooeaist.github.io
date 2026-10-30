@@ -13,6 +13,9 @@ projects:
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Klima- und
       Energiefonds Smart Cities
 category: ml
+team:
+  - member: christoph-praschl
+    role: senior_researcher
 ---
 
 ## Urbaner Speichercluster Südburgenland

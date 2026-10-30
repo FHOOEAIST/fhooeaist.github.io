@@ -12,6 +12,9 @@ projects:
     partner: ""
     foerdergeber: Land Oberösterreich
 category: cv
+team:
+  - member: christoph-praschl
+    role: senior_researcher
 ---
 
 ## Projekt Wildschwein

@@ -13,6 +13,9 @@ projects:
     foerdergeber: Austrian Research Promotion Agency FFG – Klima- und
       Energiefonds Smart Cities
 category: ml
+team:
+  - member: christoph-praschl
+    role: senior_researcher
 ---
 
 ## Urban Storage Cluster Southern Burgenland
