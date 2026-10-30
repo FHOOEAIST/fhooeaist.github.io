@@ -352,6 +352,214 @@
 
       
     </div>
+    
+    
+    
+    
+    <section class="project-output" id="theses" data-pagefind-ignore>
+      <h2>Theses <span class="project-output-count">5</span></h2>
+      
+
+
+
+
+
+
+
+<div class="listing-items">
+  
+    
+    <section class="year-section" data-year="2020">
+    <h2 class="year-heading">2020</h2>
+    <div class="year-items">
+    
+    <div class="listing-item thesis-entry collapsible" data-year="2020" data-type="bachelor" data-categories="cv ml">
+      
+      <h3 class="listing-title" id="theses-lukas-reithmeier-influence-of-depth-data-on-the-performance-of-instance-segmenta">
+        <button type="button" class="listing-toggle" aria-controls="theses-lukas-reithmeier-influence-of-depth-data-on-the-performance-of-instance-segmenta-content">
+          <span class="listing-toggle-text">Influence of depth data on the performance of instance segmentation utilizing Mask R-CNN and RGB-D images</span>
+          <span class="listing-toggle-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+      </h3>
+      <p class="thesis-meta"><i class="fas fa-user-graduate" aria-hidden="true"></i> Lukas Reithmeier<span class="thesis-type thesis-type-bachelor">Bachelor thesis</span></p>
+      
+
+
+
+
+      
+      <p class="publication-categories"><a class="publication-category" href="/pr-preview/pr-34/en/theses/#cat=cv" title="Filter by category: Visual Computing">Visual Computing</a>
+        <a class="publication-category" href="/pr-preview/pr-34/en/theses/#cat=ml" title="Filter by category: Machine Learning &amp; Data Science">Machine Learning</a>
+        </p>
+      
+      <div class="listing-content" id="theses-lukas-reithmeier-influence-of-depth-data-on-the-performance-of-instance-segmenta-content">
+        Elevators are a vital means of transportation in the modern urban life. If an emergency happens in an elevator a person must press an emergency button calling for help. Since pressing the emergency button is not always possible, the research group AIST is developing a system that detects emergencies in elevators using RGB-D camera footage, compromising both RGB images as well as depth images. The detection of persons in various poses and various different objects as well as the creation of masks from classified persons and objects to track these over the course of several camera frames, it is aimed to add an instance segmentation module using the Mask R-CNN algorithm to this system.
+
+Due to metal walls and mirrors elevator environments are highly reflective and noisy, especially the depth images provided by RGB-D cameras. Instance segmentation algorithms, like the Mask R-CNN, are well understood when using RGB images. This raises the question if instance segmentation can be improved when using the highly reflective and noisy depth images provided by the RGB-D cameras.
+
+In this thesis a comparison of four different model-versions, which differ in their input and backbone network and use the Mask R-CNN algorithm is done. The first uses solely RGB images, the second solely depth images and the third uses RGB-D images. These three model-versions use a ResNet-FPN backbone network. The fourth model-version uses RGB-D images and a FuseNet-FPN backbone network. This thesis also introduces the Elevator RGB-D dataset that contains RGB-D images from elevator scenes. To provide an equitable comparison the hyperparameters of the four model-versions are optimized using tree-structured parzen estimators. To improve the generalization of the trained models, these models are pre-trained using the SUN RGB-D dataset. Transfer learning is used to initialize the models with the pre-trained weights. These models are trained using the Elevator RGB-D dataset.
+
+In this thesis the equivalence of using RGB and depth images combined and solely RGB images to perform instance segmentation in regards of the results in highly reflective and noisy elevator environments was proven. Both approaches lead to better results than relying on depth images only. The usage of a backbone convolutional neural network specialized on RGB-D images improves the performance of the Mask R-CNN.
+      </div>
+    </div>
+    
+    </div>
+    
+    
+
+
+<div class="year-more-bar" hidden>
+    <button type="button" class="year-more" aria-expanded="false" data-label-more="Show {n} more" data-label-less="Show fewer">
+        <span class="year-more-text">Show -1 more</span>
+        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+    </button>
+</div>
+
+    </section>
+  
+    
+    <section class="year-section" data-year="2019">
+    <h2 class="year-heading">2019</h2>
+    <div class="year-items">
+    
+    <div class="listing-item thesis-entry collapsible" data-year="2019" data-type="master" data-categories="ml">
+      
+      <h3 class="listing-title" id="theses-rainer-meindl-statusbasierte-analyse-von-notf-llen-in-aufzugsanlagen">
+        <button type="button" class="listing-toggle" aria-controls="theses-rainer-meindl-statusbasierte-analyse-von-notf-llen-in-aufzugsanlagen-content">
+          <span class="listing-toggle-text">State Oriented Detection ofEmergencies in Elevator Networks – APetri Net View</span>
+          <span class="listing-toggle-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+      </h3>
+      <p class="thesis-meta"><i class="fas fa-user-graduate" aria-hidden="true"></i> Rainer Meindl<span class="thesis-type thesis-type-master">Master thesis</span></p>
+      
+
+
+
+
+      
+      <p class="publication-categories"><a class="publication-category" href="/pr-preview/pr-34/en/theses/#cat=ml" title="Filter by category: Machine Learning &amp; Data Science">Machine Learning</a>
+        </p>
+      
+      <div class="listing-content" id="theses-rainer-meindl-statusbasierte-analyse-von-notf-llen-in-aufzugsanlagen-content">
+        Detecting and reacting to emergency situations in daily life have always been a topicof research the past few years, but have always focused on either individuals prone toemergency situations, such as the elderly, or on a broader scale, like detecting activityin large crowds or pedestrians. Due to rapidly increasing availability and power of ex-ternal sensors as well as introduction of more reliable data the emergency detection andmanagement should also be able in confined spaces, such as elevators.Together withVIEW – Elevatoras domain experts and partner theFH-OOE AISTresearch group this thesis focuses on introducing activity recognition and subsequentlyemergency detection into the elevator domain. It builds on top of a stateless systemfor object and person detection, which has been implemented as part of the researchproject, and uses the produced stateless data of the system. But instead of using stochas-tic methods or artificial intelligence, this thesis aims to resolve the problem of emergencydetection by introducing a generic state oriented component, as it allows for easy, de-terministic and human readable actions and result.While introducing the reader to the basics of activity recognition and state trackingtechniques reflections are made on which approaches are the most feasible and why.It compares multiple state machine designs and ultimately suggests a new state ma-chine definition based on coloured petri nets, thedynamic non-deterministic petri net(DNPN).Based on the DNPN a state machine is designed, allowing the tracking of the elevatorstate and all its occupants, including people and their objects. Furthermore an auxiliarysystem is designed, the system preparedness, connecting with the state machine andallowing for further evaluation of the current elevator scenario and possibly predictingan emergency event.Handling and evaluating these emergency scenarios is shown in a prototype, imple-mented as part of the research project. It implements the defined DNPN and definesdata structures in order to aggregate the stateless data for the state machine. Ulti-mately, the prototype as a whole is used to evaluate the state machine by feeding itpreviously generated test data, which has a fixed script and outcome. In the conclusionthe results of the state machine are discussed, referencing the expected outcome definedin the script, as well as suggesting continued work to improve the DNPN definition andin fact, the whole system.
+      </div>
+    </div>
+    
+    <div class="listing-item thesis-entry collapsible" data-year="2019" data-type="bachelor" data-categories="cv ml">
+      
+      <h3 class="listing-title" id="theses-ignace-jordens-state-classification-of-elevator-doors-to-assist-emergency-detect">
+        <button type="button" class="listing-toggle" aria-controls="theses-ignace-jordens-state-classification-of-elevator-doors-to-assist-emergency-detect-content">
+          <span class="listing-toggle-text">State classification of elevator doors to assist emergency detection in elevator networks</span>
+          <span class="listing-toggle-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+      </h3>
+      <p class="thesis-meta"><i class="fas fa-user-graduate" aria-hidden="true"></i> Ignace Jordens<span class="thesis-type thesis-type-bachelor">Bachelor thesis</span></p>
+      
+
+
+
+
+      
+      <p class="publication-categories"><a class="publication-category" href="/pr-preview/pr-34/en/theses/#cat=cv" title="Filter by category: Visual Computing">Visual Computing</a>
+        <a class="publication-category" href="/pr-preview/pr-34/en/theses/#cat=ml" title="Filter by category: Machine Learning &amp; Data Science">Machine Learning</a>
+        </p>
+      
+      <div class="listing-content" id="theses-ignace-jordens-state-classification-of-elevator-doors-to-assist-emergency-detect-content">
+        EDEN, which stands for emergency detection in elevator networks and is a project of the AIST
+research group at the University of Applied Sciences Upper Austria, aims to use sensors and cameras
+to automatically detect emergencies in elevators, evaluate them, put them into context and take
+appropriate actions. This bachelor’s thesis tackles the classification of the status of an elevator door.
+In order to classify certain emergencies correctly, it is vitally important that the classification system
+knows all the involved parameters. A certain situation can have different interpretations if all parameters are considered. The current state of the door is in this case a very important parameter.
+The EDEN project uses an Intel RealSense D435 camera as a device to capture images and depth
+information. These images and their corresponding depth information are analysed by the project, which is written in C++ and uses the OpenCV framework for computer vision. A first part of this paper is to research the usages of the provided depth and RGB information by the camera to detect the status of an elevator door. In the research, the different possible approaches are discussed. The most feasible approaches are elaborated in a proof of concept. The first step of the detection of the door status is localising the door itself using depth and RGB information. This is followed by the extraction of the floor, which is achieved by using edge detection and extraction techniques. With the location of the door and the floor known to the application, the status of the door can be determined. In order to correctly classify this status, the research focuses on different methods to detect the status and strategies to reduce noise interference which is caused by either the recording equipment or objects blocking the vision of the door. The second part of the paper focuses on testing the capabilities of the Intel RealSense D435 camera, more specifically the accuracy of the depth information it can provide. To comply with certain ISOstandards, an elevator car cannot have a height difference of more than 20 millimetres compared to the outlying floor. The research investigates if the D435 camera can detect such a small height difference while still maintaining a visual overview of the entire elevator car, so the application can still detect occurring emergencies.
+      </div>
+    </div>
+    
+    <div class="listing-item thesis-entry collapsible" data-year="2019" data-type="master" data-categories="ml">
+      
+      <h3 class="listing-title" id="theses-david-baumgartner-self-optimization-of-the-emergency-detection-in-elevator-netwo">
+        <button type="button" class="listing-toggle" aria-controls="theses-david-baumgartner-self-optimization-of-the-emergency-detection-in-elevator-netwo-content">
+          <span class="listing-toggle-text">Self-optimization of the emergency detection in elevator networks</span>
+          <span class="listing-toggle-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+      </h3>
+      <p class="thesis-meta"><i class="fas fa-user-graduate" aria-hidden="true"></i> David Baumgartner<span class="thesis-type thesis-type-master">Master thesis</span></p>
+      
+
+
+
+
+      
+      <p class="publication-categories"><a class="publication-category" href="/pr-preview/pr-34/en/theses/#cat=ml" title="Filter by category: Machine Learning &amp; Data Science">Machine Learning</a>
+        </p>
+      
+      <div class="listing-content" id="theses-david-baumgartner-self-optimization-of-the-emergency-detection-in-elevator-netwo-content">
+        Elevators are an essential part of the lives of millions of people every day. Most people believe that elevators work 24/7 a year, but what about human problems like heart attacks and inability to press the emergency button? There exist real cases where people died in elevators, which could have been prevented if an autonomous system could have detected people with emergency need on the ground. An additional challenge for this project is to be GDPR compliant and by that not to monitor people using the elevators. Automatic emergency detection in elevators is of interest because it enables exactly that scenario of detecting human problems. The project where this is realized consists of a client running autonomously in the elevator and tracking the emergency state in it and optimizing background service. This work proposes a system that aims at solving the self-optimization of the classification in the elevators system as the background service. There exist more than one issue for such a system. First, how to extract the correct label from new arriving samples from a real emergency or action? Second, what is the most efficient parameter setting for a classifier and when is a classifier thoroughly tested and can be deployed to the client running in the elevator. The goal for this work is to present a prototype that aims at solving the main issues. One example, therefore, is the dynamic of new classes rising during the runtime and not wasting resources on creating a new flat classifier. The results further showcase, based on two different datasets, the amount of time that is required to find a better solution than manually searching for one and its downside. One of the most relevant results is the overall structure of the solution that combines state of the art technologies into one system and demonstrates a solution that is extendable in the future.
+      </div>
+    </div>
+    
+    </div>
+    
+    
+
+
+<div class="year-more-bar" hidden>
+    <button type="button" class="year-more" aria-expanded="false" data-label-more="Show {n} more" data-label-less="Show fewer">
+        <span class="year-more-text">Show 1 more</span>
+        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+    </button>
+</div>
+
+    </section>
+  
+    
+    <section class="year-section" data-year="2018">
+    <h2 class="year-heading">2018</h2>
+    <div class="year-items">
+    
+    <div class="listing-item thesis-entry collapsible" data-year="2018" data-type="bachelor" data-categories="ml cv">
+      
+      <h3 class="listing-title" id="theses-daniel-stigler-evaluierung-von-klassifikatoren-f-r-den-einsatz-in-notfallerkennu">
+        <button type="button" class="listing-toggle" aria-controls="theses-daniel-stigler-evaluierung-von-klassifikatoren-f-r-den-einsatz-in-notfallerkennu-content">
+          <span class="listing-toggle-text">Evaluation of classifiers for use in emergency detection systems</span>
+          <span class="listing-toggle-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+      </h3>
+      <p class="thesis-meta"><i class="fas fa-user-graduate" aria-hidden="true"></i> Daniel Stigler<span class="thesis-type thesis-type-bachelor">Bachelor thesis</span></p>
+      
+
+
+
+
+      
+      <p class="publication-categories"><a class="publication-category" href="/pr-preview/pr-34/en/theses/#cat=ml" title="Filter by category: Machine Learning &amp; Data Science">Machine Learning</a>
+        <a class="publication-category" href="/pr-preview/pr-34/en/theses/#cat=cv" title="Filter by category: Visual Computing">Visual Computing</a>
+        </p>
+      
+      <div class="listing-content" id="theses-daniel-stigler-evaluierung-von-klassifikatoren-f-r-den-einsatz-in-notfallerkennu-content">
+        In this thesis an evaluation of different algorithms of machine learning for information retrieval from image data for later emergency detection in elevator systems shall be performed. For this purpose, a classification prototype will be created, which will be divided into three parts to determine the information. In the first step, images of segmented objects are analyzed and it is determined whether the object is a person or an object. In the second part, objects are classified into further object categories, which allows a statement about an existing dangerous situation to be made. In the third part, objects classified as human beings are subjected to a posture classification based on their silhouette shape, which can later trigger an emergency signal if a person is lying on the ground for a longer period of time. The tested algorithms are provided by OpenCV and are limited to K-Nearest Neighbor, Support Vector Machine, Random Forest and neural network. The results show that Support Vector Machines, with a hit rate of over 98%, using HOG descriptors, are best suited for categorizing objects into human and object. Also, compared to other classifiers, this combination provided the best results for further grouping of objects, but with a 73% classification rate, it is not very satisfying. When classifying posture using silhouette features, the neural network proved to be the most suitable classifier, with a correct classification of 92% of all test data.
+      </div>
+    </div>
+    
+    </div>
+    
+    
+
+
+<div class="year-more-bar" hidden>
+    <button type="button" class="year-more" aria-expanded="false" data-label-more="Show {n} more" data-label-less="Show fewer">
+        <span class="year-more-text">Show -1 more</span>
+        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+    </button>
+</div>
+
+    </section>
+  
+</div>
+
+    </section>
+    
 
     <footer class="article-footer">
       <a class="link-arrow" href="/pr-preview/pr-34/en/projects/"><i class="fas fa-arrow-left" aria-hidden="true"></i> All projects</a>

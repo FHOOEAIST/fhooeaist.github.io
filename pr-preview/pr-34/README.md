@@ -186,6 +186,7 @@ date: 2024-12-31
 title: Modeling Wildlife Accident Risk with Gaussian Mixture Models
 reference: Praschl C., Schedl D., Stöckl A. "Modeling Wildlife Accident Risk with Gaussian Mixture Models", EUROCAST 2024.
 categories: [ml, geo]   # one or more, see below
+projects: [projects:bambi]                   # optional, page_ids of the related projects
 external_url: https://example.org/abstract-book.pdf
 doi: https://doi.org/10.0000/example        # optional
 attachment: /assets/.../paper.pdf            # optional
@@ -243,11 +244,20 @@ title: Process Mining im Radiologiebereich
 student: Andreas Erhard
 thesis_type: master  # bachelor | master | dissertation -- shown as a label and used by the type filter
 categories: [pm, ehealth]  # ids from _data/publication_categories.yml, usually one or two
-project_url: https://aist.fh-hagenberg.at/index.php/de/projekte/pica  # optional
+projects: [projects:pica]  # optional, page_ids of the related projects, see below
 ---
 
 Abstract (Markdown)...
 ```
+
+## Linking Output to Projects
+
+Publications and theses can name the project(s) they came out of in a `projects:` list of project `page_id`s (e.g. `projects: [projects:bambi]`; the same value goes into the DE and the EN file). This
+
+- adds a **Publications** and a **Theses** section at the end of that project's page (after all phases), rendered with the same includes as the listings ([`_includes/publication-list.html`](_includes/publication-list.html), [`_includes/thesis-list.html`](_includes/thesis-list.html)); a section without entries is left out, and
+- shows a "Project: …" link under the entry on the publications and theses pages ([`_includes/project-links.html`](_includes/project-links.html)).
+
+Unknown ids are ignored, so back-filling can happen gradually.
 
 # Open Positions & Thesis Topics
 
