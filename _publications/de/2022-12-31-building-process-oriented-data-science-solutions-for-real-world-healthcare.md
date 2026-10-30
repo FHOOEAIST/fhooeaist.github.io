@@ -5,7 +5,7 @@ permalink: /publications/building-process-oriented-data-science-solutions-for-re
 date: 2022-12-31
 title: Building Process-Oriented Data Science Solutions for Real-World Healthcare
 categories: [ehealth, ml, pm]
-reference: 'Fernandez-Llatas C., et al. „Building Process-Oriented Data Science Solutions
+reference: 'Fernández-Llatas C., Martin N., Johnson O., Sepúlveda M., Helm E., Muñoz-Gama J. „Building Process-Oriented Data Science Solutions
   for Real-World Healthcare.“ International Journal of Environmental Research and
   Public Health 19.14 (2022): 8427.'
 doi: https://doi.org/10.3390/ijerph19148427
