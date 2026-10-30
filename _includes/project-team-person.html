@@ -40,8 +40,8 @@ Former staff (alumni entries) get a "former" marker and no contact details.
     {% if person.former %}
     <span class="team-person-former">{% if en %}Former staff{% else %}Ehemalig{% endif %}</span>
     {% elsif include.featured %}
-    {% if person.email %}<a class="team-person-contact" href="mailto:{{ person.email }}"><i class="fas fa-envelope" aria-hidden="true"></i>{{ person.email }}</a>{% endif %}
-    {% if person.phone %}<a class="team-person-contact" href="tel:{{ person.phone | remove: ' ' }}"><i class="fas fa-phone" aria-hidden="true"></i>{{ person.phone }}</a>{% endif %}
+    {% if person.email %}<a class="team-person-contact" href="mailto:{{ person.email }}"><i class="fas fa-envelope" aria-hidden="true"></i><span>{{ person.email | replace: "@", "<wbr>@" }}</span></a>{% endif %}
+    {% if person.phone %}<a class="team-person-contact" href="tel:{{ person.phone | remove: ' ' }}"><i class="fas fa-phone" aria-hidden="true"></i><span class="team-person-phone">{{ person.phone }}</span></a>{% endif %}
     {% elsif person.email or person.phone %}
     <span class="team-person-icons">
       {% if person.email %}<a href="mailto:{{ person.email }}" title="{{ person.email }}" aria-label="{% if en %}Email{% else %}E-Mail{% endif %} – {{ person.name }}"><i class="fas fa-envelope" aria-hidden="true"></i></a>{% endif %}
