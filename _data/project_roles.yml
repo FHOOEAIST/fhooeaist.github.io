@@ -1,0 +1,47 @@
+# Roles a person can have in a project, used by the `team:` lists in the
+# project front matter (_projects/{de,en}/*.md) and rendered in the team box
+# of _layouts/project.html (_includes/project-team.html).
+#
+#   id          — the value written into a team entry's `role:` field
+#   label_de_m  — German label for members with `gender: m`
+#   label_de_f  — German label for members with `gender: f`
+#   label_de    — gender-neutral German fallback (former staff have no gender)
+#   label_en    — English label
+#
+# The order below is the sort order of the team box (then by last name).
+
+- id: lead
+  label_de_m: Projektleiter
+  label_de_f: Projektleiterin
+  label_de: Projektleitung
+  label_en: Project lead
+
+- id: professor
+  label_de_m: Professor
+  label_de_f: Professorin
+  label_de: Professor*in
+  label_en: Professor
+
+- id: senior_researcher
+  label_de_m: Senior Researcher
+  label_de_f: Senior Researcher
+  label_de: Senior Researcher
+  label_en: Senior researcher
+
+- id: researcher
+  label_de_m: Researcher
+  label_de_f: Researcher
+  label_de: Researcher
+  label_en: Researcher
+
+- id: phd_student
+  label_de_m: Doktorand
+  label_de_f: Doktorandin
+  label_de: Doktorand*in
+  label_en: PhD student
+
+- id: student_assistant
+  label_de_m: Studentischer Mitarbeiter
+  label_de_f: Studentische Mitarbeiterin
+  label_de: Studentische*r Mitarbeiter*in
+  label_en: Student assistant

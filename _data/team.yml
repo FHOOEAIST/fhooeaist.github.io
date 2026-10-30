@@ -1,8 +1,11 @@
 # Current team, rendered by team.html / team-en.html (_includes/team-card.html).
 #
-# Required: name, category (professor | project_manager | researcher | student,
-# labels in _data/team_categories.yml). Everything else is optional and left
-# out when missing:
+# Required: name, id, category (professor | project_manager | researcher |
+# student, labels in _data/team_categories.yml). Everything else is optional
+# and left out when missing:
+#   id             stable key (slug of the name), used by the projects' `team:`
+#                  lists; keep it when the name changes, and when the person
+#                  moves to `alumni:` below
 #   gender         m | f, picks the German form of the category label
 #   role           free text next to the category (e.g. study programme)
 #   email, phone, image, details_url (Pure profile)
@@ -18,6 +21,7 @@
 #
 members:
   - name: Sophie Bauernfeind MSc
+    id: sophie-bauernfeind
     category: researcher
     gender: f
     email: sophie.bauernfeind@fh-hagenberg.at
@@ -26,6 +30,7 @@ members:
     orcid: 0009-0005-5290-3900
     github: SophieBauernfeind
   - name: FH-Prof. Univ.-Doz. DI Dr. Ulrich Bodenhofer
+    id: ulrich-bodenhofer
     category: professor
     gender: m
     email: ulrich.bodenhofer@fh-hagenberg.at
@@ -37,12 +42,14 @@ members:
     github: UBod
     linkedin: ulrichbodenhofer
   - name: Harald Brunner BSc
+    id: harald-brunner
     category: student
     gender: m
     role: Mobile Computing Master
     email: harald.brunner@fh-hagenberg.at
     image: /assets/images/team/harald_brunner.jpg
   - name: Mert Dalkilic MSc
+    id: mert-dalkilic
     category: researcher
     gender: m
     email: mert.dalkilic@fh-hagenberg.at
@@ -51,6 +58,7 @@ members:
     orcid: 0009-0001-8542-5176
     github: medalkilic
   - name: Martin Hanreich MSc
+    id: martin-hanreich
     category: researcher
     gender: m
     email: martin.hanreich@fh-hagenberg.at
@@ -59,6 +67,7 @@ members:
     details_url: https://pure.fh-ooe.at/en/persons/martin-hanreich
     orcid: 0009-0007-8855-8445
   - name: FH-Assistenzprof. Dr. Oliver Krauss MSc
+    id: oliver-krauss
     category: professor
     gender: m
     email: oliver.krauss@fh-hagenberg.at
@@ -70,6 +79,7 @@ members:
     github: oliver-krauss
     linkedin: oliver-krauss
   - name: Helga Billensteiner MSc
+    id: helga-billensteiner
     category: researcher
     gender: f
     email: helga.billensteiner@fh-hagenberg.at
@@ -77,12 +87,14 @@ members:
     image: /assets/images/team/helga_billensteiner_msc.jpg
     details_url: https://pure.fh-ooe.at/en/persons/helga-ludwig
   - name: Brecht Maes
+    id: brecht-maes
     category: student
     gender: m
     role: PXL University of Applied Sciences and Arts
     email: brecht.maes@students.fh-hagenberg.at
     image: /assets/images/team/brecht_maes.jpg
   - name: FH-Prof. DI Dr. Herwig Mayr
+    id: herwig-mayr
     category: professor
     gender: m
     email: herwig.mayr@fh-hagenberg.at
@@ -90,6 +102,7 @@ members:
     image: /assets/images/team/fh_prof_di_dr_herwig_mayr.jpg
     details_url: https://pure.fh-ooe.at/en/persons/herwig-mayr
   - name: FH-Assistenzprof. Andreas Pointner MSc
+    id: andreas-pointner
     category: project_manager
     gender: m
     email: andreas.pointner@fh-hagenberg.at
@@ -101,6 +114,7 @@ members:
     github: pointan
     linkedin: pointan
   - name: FH-Assistenzprof. Christoph Praschl MSc
+    id: christoph-praschl
     category: project_manager
     gender: m
     email: christoph.praschl@fh-hagenberg.at
@@ -112,6 +126,7 @@ members:
     github: cpraschl
     linkedin: christophpraschl
   - name: Sebastian Pritz MSc
+    id: sebastian-pritz
     category: researcher
     gender: m
     email: sebastian.pritz@fh-hagenberg.at
@@ -122,6 +137,7 @@ members:
     github: SebastianPritzFH
     linkedin: sebastian-pritz-490b74250
   - name: Simone Sandler MSc
+    id: simone-sandler
     category: researcher
     gender: f
     email: simone.sandler@fh-hagenberg.at
@@ -131,6 +147,7 @@ members:
     orcid: 0000-0001-8919-7804
     github: simonesan
   - name: Dipl.-Ing. Natasha Trajkovska MSc
+    id: natasha-trajkovska
     category: researcher
     gender: f
     email: natasha.trajkovska@fh-hagenberg.at
@@ -138,6 +155,7 @@ members:
     details_url: https://pure.fh-ooe.at/en/persons/natasha-trajkovska
     orcid: 0000-0001-8265-9041
   - name: DI (FH) Dr. Gerald Adam Zwettler MSc
+    id: gerald-zwettler
     category: professor
     gender: m
     email: gerald.zwettler@fh-hagenberg.at
@@ -151,6 +169,8 @@ members:
 # Former members, listed below the team (_includes/team-alumni.html) in the
 # order of this list (by last name). Remove people who rejoin the team.
 #   name                required
+#   id                  required, stable key used by the projects' `team:`
+#                       lists (the same id as while on the team)
 #   image               optional, 3:4 portrait (assets/images/team/alumni/);
 #                       without one a placeholder is shown
 #   years               optional, e.g. 2015–2021
@@ -159,179 +179,239 @@ members:
 #   url                 optional, e.g. a profile page
 alumni:
   - name: Florian Abraham
+    id: florian-abraham
     image: /assets/images/team/alumni/abraham_florian.jpg
     years: 2019
   - name: Selina Adlberger
+    id: selina-adlberger
     image: /assets/images/team/alumni/adlberger_selina.jpg
     years: 2024–2026
   - name: Johann Aichberger
+    id: johann-aichberger
     image: /assets/images/team/alumni/aichberger_johann.jpg
     years: 2018–2021
   - name: Philipp Aichinger
+    id: philipp-aichinger
     image: /assets/images/team/alumni/aichinger_philipp.jpg
     years: 2018–2019
   - name: Philipp Aldea
+    id: philipp-aldea
     image: /assets/images/team/alumni/aldea_philipp.jpg
     years: 2020
   - name: Anthony Alessi
+    id: anthony-alessi
     image: /assets/images/team/alumni/alessi_anthony.jpg
     years: 2022
   - name: Josef Altmann
+    id: josef-altmann
     image: /assets/images/team/alumni/altmann_josef.jpg
     years: 2008–2016
   - name: Martina Angermaier
+    id: martina-angermaier
     image: /assets/images/team/alumni/angermaier_martina.jpg
     years: 2016–2017
   - name: Nicolas Arvanitidis
+    id: nicolas-arvanitidis
     years: 2024
   - name: David Baumgartner
+    id: david-baumgartner
     image: /assets/images/team/alumni/baumgartner_david.jpg
     years: 2018–2021
   - name: Mügem Boral
+    id: muegem-boral
     years: 2024
   - name: Clara Diesenreiter
+    id: clara-diesenreiter
     image: /assets/images/team/alumni/diesenreiter_clara.jpg
     years: 2021–2023
   - name: Daniel Dorfmeister
+    id: daniel-dorfmeister
     image: /assets/images/team/alumni/dorfmeister_daniel.jpg
     years: 2019
   - name: Mimoun El Asri
+    id: mimoun-el-asri
     image: /assets/images/team/alumni/elasri_mimoun.jpg
     years: 2023
   - name: Andreas Erhard
+    id: andreas-erhard
     image: /assets/images/team/alumni/erhard_andreas.jpg
     years: 2022–2023
   - name: Stefan Freilinger
+    id: stefan-freilinger
     image: /assets/images/team/alumni/freilinger_stefan.jpg
     years: 2021
   - name: Alexander Freller
+    id: alexander-freller
     image: /assets/images/team/alumni/freller_alexander.jpg
     years: 2019
   - name: Lisa-Maria Freller
+    id: lisa-maria-freller
     image: /assets/images/team/alumni/freller_lisa-maria.jpg
     years: 2023
   - name: Julian Haas
+    id: julian-haas
     image: /assets/images/team/alumni/haas_julian.jpg
     years: 2018–2019
   - name: Tom Hacker
+    id: tom-hacker
     image: /assets/images/team/alumni/hacker_tom.jpg
     years: 2018
   - name: Emmanuel Helm
+    id: emmanuel-helm
     image: /assets/images/team/alumni/helm_emmanuel.jpg
     years: 2011–2023
   - name: Oliver Hiesl
+    id: oliver-hiesl
     image: /assets/images/team/alumni/hiesl_oliver.jpg
     years: 2019
   - name: Sebastian Huber
+    id: sebastian-huber
     image: /assets/images/team/alumni/huber_sebastian.jpg
     years: 2017
   - name: Dmitry Ivanov
+    id: dmitry-ivanov
     image: /assets/images/team/alumni/ivanov_dmitry.jpg
     years: 2023
   - name: Francesca Kaschnig
+    id: francesca-kaschnig
     image: /assets/images/team/alumni/kaschnig_francesca.jpg
     years: 2019
   - name: Stefan Kastenhofer
+    id: stefan-kastenhofer
     image: /assets/images/team/alumni/kastenhofer_stefan.jpg
     years: 2025
   - name: Thomas Kniplitsch
+    id: thomas-kniplitsch
     image: /assets/images/team/alumni/kniplitsch_thomas.jpg
     years: 2018
   - name: Alpkan Kocaslan
+    id: alpkan-kocaslan
     years: 2024
   - name: Jessica Köberle
+    id: jessica-koeberle
     image: /assets/images/team/alumni/koeberle_jessica.jpg
     years: 2018
   - name: Kevin Liendorfer
+    id: kevin-liendorfer
     image: /assets/images/team/alumni/liendorfer_kevin.jpg
     years: 2021
   - name: Anna Lin
+    id: anna-lin
     image: /assets/images/team/alumni/lin_anna.jpg
     years: 2016–2020
   - name: Benito Lo Bue
+    id: benito-lo-bue
     image: /assets/images/team/alumni/lobue_benito.jpg
     years: 2022
   - name: Toon Lodts
+    id: toon-lodts
     image: /assets/images/team/alumni/lodts_toon.jpg
     years: 2020
   - name: Elisabeth Mayrhuber
+    id: elisabeth-mayrhuber
     image: /assets/images/team/alumni/mayrhuber_elisabeth.jpg
     years: 2021–2024
   - name: Rainer Meindl
+    id: rainer-meindl
     image: /assets/images/team/alumni/meindl_rainer.jpg
     years: 2017–2022
   - name: Monika Moser
+    id: monika-moser
     image: /assets/images/team/alumni/moser_monika.jpg
     years: 2015–2018
   - name: Karen O’Brien
+    id: karen-obrien
     image: /assets/images/team/alumni/obrien_karen.jpg
     years: 2019
   - name: Yuta Ono
+    id: yuta-ono
     image: /assets/images/team/alumni/ono_yuta.jpg
     years: 2021–2022
   - name: Konstantin Papesh
+    id: konstantin-papesh
     image: /assets/images/team/alumni/papesh_konstantin.jpg
     years: 2021–2022
   - name: Benjamin Pils
+    id: benjamin-pils
     image: /assets/images/team/alumni/pils_benjamin.jpg
     years: 2019
   - name: Jonathan Ponschab
+    id: jonathan-ponschab
     image: /assets/images/team/alumni/ponschab_jonathan.jpg
     years: 2025
   - name: Anna Reichhardt
+    id: anna-reichhardt
     image: /assets/images/team/alumni/reichhardt_anna.jpg
     years: 2019–2021
   - name: Lukas Reithmeier
+    id: lukas-reithmeier
     image: /assets/images/team/alumni/reithmeier_lukas.jpg
     years: 2018–2020
   - name: Joselyn Romero
+    id: joselyn-romero
     image: /assets/images/team/alumni/romero_joselyn.jpg
     years: 2024–2025
   - name: Andreas Schuler
+    id: andreas-schuler
     image: /assets/images/team/alumni/schuler_andreas.jpg
     years: 2012–2023
   - name: Jacqueline Schwebach
+    id: jacqueline-schwebach
     image: /assets/images/team/alumni/schwebach_jacqueline.jpg
     years: 2019–2021
   - name: Eva-Maria Spitzer
+    id: eva-maria-spitzer
     image: /assets/images/team/alumni/spitzer_eva-maria.jpg
     years: 2019–2021
   - name: Norbert Stefanski
+    id: norbert-stefanski
     image: /assets/images/team/alumni/stefanski_norbert.jpg
     years: 2023
   - name: Alex Stelzhammer
+    id: alex-stelzhammer
     image: /assets/images/team/alumni/stelzhammer_alex.jpg
     years: 2018
   - name: Michael Stradner
+    id: michael-stradner
     image: /assets/images/team/alumni/stradner_michael.jpg
     years: 2021–2022
   - name: Melani Strasser
+    id: melani-strasser
     image: /assets/images/team/alumni/strasser_melani.jpg
     years: 2009–2016
   - name: Thomas Stüttler
+    id: thomas-stuettler
     image: /assets/images/team/alumni/stuettler_thomas.jpg
     years: 2017
   - name: Daniel Stütz
+    id: daniel-stuetz
     image: /assets/images/team/alumni/stuetz_daniel.jpg
     years: 2022–2024
   - name: Clemens Tögel
+    id: clemens-toegel
     image: /assets/images/team/alumni/toegel_clemens.jpg
     years: 2020
   - name: Barbara Traxler
+    id: barbara-traxler
     image: /assets/images/team/alumni/traxler_barbara.jpg
     years: 2009–2024
   - name: Mitch van den Broek
+    id: mitch-van-den-broek
     image: /assets/images/team/alumni/vandenbroek_mitch.jpg
     years: 2024
   - name: Daniel Wilfing
+    id: daniel-wilfing
     image: /assets/images/team/alumni/wilfing_daniel.jpg
     years: 2016–2018
   - name: Michael Würflinger
+    id: michael-wuerflinger
     image: /assets/images/team/alumni/wuerflinger_michael.jpg
     years: 2025
   - name: Stefan Zeitlhofer
+    id: stefan-zeitlhofer
     image: /assets/images/team/alumni/zeitlhofer_stefan.jpg
     years: 2019
   - name: Samuel Zühlke
+    id: samuel-zuehlke
     image: /assets/images/team/alumni/zuehlke_samuel.jpg
     years: 2024–2025

@@ -12,6 +12,13 @@ projects:
     partner: rudy games GmbH
     foerdergeber: Austrian Research Promotion Agency FFG – Basisprogramm
 category: cv
+team:
+  - member: gerald-zwettler
+    role: lead
+  - member: emmanuel-helm
+    role: researcher
+  - member: oliver-krauss
+    role: researcher
 ---
 
 ## i2f – Interface2Face Mixreality Game

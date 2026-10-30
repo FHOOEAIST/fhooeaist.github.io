@@ -12,6 +12,11 @@ projects:
     partner: Karriere.at
     foerdergeber: Austrian Research Promotion Agency FFG – Basisprogramm
 category: ml
+team:
+  - member: ulrich-bodenhofer
+    role: professor
+  - member: helga-billensteiner
+    role: researcher
 ---
 
 ## Career Advisory System

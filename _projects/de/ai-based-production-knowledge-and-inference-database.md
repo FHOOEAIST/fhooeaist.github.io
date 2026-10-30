@@ -12,6 +12,13 @@ projects:
     partner: Chase comet Center Linz, RICO Thalheim bei Wels
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – CHASE Comet Center
 category: ml
+team:
+  - member: christoph-praschl
+    role: lead
+  - member: martin-hanreich
+    role: researcher
+  - member: josef-altmann
+    role: researcher
 ---
 
 ## AI-Based Production Knowledge and Inference Database
