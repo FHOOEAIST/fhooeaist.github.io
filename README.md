@@ -173,7 +173,7 @@ Area description (Markdown)...
 
 ## Publications
 
-Research papers, shown grouped by year with a category filter.
+Research papers, shown grouped by year with a category and year filter and a search field that finds entries by author, title or DOI (every word has to match; case and accents are ignored; the search is kept in the URL as `#q=...`, so it can be linked).
 
 - **Location:** `_publications/{de,en}/YYYY-MM-DD-title.md` (dates typically use `12-31`)
 

@@ -48,8 +48,9 @@
   // that unfolds the rest (and folds it again). The filter re-applies that
   // rule to the entries it leaves visible (initListingFilter); a year the
   // visitor unfolded stays unfolded, and a deep link unfolds the year it
-  // points into.
+  // points into. While a search is active every year shows all its hits.
   var YEAR_TEASER = 2;
+  var yearsUnfolded = false;
 
   function yearVisibleItems(section) {
     return Array.prototype.filter.call(section.querySelectorAll(".listing-item"), function (item) {
@@ -59,7 +60,7 @@
 
   function renderYearSection(section) {
     var items = yearVisibleItems(section);
-    var expanded = section.getAttribute("data-expanded") === "true";
+    var expanded = yearsUnfolded || section.getAttribute("data-expanded") === "true";
     var extra = items.length - YEAR_TEASER;
     items.forEach(function (item, i) {
       item.classList.toggle("is-beyond", !expanded && i >= YEAR_TEASER);
@@ -67,7 +68,7 @@
     var bar = section.querySelector(".year-more-bar");
     var button = section.querySelector(".year-more");
     if (!bar || !button) return;
-    bar.hidden = extra <= 0;
+    bar.hidden = yearsUnfolded || extra <= 0;
     button.setAttribute("aria-expanded", expanded ? "true" : "false");
     var text = button.querySelector(".year-more-text");
     var label = button.getAttribute(expanded ? "data-label-less" : "data-label-more") || "";
@@ -540,8 +541,9 @@
   // data-categories list, every other facet against data-<key>, which may be
   // a space-separated list as well (a topic for bachelor and master
   // students). An entry is shown when it matches
-  // every facet; year headings without visible entries are hidden. State is
-  // mirrored into the hash (#cat=ml&year=2024).
+  // every facet; year headings without visible entries are hidden. The
+  // publications add a search field: every word has to appear in the title,
+  // reference or DOI. State is mirrored into the hash (#cat=ml&year=2024&q=...).
   function initListingFilter() {
     var root = document.querySelector("[data-listing-filter]");
     if (!root) return;
@@ -550,11 +552,32 @@
     var items = Array.prototype.slice.call(document.querySelectorAll(".listing-item[data-categories]"));
     var sections = Array.prototype.slice.call(document.querySelectorAll(".year-section"));
     var boxes = {};
+    var search = root.querySelector("[data-filter-search]");
+
+    // lower case without accents, so "muller" also finds "Müller"
+    function fold(text) {
+      return text.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+    }
+
+    function textOf(item, selector) {
+      var el = item.querySelector(selector);
+      return el ? el.textContent : "";
+    }
 
     items.forEach(function (item) {
       var raw = item.getAttribute("data-categories") || "";
       item.catList = raw.split(" ").filter(Boolean);
+      // title, reference (authors, venue) and DOI
+      if (search) {
+        item.searchText = fold([".listing-toggle-text", ".publication-meta", ".doi-link"].map(function (sel) {
+          return textOf(item, sel);
+        }).join(" ").replace(/\s+/g, " "));
+      }
     });
+
+    function searchTerms() {
+      return search ? fold(search.value).split(/\s+/).filter(Boolean) : [];
+    }
 
     function matches(item, key, value) {
       if (value === "all") return true;
@@ -564,20 +587,24 @@
 
     function apply() {
       var keys = Object.keys(boxes);
+      var terms = searchTerms();
       var shown = 0;
 
       items.forEach(function (item) {
         var ok = keys.every(function (key) {
           return matches(item, key, boxes[key].value());
+        }) && terms.every(function (term) {
+          return item.searchText.indexOf(term) !== -1;
         });
         item.style.display = ok ? "" : "none";
         if (ok) shown++;
       });
 
-      // a year without visible entries disappears
+      // a year without visible entries disappears; a search shows all hits
       sections.forEach(function (section) {
         section.style.display = yearVisibleItems(section).length ? "" : "none";
       });
+      yearsUnfolded = terms.length > 0;
       applyYearDefaults();
 
       var tpl = root.getAttribute("data-results-template") || "";
@@ -592,6 +619,7 @@
         var v = boxes[key].value();
         if (v !== "all") parts.push(key + "=" + v);
       });
+      if (search && search.value.trim()) parts.push("q=" + encodeURIComponent(search.value.trim()));
       // replaceState so filtering does not pile up history entries
       history.replaceState(null, "",
         parts.length ? "#" + parts.join("&") : location.pathname + location.search);
@@ -618,11 +646,28 @@
       });
     }
 
-    // Restore facets from the hash, e.g. #cat=ml&year=2024.
+    if (search) {
+      search.addEventListener("input", function () {
+        apply();
+        syncHash();
+      });
+    }
+
+    // Restore facets from the hash, e.g. #cat=ml&year=2024&q=praschl.
     Object.keys(boxes).forEach(function (key) {
       var m = new RegExp("(?:^#|&)" + key + "=([a-z0-9]+)").exec(location.hash);
       boxes[key].set(m ? m[1] : "all", false);
     });
+    if (search) {
+      var q = /(?:^#|&)q=([^&]*)/.exec(location.hash);
+      if (q) {
+        try {
+          search.value = decodeURIComponent(q[1]);
+        } catch (e) {
+          search.value = "";
+        }
+      }
+    }
     apply();
   }
 
