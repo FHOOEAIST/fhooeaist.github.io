@@ -434,6 +434,21 @@
     document.addEventListener("projects:filtered", measure);
     window.addEventListener("load", measure); // logos may change the row height
 
+    // a link to an entry in the folded part (e.g. #alumni-<id> from the team
+    // box of a project page) unfolds the grid and scrolls the entry into view
+    function revealHash() {
+      var id = decodeURIComponent(location.hash.slice(1));
+      var target = id && document.getElementById(id);
+      if (!target || !grid.contains(target)) return;
+      if (!expanded && collapsedHeight) {
+        expanded = true;
+        render();
+      }
+      setTimeout(function () { target.scrollIntoView(); }, 460); // after the max-height transition
+    }
+    window.addEventListener("hashchange", revealHash);
+    window.addEventListener("load", revealHash);
+
     measure();
   }
 

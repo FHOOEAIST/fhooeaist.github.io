@@ -16,7 +16,7 @@ with the Pure "Details" link (details_url) on the left and the profile icons
 {% else %}
   {% assign interests = member.interests_de | default: member.interests_en %}
 {% endif %}
-<div class="team-card">
+<div class="team-card"{% if member.id %} id="member-{{ member.id }}"{% endif %}>
   <div class="team-card-main">
     <div class="team-card-image">
       {% if member.image %}
