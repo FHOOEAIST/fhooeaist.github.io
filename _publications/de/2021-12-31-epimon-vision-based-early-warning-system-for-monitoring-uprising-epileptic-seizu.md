@@ -8,6 +8,7 @@ title: "EpiMon: Vision-Based Early Warning System for Monitoring Uprising
 reference: Zwettler G., Reichhard A., Stradner M., Praschl C. (2021). In Proceedings
   of 33rd European Modeling & Simulation Symposium.
 categories: [ehealth, cv, ml]
+projects: [projects:epilepsie-monitoring]
 doi: https://doi.org/10.46354/i3m.2021.iwish.004
 ---
 

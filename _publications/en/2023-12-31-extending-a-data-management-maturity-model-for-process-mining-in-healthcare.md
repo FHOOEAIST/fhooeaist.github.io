@@ -8,6 +8,7 @@ reference: Erhard A., Arthofer K., Helm E. (2023). Extending a Data Management M
   Model for Process Mining in Healthcare. Studies in Health Technology and Informatics, 301,
   192-197.
 categories: [ehealth, pm]
+projects: [projects:pica]
 doi: https://doi.org/10.3233/SHTI230038
 ---
 

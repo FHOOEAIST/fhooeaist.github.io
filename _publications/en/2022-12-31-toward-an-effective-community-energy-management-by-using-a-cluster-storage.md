@@ -8,6 +8,7 @@ reference: Veichtlbauer A., Praschl C., Gaisberger L., Steinmaurer G., Strasser 
   „Toward an Effective Community Energy Management by Using a Cluster Storage,“ in IEEE
   Access, vol. 10, pp. 112286-112306, 2022.
 categories: [ml]
+projects: [projects:urbaner-speichercluster-suedburgenland]
 doi: https://doi.org/10.1109/ACCESS.2022.3216298
 ---
 

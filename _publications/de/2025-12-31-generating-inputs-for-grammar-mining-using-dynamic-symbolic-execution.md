@@ -8,6 +8,7 @@ reference: Pointner A., Pichler J., Prähofer H. 2025. Generating Inputs for Gra
   Mining using Dynamic Symbolic Execution. The Art, Science, and Engineering of Programming,
   10(2), Article 16.
 categories: [se]
+projects: [projects:ag-fuzzer]
 doi: https://doi.org/10.22152/programming-journal.org/2025/10/16
 ---
 

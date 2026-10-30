@@ -9,6 +9,7 @@ reference: 'Pointner A., Krauss O., Erhard A., Schuler A., Helm E. (2023). Multi
   Process Mining Interfaces for HL7 AuditEvent Repositories: XES and OCEL. In dHealth
   2023 (pp. 168-173). IOS Press.'
 categories: [ehealth, pm]
+projects: [projects:pica]
 doi: https://doi.org/10.3233/SHTI230034
 ---
 

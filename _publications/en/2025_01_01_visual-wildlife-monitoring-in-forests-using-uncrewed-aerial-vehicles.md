@@ -7,5 +7,6 @@ title: Visual Wildlife Monitoring in Forests using Uncrewed Aerial Vehicles
 reference: Praschl C., Schedl D. “Visual Wildlife Monitoring in Forests using Uncrewed
   Aerial Vehicles“, WildDrone Summer School 2025.
 categories: [cv, geo]
+projects: [projects:thumper]
 external_url: https://wilddrone.github.io/training/summer-school/posters
 ---

@@ -5,6 +5,7 @@ permalink: /publications/extending-3d-geometric-file-formats-for-geospatial-appl
 date: 2023-12-31
 title: Extending 3D geometric file formats for geospatial applications
 categories: [geo, xr]
+projects: [projects:projekt-mixed-reality-coverage-calculation]
 reference: Praschl C., Krauss O. „Extending 3D geometric file formats for geospatial
   applications“. Appl Geomat (2023).
 doi: https://doi.org/10.1007/s12518-023-00543-6

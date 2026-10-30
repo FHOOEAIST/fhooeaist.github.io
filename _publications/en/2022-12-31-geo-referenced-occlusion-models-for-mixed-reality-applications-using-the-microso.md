@@ -10,6 +10,7 @@ reference: 'Praschl C., Krauss O. Geo-Referenced Occlusion Models for Mixed Real
   Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications,
   Volume 3: IVAPP. 2022.'
 categories: [cv, geo, xr]
+projects: [projects:projekt-mixed-reality-coverage-calculation]
 doi: https://doi.org/10.5220/0010775200003124
 ---
 

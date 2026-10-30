@@ -8,6 +8,7 @@ title: Efficient classification of live sensor data on Low-Energy IoT devices
 reference: Hanreich M., Krauss O., Zwettler G. “Efficient classification of live sensor
   data on Low-Energy IoT devices with simple Machine Learning methods“, EUROCAST 2024.
 categories: [ml]
+projects: [projects:smartbouy]
 external_url: https://eurocast2024.fulp.ulpgc.es/documents/Eurocast_2024_Extended_Abstract_Book.pdf
 ---
 

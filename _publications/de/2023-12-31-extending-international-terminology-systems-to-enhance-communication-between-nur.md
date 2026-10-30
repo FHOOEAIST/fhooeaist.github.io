@@ -10,6 +10,7 @@ reference: Diesenreiter C., Krauss O., Traxler B. „Extending International Ter
   12th International Workshop on Innovative Simulation for Healthcare (IWISH 2023),
   2023.
 categories: [ehealth]
+projects: [projects:lica-ried]
 doi: https://doi.org/10.46354/i3m.2023.iwish.006
 ---
 

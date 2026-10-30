@@ -7,6 +7,7 @@ title: Inferring Attributed Grammars from Parser Implementations
 reference: Pointner A., Pichler J., Prähofer H. 2025. Inferring Attributed Grammars
   from Parser Implementations. arXiv:2507.13117.
 categories: [se]
+projects: [projects:ag-fuzzer]
 doi: https://doi.org/10.48550/arXiv.2507.13117
 ---
 

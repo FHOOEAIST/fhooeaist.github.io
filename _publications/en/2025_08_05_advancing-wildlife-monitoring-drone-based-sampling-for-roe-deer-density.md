@@ -8,6 +8,7 @@ reference: 'Wohlfahrt S., Praschl C., Leitner H., Jantasch W., Konic J., Schuele
   S., Schedl D. “Advancing Wildlife Monitoring: Drone-Based Sampling for Roe Deer
   Density Estimation“, International Wildlife Congress 2025.'
 categories: [cv, geo]
+projects: [projects:thumper]
 external_url: https://arxiv.org/abs/2508.03545
 ---
 

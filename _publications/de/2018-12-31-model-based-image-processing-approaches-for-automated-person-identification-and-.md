@@ -9,5 +9,6 @@ reference: Pointner A., Krauss O., Freilinger G., Strieder D., Zwettler G. Proce
   of the 30th European Modeling and Simulation Symposium EMSS2018, Budapest, Ungarn,
   2018.
 categories: [cv]
+projects: [projects:projekt-credi2]
 ---
 

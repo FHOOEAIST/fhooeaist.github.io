@@ -6,5 +6,6 @@ date: 2023-12-31
 title: 'Ontology-Based Multi-Perspective Process Mining in Laboratories: A Case Study'
 reference: 'Mayrhuber E., Helm E., Ehrlinger L. “Ontology-Based Multi-Perspective Process Mining in Laboratories: A Case Study“, International Conference on Process Mining (ICPM 2023) Workshops, pp. 283–295, 2023.'
 categories: [pm, ehealth]
+projects: [projects:gemini]
 doi: https://doi.org/10.1007/978-3-031-56107-8_22
 ---

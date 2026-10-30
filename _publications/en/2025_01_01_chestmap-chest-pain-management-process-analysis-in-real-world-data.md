@@ -8,4 +8,5 @@ reference: Rechenmacher M., Kastenhofer S., Krauss O., Praschl C., Sandler S., R
   M., Roth D. “CHESTMAP - Chest Pain Management Process Analysis in Real World Data“,
   European Emergency Medicine Congress 2025.
 categories: [ehealth, pm]
+projects: [projects:treetop-medical]
 ---

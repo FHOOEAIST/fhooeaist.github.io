@@ -10,6 +10,7 @@ reference: Praschl C., Schedl D. „Towards an Automated Biodiversity Modelling 
   Workshop on Simulation for Energy, Sustainable Development & Environment (SESDE
   2023), 2023.
 categories: [cv, ml, geo]
+projects: [projects:bambi]
 doi: https://doi.org/10.46354/i3m.2023.sesde.002
 ---
 

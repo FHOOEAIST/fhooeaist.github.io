@@ -8,6 +8,7 @@ reference: Pointner A., Praschl C., Krauss O. „Enhancing Interoperability of H
   Using Namespaces in Graph Databases“ in Proceedings of the 12th International Workshop
   on Innovative Simulation for Healthcare (IWISH 2023), 2023.
 categories: [ehealth, se]
+projects: [projects:pica]
 doi: https://doi.org/10.46354/i3m.2023.iwish.001
 ---
 

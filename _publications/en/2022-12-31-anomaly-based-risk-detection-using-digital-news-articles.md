@@ -9,6 +9,7 @@ reference: 'Pointner A., Spitzer E., Krauss O., Stöckl A. (2023). Anomaly-Based
   Applications. IntelliSys 2022. Lecture Notes in Networks and Systems, vol 542. Springer,
   Cham.'
 categories: [ml]
+projects: [projects:projekt-rcpm]
 doi: https://doi.org/10.1007/978-3-031-16072-1_1
 ---
 

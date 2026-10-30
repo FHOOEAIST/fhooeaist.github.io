@@ -10,6 +10,7 @@ reference: Sandler S., Krauss O., Diesenreiter C., Stöckl A. „Detecting Fake 
   Proceedings of International Conference on Electrical, Computer, Communications
   and Mechatronics Engineering (ICECCME), 2022.
 categories: [ml]
+projects: [projects:projektkooperation-506-data-performance]
 ---
 
 Nowadays, news spread quickly, and it is not always clear to the reader whether an article is real or fake. Moreover, readers use only a few sources to read the news without knowing the quality of the source. This is due to a lack of up-to-date

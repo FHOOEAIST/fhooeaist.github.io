@@ -7,6 +7,7 @@ title: "From Virtual Forests to Real Wildlife: Synthethic Non-Radiometric Therma
 reference: 'Praschl C., Schedl D. “From Virtual Forests to Real Wildlife: Synthethic
   Non-Radiometric Thermal UAV Data for Animal Detection“, Siggraph 2026.'
 categories: [cv, ml, geo]
+projects: [projects:thumper]
 doi: https://doi.org/10.1145/3799825.3818732
 ---
 

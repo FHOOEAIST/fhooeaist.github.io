@@ -9,4 +9,5 @@ reference: 'Trajkovska N., Kastenhofer S., Bauernfeind S., Sandler S., Praschl C
   D. “Tracing Clinical Pathways from Unstructured Medical Documents: A Case Study
   on a Standard Operating Procedure for Chest Pain“, Eurocast 2026.'
 categories: [ehealth, ml, pm]
+projects: [projects:treetop-medical]
 ---

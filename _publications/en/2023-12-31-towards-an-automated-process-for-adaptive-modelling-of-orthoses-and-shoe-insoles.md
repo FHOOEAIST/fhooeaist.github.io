@@ -10,6 +10,7 @@ reference: Zwettler G.A., Trixner M., Schartmüller C., Bauernfeind S., Stocking
   and Shoe Insoles in Additive Manufacturing“ in Proceedings of the 12th International
   Workshop on Innovative Simulation for Healthcare (IWISH 2023), 2023.
 categories: [ehealth, ml]
+projects: [projects:move]
 doi: https://doi.org/10.46354/i3m.2023.iwish.005
 ---
 

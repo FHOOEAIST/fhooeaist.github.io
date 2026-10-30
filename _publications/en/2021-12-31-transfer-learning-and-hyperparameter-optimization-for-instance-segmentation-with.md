@@ -11,6 +11,7 @@ reference: 'Reithmeier L., Krauss O., Zwettler G.,  . (2021). Transfer Learning
   on Computer Vision, Imaging and Computer Graphics Theory and Applications – Volume
   5: VISAPP, ISBN 978-989-758-488-6.'
 categories: [cv, ml]
+projects: [projects:projekt-view-promotion]
 doi: https://doi.org/10.24132/CSRN.2021.3101.30
 ---
 
