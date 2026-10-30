@@ -382,9 +382,10 @@
   color: var(--color-primary);
 }
 
+/* icon on the first line when a long address wraps */
 .team-person-contact {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 0.45rem;
   font-size: 0.85rem;
   overflow-wrap: anywhere;
@@ -406,10 +407,6 @@
 
 .team-person.is-featured .team-person-name {
   font-size: 1rem;
-}
-
-.team-person.is-former .team-person-photo img {
-  filter: grayscale(1);
 }
 
 /* the rest of a long team: small portraits and "+N", unfolded on click */
