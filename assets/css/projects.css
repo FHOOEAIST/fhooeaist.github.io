@@ -382,13 +382,19 @@
   color: var(--color-primary);
 }
 
-/* icon on the first line when a long address wraps */
+/* icon on the first line when a long address wraps; addresses break
+   before the @ (<wbr>), mid-word only if a part alone is too long */
 .team-person-contact {
   display: flex;
   align-items: baseline;
   gap: 0.45rem;
   font-size: 0.85rem;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.team-person-phone {
+  white-space: nowrap;
 }
 
 .team-person-contact i {
