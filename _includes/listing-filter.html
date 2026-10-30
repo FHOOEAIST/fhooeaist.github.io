@@ -12,6 +12,10 @@ behaviour lives in assets/js/main.js (initListingFilter): entries are
 `.listing-item[data-categories]`, optionally with `data-year` / `data-type` (a
 space-separated list, like the categories), and the chosen
 values are mirrored into the hash as `#cat=...&year=...`.
+
+The publications also get a search field (`data-filter-search`): it matches
+title, reference (authors, venue) and DOI of an entry, every word on its own,
+ignoring case and accents, and is kept in the hash as `q=...`.
 {% endcomment %}
 
 {% if include.kind == "topics" %}
@@ -32,6 +36,8 @@ values are mirrored into the hash as `#cat=...&year=...`.
     {% assign t_all_years = "Alle Jahre" %}
     {% assign t_type = "Art" %}
     {% assign t_all_types = "Alle Arten" %}
+    {% assign t_search = "Publikationen durchsuchen" %}
+    {% assign t_search_hint = "Autor*in, Titel oder DOI" %}
     {% if include.kind == "topics" %}
         {% assign t_results = "{n} von {total} Themen" %}
     {% elsif include.kind == "theses" %}
@@ -46,6 +52,8 @@ values are mirrored into the hash as `#cat=...&year=...`.
     {% assign t_all_years = "All years" %}
     {% assign t_type = "Type" %}
     {% assign t_all_types = "All types" %}
+    {% assign t_search = "Search publications" %}
+    {% assign t_search_hint = "Author, title or DOI" %}
     {% if include.kind == "topics" %}
         {% assign t_results = "{n} of {total} topics" %}
     {% elsif include.kind == "theses" %}
@@ -56,6 +64,13 @@ values are mirrored into the hash as `#cat=...&year=...`.
 {% endif %}
 
 <div class="cat-filter" data-listing-filter data-results-template="{{ t_results }}">
+    {% if include.kind == "publications" %}
+    <label class="cat-filter-search">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <span class="visually-hidden">{{ t_search }}</span>
+        <input type="search" data-filter-search placeholder="{{ t_search_hint }}" autocomplete="off" spellcheck="false">
+    </label>
+    {% endif %}
     <span class="cat-filter-label" id="filterLabel-cat">{{ t_cat }}</span>
     <div class="cat-filter-control" data-filter-key="cat">
         <button
