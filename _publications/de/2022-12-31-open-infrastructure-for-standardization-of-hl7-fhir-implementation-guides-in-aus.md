@@ -5,7 +5,7 @@ permalink: /publications/open-infrastructure-for-standardization-of-hl7-fhir-imp
 date: 2022-12-31
 title: Open Infrastructure for Standardization of HL7® FHIR® Implementation
   Guides in Austria.
-reference: Egelkraut R., et al. „Open Infrastructure for Standardization of HL7® FHIR®
+reference: Egelkraut R., Traxler B., Helm E., Krauss O., Schuler A. „Open Infrastructure for Standardization of HL7® FHIR®
   Implementation Guides in Austria.“ dHealth. 2022.
 categories: [ehealth]
 doi: https://doi.org/10.3233/shti220372

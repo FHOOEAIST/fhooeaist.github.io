@@ -6,7 +6,7 @@ date: 2022-12-31
 title: A Scalable Microservice Infrastructure for Fleet Data Management
 categories: [se]
 projects: [projects:projekt-akfa]
-reference: Meindl R., et al. „A Scalable Microservice Infrastructure for Fleet Data
+reference: Meindl R., Papesh K., Baumgartner D., Helm E. „A Scalable Microservice Infrastructure for Fleet Data
   Management.“ International Conference on Database and Expert Systems Applications.
   Springer, Cham, 2022.
 doi: https://doi.org/10.1007/978-3-031-14343-4_37
