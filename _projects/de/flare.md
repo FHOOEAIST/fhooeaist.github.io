@@ -15,7 +15,7 @@ projects:
 category: cv
 team:
   - member: gerald-zwettler
-    role: professor
+    role: lead
   - member: ulrich-bodenhofer
     role: professor
   - member: martin-hanreich

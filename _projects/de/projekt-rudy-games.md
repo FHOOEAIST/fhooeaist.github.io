@@ -13,12 +13,12 @@ projects:
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: cv
 team:
-  - member: emmanuel-helm
-    role: lead
   - member: gerald-zwettler
-    role: professor
+    role: lead
+  - member: emmanuel-helm
+    role: researcher
   - member: oliver-krauss
-    role: professor
+    role: researcher
 ---
 
 ## i2f – Interface2Face Mixreality Game
