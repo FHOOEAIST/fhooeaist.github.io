@@ -252,6 +252,13 @@
   border-radius: var(--radius-lg);
 }
 
+/* the person a project's team box linked to (#member-<id> / #alumni-<id>) */
+.team-card:target,
+.alumni-list li:target {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
 .alumni-image {
   display: flex;
   flex: none;

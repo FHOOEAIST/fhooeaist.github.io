@@ -139,6 +139,23 @@ Markdown description for Bambi 2...
 > single file describe multi-phase projects. The listing uses `laufzeitEnd`
 > to decide whether a project is still active.
 
+### Project Team
+
+A project can list who works (or worked) on it. The page then shows a **Team** box at the side (below the text on narrow screens) with each person's portrait and name, linked to their card on the team page. A project without a `team:` list shows no box.
+
+```yaml
+team:                     # same list in the DE and the EN file
+  - christoph-praschl     # `id` of a member or alumni entry in _data/team.yml; the first is the contact person
+  - simone-sandler        # everyone else: team members, shown in this order
+  - martin-hanreich
+```
+
+- **Contact person:** the first id, shown on top with e-mail and phone. If that person is former staff, there is no contact box and everyone is listed as a team member.
+- **Former staff** (ids from `alumni:`) are shown with a "former" marker and their years, without contact details.
+- **Long teams:** the first five members are shown as cards, the rest behind a row of small portraits with "+N".
+
+The ids are resolved by [`_plugins/project_team.rb`](_plugins/project_team.rb), which warns during the build about unknown ids and about a project whose DE and EN files list different teams.
+
 ### Ordering
 
 Both sections of the projects listing (active and completed) are sorted
@@ -306,11 +323,12 @@ It looks for the logo on each partner's start page (skipping entries that alread
 
 Team members are listed from [`_data/team.yml`](_data/team.yml). Each member carries a `category:` (`professor` | `project_manager` | `researcher` | `student`, labels in [`_data/team_categories.yml`](_data/team_categories.yml)) that is shown after the name, and a `gender:` (`m` | `f`) that picks the German form of that label (neutral fallback without it); an optional `role:` (e.g. the study programme of a student employee) is shown next to it.
 
-All further fields are optional and only rendered when present (cards: [`_includes/team-card.html`](_includes/team-card.html)). Profile links and interests are meant to be added by each member themselves:
+Every member (and alumni entry) also has an `id:`, a slug of the name that stays the same when the name changes; project pages refer to people by it (see *Project Team* above), and the team page gives each card the anchor `#member-<id>` (`#alumni-<id>` for former staff). All further fields are optional and only rendered when present (cards: [`_includes/team-card.html`](_includes/team-card.html)). Profile links and interests are meant to be added by each member themselves:
 
 ```yaml
 members:
   - name: Jane Doe MSc
+    id: jane-doe                    # stable key, used by the projects' `team:` lists
     category: researcher
     gender: f
     email: jane.doe@fh-hagenberg.at
