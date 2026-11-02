@@ -15,6 +15,7 @@ category: ml
 team:
   - christoph-praschl
   - martin-hanreich
+  - gerald-zwettler
 ---
 
 ## AI-Based Production Knowledge and Inference Database
