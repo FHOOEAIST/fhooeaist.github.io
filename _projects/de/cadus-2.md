@@ -12,6 +12,8 @@ projects:
     partner: Cadus Innovation GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Innovationsscheck
 category: cv
+team:
+  - gerald-zwettler
 ---
 
 ## Cadus

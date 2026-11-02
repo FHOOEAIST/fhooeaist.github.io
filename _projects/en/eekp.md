@@ -12,6 +12,11 @@ projects:
     partner: MIT - Medizinformatik und IT, eine Direktion der OÖ Gesundheitsholding GmbH
     foerdergeber: Auftragsprojekt
 category: ehealth
+team:
+  - andreas-pointner
+  - sophie-bauernfeind
+  - oliver-krauss
+  - christoph-praschl
 ---
 
 ## eEKP

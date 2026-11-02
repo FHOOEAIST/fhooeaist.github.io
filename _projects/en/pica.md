@@ -15,6 +15,13 @@ projects:
       Oö. Außeruniversitären Forschungseinrichtungen im Zeitraum 01.01.2022 –
       31.12.2029.
 category: cv
+team:
+  - emmanuel-helm
+  - andreas-pointner
+  - oliver-krauss
+  - clara-diesenreiter
+  - andreas-erhard
+  - andreas-schuler
 ---
 
 ## PICA - Process Intelligence and Conformance Auditing

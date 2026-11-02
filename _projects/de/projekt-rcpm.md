@@ -12,6 +12,10 @@ projects:
     partner: Calpana business consulting GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ml
+team:
+  - oliver-krauss
+  - eva-maria-spitzer
+  - andreas-pointner
 ---
 
 ## RCPM - Realtime Corporate Performance Management

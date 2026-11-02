@@ -11,6 +11,8 @@ projects:
     laufzeitEnd: 30.09.2024
     partner: WIFI Oberösterreich
 category: unknown
+team:
+  - gerald-zwettler
 ---
 
 ## Compliance Crawler

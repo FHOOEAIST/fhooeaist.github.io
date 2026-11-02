@@ -12,6 +12,9 @@ projects:
     partner: Mox Innovations GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Innovationsscheck
 category: cv
+team:
+  - gerald-zwettler
+  - simone-sandler
 ---
 
 ## Projekt MoxUP

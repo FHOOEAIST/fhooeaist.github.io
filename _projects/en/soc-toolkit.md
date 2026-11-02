@@ -12,6 +12,9 @@ projects:
     partner: Nextpart Security Intelligence GmbH
     foerdergeber: Austrian Research Promotion Agency FFG – Basisprogramm
 category: ml
+team:
+  - oliver-krauss
+  - konstantin-papesh
 ---
 
 ## SOC-Toolkit

@@ -13,8 +13,7 @@ projects:
     foerdergeber: Land Oberösterreich
 category: cv
 team:
-  - member: christoph-praschl
-    role: senior_researcher
+  - christoph-praschl
 ---
 
 ## Project Wildboar

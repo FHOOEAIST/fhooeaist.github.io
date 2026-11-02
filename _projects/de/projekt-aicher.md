@@ -13,14 +13,11 @@ projects:
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: cv
 team:
-  - member: oliver-krauss
-    role: lead
-  - member: gerald-zwettler
-    role: professor
-  - member: andreas-pointner
-    role: senior_researcher
-  - member: christoph-praschl
-    role: senior_researcher
+  - oliver-krauss
+  - gerald-zwettler
+  - andreas-pointner
+  - christoph-praschl
+  - andreas-schuler
 ---
 
 ## PASS – Plan Analysis using Self-learning Solutions

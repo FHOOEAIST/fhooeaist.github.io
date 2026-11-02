@@ -17,6 +17,11 @@ projects:
       FlugaufnahmenRegistrierung der Flugaufnahmekarten mit digitalen
       Kartendiensten zur Geo-Referenzierung bzw. Adressfindung
 category: cv
+team:
+  - gerald-zwettler
+  - christoph-praschl
+  - michael-stradner
+  - yuta-ono
 ---
 
 ## Amido

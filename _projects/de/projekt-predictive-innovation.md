@@ -13,8 +13,7 @@ projects:
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: cv
 team:
-  - member: oliver-krauss
-    role: professor
+  - oliver-krauss
 ---
 
 ## Projekt: Predictive Innovation

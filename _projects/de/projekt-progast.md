@@ -12,6 +12,9 @@ projects:
     partner: Progast+
     foerdergeber: Easy2Research
 category: cv
+team:
+  - gerald-zwettler
+  - andreas-pointner
 ---
 
 ## Projekt Progast+

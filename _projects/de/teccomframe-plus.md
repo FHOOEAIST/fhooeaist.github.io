@@ -17,6 +17,9 @@ projects:
     foerdergeber: Erasmus+ Cooperation Partnerships in Higher Education programme
 category: unknown
 eu_funded: true
+team:
+  - gerald-zwettler
+  - christoph-praschl
 ---
 
 ## TecCOMFrame+

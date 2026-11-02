@@ -14,6 +14,10 @@ projects:
       Innovationsscheck (Fokus Sentimentanalyse)easy2research (Fokus Prompt
       Engineering)
 category: ml
+team:
+  - oliver-krauss
+  - christoph-praschl
+  - samuel-zuehlke
 ---
 
 ## Replient

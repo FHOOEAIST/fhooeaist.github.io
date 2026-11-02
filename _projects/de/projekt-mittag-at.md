@@ -17,6 +17,10 @@ projects:
     partner: mittag.at
     foerdergeber: Österreichische Fördergesellschaft (FFG) – Innovationscheck
 category: ml
+team:
+  - emmanuel-helm
+  - christoph-praschl
+  - jessica-koeberle
 ---
 
 ## Smart Menus

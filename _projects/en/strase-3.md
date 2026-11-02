@@ -13,6 +13,8 @@ projects:
     foerdergeber: Austrian Research Promotion Agency (FFG) – COMET Compentence
       Centers for Excellent Technologies
 category: cv
+team:
+  - andreas-pointner
 ---
 
 ## StraSE

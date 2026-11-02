@@ -12,6 +12,8 @@ projects:
     partner: ""
     foerdergeber: FH Basisfördermittelfinaziertes Projekt
 category: ml
+team:
+  - oliver-krauss
 ---
 
 ## Autonomous Innovation

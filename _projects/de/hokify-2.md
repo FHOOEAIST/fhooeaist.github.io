@@ -12,6 +12,9 @@ projects:
     partner: hokify GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ml
+team:
+  - gerald-zwettler
+  - andreas-pointner
 ---
 
 ## Hokify

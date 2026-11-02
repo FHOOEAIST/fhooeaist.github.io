@@ -12,6 +12,8 @@ projects:
     partner: LMNOP
     foerdergeber: Austrian Research Promotion Agency FFG – Basisprogram
 category: ml
+team:
+  - andreas-pointner
 ---
 
 ## Project ORG-Manager

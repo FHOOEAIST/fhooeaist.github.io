@@ -12,6 +12,8 @@ projects:
     partner: ATOS Ambulanz Mobile
     foerdergeber: Innovatives OÖ 2020
 category: ehealth
+team:
+  - emmanuel-helm
 ---
 
 ## Project Oppa

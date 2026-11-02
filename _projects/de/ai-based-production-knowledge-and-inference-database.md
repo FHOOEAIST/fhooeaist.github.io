@@ -13,12 +13,8 @@ projects:
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – CHASE Comet Center
 category: ml
 team:
-  - member: christoph-praschl
-    role: lead
-  - member: martin-hanreich
-    role: researcher
-  - member: josef-altmann
-    role: researcher
+  - christoph-praschl
+  - martin-hanreich
 ---
 
 ## AI-Based Production Knowledge and Inference Database

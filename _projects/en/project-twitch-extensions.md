@@ -12,6 +12,9 @@ projects:
     partner: Own3d Media GmbH
     foerdergeber: Easy2Research
 category: unknown
+team:
+  - emmanuel-helm
+  - simone-sandler
 ---
 
 ## Project Twitch Extensions

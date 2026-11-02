@@ -12,6 +12,8 @@ projects:
     partner: ""
     foerdergeber: FH Basisfördermittelfinaziertes Projekt
 category: cv
+team:
+  - andreas-pointner
 ---
 
 ## Attribute grammar - Miner

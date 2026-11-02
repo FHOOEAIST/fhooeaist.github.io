@@ -12,6 +12,9 @@ projects:
     partner: Catchgoal GmbH
     foerdergeber: Land Oberösterreich – easy2research
 category: ml
+team:
+  - christoph-praschl
+  - simone-sandler
 ---
 
 ## Feedbackloop

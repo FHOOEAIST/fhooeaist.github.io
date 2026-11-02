@@ -13,6 +13,8 @@ projects:
     foerdergeber: Austrian Research Promotion Agency FFG – Security Technologies &
       Solutions
 category: cv
+team:
+  - christoph-praschl
 ---
 
 ## PUMBAA – Platform for Unmanned Measurement Systems for the Assessment of Airborne Agents

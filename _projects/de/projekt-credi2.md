@@ -12,6 +12,9 @@ projects:
     partner: Credi2 GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: cv
+team:
+  - gerald-zwettler
+  - andreas-pointner
 ---
 
 ## Projekt Credi2

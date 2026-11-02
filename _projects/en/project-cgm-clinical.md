@@ -12,6 +12,10 @@ projects:
     partner: CGM Clinical
     foerdergeber: Austrian Research Promotion Agency FFG – Basisprogramm
 category: cv
+team:
+  - emmanuel-helm
+  - oliver-krauss
+  - andreas-schuler
 ---
 
 ## Project CGM Clinical

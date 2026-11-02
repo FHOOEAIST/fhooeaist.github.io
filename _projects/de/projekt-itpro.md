@@ -12,6 +12,8 @@ projects:
     partner: ITPRO – Consulting & Software GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Innovationsscheck
 category: unknown
+team:
+  - oliver-krauss
 ---
 
 ## Projekt ITPRO

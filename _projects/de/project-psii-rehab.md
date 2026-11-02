@@ -12,6 +12,9 @@ projects:
     partner: psii.rehab
     foerdergeber: OÖ Kooperationsförderung easy2innovate
 category: ehealth
+team:
+  - emmanuel-helm
+  - rainer-meindl
 ---
 
 ## Projekt Psii Rehab

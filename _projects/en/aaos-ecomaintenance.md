@@ -13,14 +13,10 @@ projects:
     foerdergeber: Austrian Research Promotion Agency FFG – Basisprogramm
 category: ml
 team:
-  - member: christoph-praschl
-    role: lead
-  - member: gerald-zwettler
-    role: professor
-  - member: helga-billensteiner
-    role: researcher
-  - member: mert-dalkilic
-    role: researcher
+  - christoph-praschl
+  - gerald-zwettler
+  - helga-billensteiner
+  - mert-dalkilic
 ---
 
 ## AAOS Eco+Maintenance

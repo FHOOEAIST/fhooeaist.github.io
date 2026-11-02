@@ -12,6 +12,11 @@ projects:
     partner: Apro Kassensysteme GmbH
     foerdergeber: Austrian Research Promotion Agency FFG – Basisprogramm
 category: ml
+team:
+  - emmanuel-helm
+  - rainer-meindl
+  - simone-sandler
+  - elisabeth-mayrhuber
 ---
 
 ## Project Voigas

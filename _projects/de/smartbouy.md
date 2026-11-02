@@ -12,6 +12,10 @@ projects:
     partner: Hermes Bootsbaus Gmbh
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ml
+team:
+  - christoph-praschl
+  - gerald-zwettler
+  - martin-hanreich
 ---
 
 ## SmartBuoy 2.0

@@ -12,6 +12,15 @@ projects:
     partner: TrueSize
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: cv
+team:
+  - gerald-zwettler
+  - andreas-schuler
+  - christoph-praschl
+  - martin-hanreich
+  - david-baumgartner
+  - oliver-hiesl
+  - alexander-freller
+  - stefan-zeitlhofer
 ---
 
 ## Projekt TrueSize

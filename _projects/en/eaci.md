@@ -12,6 +12,9 @@ projects:
     partner: Mobile Agreement (mogree)
     foerdergeber: Austrian Research Promotion Agency (FFG) – General Programme
 category: ml
+team:
+  - oliver-krauss
+  - simone-sandler
 ---
 
 ## Eaci

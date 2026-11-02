@@ -12,6 +12,11 @@ projects:
     partner: hello again GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: cv
+team:
+  - emmanuel-helm
+  - eva-maria-spitzer
+  - christoph-praschl
+  - johann-aichberger
 ---
 
 ## Projekt Kimiku

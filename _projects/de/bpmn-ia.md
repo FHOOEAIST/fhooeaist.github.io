@@ -12,6 +12,9 @@ projects:
     partner: UIA
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ml
+team:
+  - ulrich-bodenhofer
+  - andreas-pointner
 ---
 
 ## BPMN.IA

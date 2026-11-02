@@ -12,6 +12,8 @@ projects:
     partner: Safetydrain Designduschen GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Innovationsscheck
 category: unknown
+team:
+  - emmanuel-helm
 ---
 
 ## Projekt Safetydrain

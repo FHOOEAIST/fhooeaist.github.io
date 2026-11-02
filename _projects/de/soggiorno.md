@@ -12,6 +12,8 @@ projects:
     partner: Soggiorno
     foerdergeber: Land Oberösterreich – easy2research
 category: ml
+team:
+  - christoph-praschl
 ---
 
 ## Soggiorno

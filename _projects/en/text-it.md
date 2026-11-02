@@ -12,6 +12,8 @@ projects:
     partner: text-it GmbH
     foerdergeber: Austrian Research Promotion Agency FFG – Innovationsscheck
 category: ml
+team:
+  - gerald-zwettler
 ---
 
 ## text-it

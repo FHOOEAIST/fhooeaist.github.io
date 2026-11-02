@@ -12,6 +12,11 @@ projects:
     partner: Wako3D, Kepler Universitätsklinikum, Sendance
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ml
+team:
+  - christoph-praschl
+  - gerald-zwettler
+  - sophie-bauernfeind
+  - mert-dalkilic
 ---
 
 ## M.O.V.E. - Modeling Orthoses for Vitality Enhancement

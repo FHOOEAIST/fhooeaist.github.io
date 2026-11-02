@@ -12,6 +12,10 @@ projects:
     partner: Dr. Eduard Holzer
     foerdergeber: Austrian Research Promotion Agency FFG – Innovationsscheck
 category: cv
+team:
+  - gerald-zwettler
+  - mert-dalkilic
+  - martin-hanreich
 ---
 
 ## Ball-Tracking

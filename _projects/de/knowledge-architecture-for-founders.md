@@ -12,6 +12,8 @@ projects:
     partner: Innoflow
     foerdergeber: WKOÖ Technologie-Scheck
 category: ml
+team:
+  - christoph-praschl
 ---
 
 ## Skalierbare Wissens- und Datenarchitektur für Gründerinnen und Gründer

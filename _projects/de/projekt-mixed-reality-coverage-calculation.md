@@ -12,6 +12,10 @@ projects:
     partner: Realsim
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Kleinprojekte
 category: cv
+team:
+  - oliver-krauss
+  - christoph-praschl
+  - martin-hanreich
 ---
 
 ## Projekt: Mixed Reality Coverage Calculation

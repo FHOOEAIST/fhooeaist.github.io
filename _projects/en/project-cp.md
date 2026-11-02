@@ -12,6 +12,9 @@ projects:
     partner: Christian Bauernfeind IT-Beratung & Realisierung
     foerdergeber: Austrian Research Promotion Agency FFG – Innovationsscheck
 category: cv
+team:
+  - gerald-zwettler
+  - martin-hanreich
 ---
 
 ## Project CP+

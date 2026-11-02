@@ -12,6 +12,10 @@ projects:
     partner: Intelligent Automation GmbH
     foerdergeber: Austrian Research Promotion Agency FFG – Kleinprojekt
 category: ml
+team:
+  - andreas-pointner
+  - ulrich-bodenhofer
+  - mert-dalkilic
 ---
 
 ## Vipa

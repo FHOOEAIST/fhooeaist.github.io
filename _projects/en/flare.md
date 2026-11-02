@@ -14,14 +14,10 @@ projects:
     foerdergeber: Land Oberösterreich – AI-Region Upper Austria 2024
 category: cv
 team:
-  - member: gerald-zwettler
-    role: lead
-  - member: ulrich-bodenhofer
-    role: professor
-  - member: martin-hanreich
-    role: researcher
-  - member: harald-brunner
-    role: student_assistant
+  - gerald-zwettler
+  - ulrich-bodenhofer
+  - martin-hanreich
+  - harald-brunner
 ---
 
 ## FLARE

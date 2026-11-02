@@ -12,6 +12,9 @@ projects:
     partner: ""
     foerdergeber: FWF – Doc.fund.connects
 category: ml
+team:
+  - ulrich-bodenhofer
+  - sebastian-pritz
 ---
 
 ## Human-Centered Artificial Intelligence

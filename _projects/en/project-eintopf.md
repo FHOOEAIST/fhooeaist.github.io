@@ -12,6 +12,10 @@ projects:
     partner: Tiani Spirit GmbH
     foerdergeber: Austrian Research Promotion Agency FFG – Basisprogramm
 category: ehealth
+team:
+  - emmanuel-helm
+  - oliver-krauss
+  - rainer-meindl
 ---
 
 ## Project Eintopf

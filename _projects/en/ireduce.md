@@ -14,12 +14,8 @@ projects:
     foerdergeber: Austrian Research Promotion Agency FFG – KIRAS
 category: ml
 team:
-  - member: ulrich-bodenhofer
-    role: professor
-  - member: natasha-trajkovska
-    role: researcher
-  - member: josef-altmann
-    role: researcher
+  - ulrich-bodenhofer
+  - natasha-trajkovska
 ---
 
 ## iReduce
