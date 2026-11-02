@@ -8,6 +8,5 @@ title: "Synthetic Football Data: Modding FIFA 20 for Labelled Data Generation
 student: Clara Kainz
 thesis_type: bachelor
 categories: [cv, ml]
-projects: [projects:projektkooperation-506-data-performance]
 ---
 
