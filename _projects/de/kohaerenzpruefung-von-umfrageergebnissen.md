@@ -12,6 +12,9 @@ projects:
     partner: Redem GmbH
     foerdergeber: Land Oberösterreich – easy2innovate
 category: ml
+team:
+  - christoph-praschl
+  - simone-sandler
 ---
 
 ## Kohärenzprüfung von Umfragen

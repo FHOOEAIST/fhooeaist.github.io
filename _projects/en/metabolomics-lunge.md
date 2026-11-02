@@ -14,6 +14,10 @@ projects:
 category:
   - ehealth
   - ml
+team:
+  - ulrich-bodenhofer
+  - sebastian-pritz
+  - helga-billensteiner
 ---
 
 ## Metabolomics Lunge

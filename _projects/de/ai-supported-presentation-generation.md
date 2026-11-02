@@ -12,6 +12,9 @@ projects:
     partner: DOKA
     foerdergeber: Auftragsprojekt
 category: ml
+team:
+  - gerald-zwettler
+  - mert-dalkilic
 ---
 
 ## KI-gestützte Erstellung von Präsentationen

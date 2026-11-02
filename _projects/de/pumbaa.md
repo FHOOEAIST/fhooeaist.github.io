@@ -13,6 +13,8 @@ projects:
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Security
       Technologies & Solutions
 category: cv
+team:
+  - christoph-praschl
 ---
 
 ## PUMBAA – Plattform für Unbemannte Messsysteme zur Bewertung Aerogener Agenzien

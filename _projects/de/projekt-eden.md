@@ -13,12 +13,10 @@ projects:
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: cv
 team:
-  - member: oliver-krauss
-    role: lead
-  - member: gerald-zwettler
-    role: professor
-  - member: rainer-meindl
-    role: researcher
+  - oliver-krauss
+  - gerald-zwettler
+  - rainer-meindl
+  - david-baumgartner
 ---
 
 ## EDEN – Emergency Detection for Elevator Networks

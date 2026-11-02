@@ -12,6 +12,9 @@ projects:
     partner: Monto Tech GmbH
     foerdergeber: Land Oberösterreich – easy2research
 category: ml
+team:
+  - christoph-praschl
+  - mert-dalkilic
 ---
 
 ## BuildPilot

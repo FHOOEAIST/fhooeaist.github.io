@@ -13,8 +13,7 @@ projects:
     foerdergeber: Auftragsprojekt
 category: cv
 team:
-  - member: christoph-praschl
-    role: senior_researcher
+  - christoph-praschl
 ---
 
 ## KfV – Bewertung von Wildunfallrisiko

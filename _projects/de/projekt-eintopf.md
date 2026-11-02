@@ -12,6 +12,10 @@ projects:
     partner: Tiani Spirit GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ehealth
+team:
+  - emmanuel-helm
+  - oliver-krauss
+  - rainer-meindl
 ---
 
 ## Projekt EINTOPF

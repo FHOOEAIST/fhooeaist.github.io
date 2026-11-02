@@ -16,6 +16,10 @@ projects:
       GmbH, Xylem Science and Technology Management GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Kiras
 category: ml
+team:
+  - oliver-krauss
+  - sophie-bauernfeind
+  - simone-sandler
 ---
 
 ## eMarketShield

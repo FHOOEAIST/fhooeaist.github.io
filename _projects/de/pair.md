@@ -12,6 +12,10 @@ projects:
     partner: CAS GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Kleinprojekt
 category: ehealth
+team:
+  - andreas-pointner
+  - selina-adlberger
+  - oliver-krauss
 ---
 
 ## PAIR

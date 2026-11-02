@@ -12,6 +12,9 @@ projects:
     partner: eBuddies GmbH
     foerdergeber: easy2research, Land Oberösterreich
 category: ml
+team:
+  - gerald-zwettler
+  - martin-hanreich
 ---
 
 ## Risk Map App

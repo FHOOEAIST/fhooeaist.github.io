@@ -12,6 +12,10 @@ projects:
     partner: Realsim
     foerdergeber: easy2research
 category: cv
+team:
+  - oliver-krauss
+  - martin-hanreich
+  - christoph-praschl
 ---
 
 ## Project ARRR

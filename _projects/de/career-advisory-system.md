@@ -13,10 +13,8 @@ projects:
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ml
 team:
-  - member: ulrich-bodenhofer
-    role: professor
-  - member: helga-billensteiner
-    role: researcher
+  - ulrich-bodenhofer
+  - helga-billensteiner
 ---
 
 ## Career Advisory System

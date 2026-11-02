@@ -12,6 +12,9 @@ projects:
     partner: Stringnet
     foerdergeber: Land Oberösterreich – easy2research
 category: cv
+team:
+  - christoph-praschl
+  - mert-dalkilic
 ---
 
 ## Stringnet

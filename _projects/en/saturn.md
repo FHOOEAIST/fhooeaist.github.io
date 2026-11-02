@@ -12,6 +12,9 @@ projects:
     partner: 506 Data & Performance GmbH
     foerdergeber: Austria Wirtschaftsservice (AWS)
 category: ml
+team:
+  - oliver-krauss
+  - elisabeth-mayrhuber
 ---
 
 ## Saturn

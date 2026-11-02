@@ -17,6 +17,11 @@ projects:
       hinsichtlich Bewuchsdichte, Größe/Form der Pflanzen/Blätter und auch
       Verdrängung (Biodiversität) durch andere Spezien"
 category: cv
+team:
+  - gerald-zwettler
+  - christoph-praschl
+  - sebastian-pritz
+  - david-baumgartner
 ---
 
 ## AlpinIO

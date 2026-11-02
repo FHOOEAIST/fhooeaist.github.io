@@ -12,6 +12,10 @@ projects:
     partner: CGM (CompuGroup Medical) Clinical
     foerdergeber: TIMed Center Aktivität, Innovatives OÖ 2020
 category: cv
+team:
+  - emmanuel-helm
+  - oliver-krauss
+  - andreas-pointner
 ---
 
 ## Projekt MSBPMN

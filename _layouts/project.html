@@ -45,7 +45,7 @@ css: projects
   side (below the text on narrow screens); without one it stays as before.
 {%- endcomment -%}
 {% assign has_team = false %}
-{% if page.team_contact or page.team_groups.size > 0 %}{% assign has_team = true %}{% endif %}
+{% if page.team_contact or page.team_members.size > 0 %}{% assign has_team = true %}{% endif %}
 
 <div class="container{% unless has_team %} container-narrow{% endunless %}">
   <article class="project-article">

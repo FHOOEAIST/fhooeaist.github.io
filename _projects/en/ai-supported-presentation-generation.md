@@ -12,6 +12,9 @@ projects:
     partner: DOKA
     foerdergeber: Auftragsprojekt
 category: ml
+team:
+  - gerald-zwettler
+  - mert-dalkilic
 ---
 
 ## AI-supported Generation of Presentations

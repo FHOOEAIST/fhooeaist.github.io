@@ -14,6 +14,8 @@ projects:
       Oberösterreich und Tirol
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – AI4Green
 category: cv
+team:
+  - christoph-praschl
 ---
 
 ## Bambi

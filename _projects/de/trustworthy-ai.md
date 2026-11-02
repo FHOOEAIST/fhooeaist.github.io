@@ -15,6 +15,9 @@ projects:
 category:
   - ehealth
   - ml
+team:
+  - oliver-krauss
+  - sophie-bauernfeind
 ---
 
 ## Trustworthy AI

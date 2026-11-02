@@ -12,6 +12,10 @@ projects:
     partner: 506 Data & Performance GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ml
+team:
+  - oliver-krauss
+  - elisabeth-mayrhuber
+  - simone-sandler
 ---
 
 ## Gemini

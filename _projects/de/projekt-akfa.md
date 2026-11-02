@@ -12,6 +12,9 @@ projects:
     partner: STEINBAUER Performance Austria GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ml
+team:
+  - emmanuel-helm
+  - rainer-meindl
 ---
 
 ## Projekt AKFA

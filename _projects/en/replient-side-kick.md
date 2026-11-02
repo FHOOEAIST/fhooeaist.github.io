@@ -12,6 +12,10 @@ projects:
     partner: Doppel-N GmbH
     foerdergeber: Austrian Research Promotion Agency FFG – Kleinprojekt
 category: ml
+team:
+  - oliver-krauss
+  - christoph-praschl
+  - samuel-zuehlke
 ---
 
 ## Replient Side-Kick

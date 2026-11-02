@@ -14,8 +14,7 @@ projects:
       Energiefonds Smart Cities
 category: ml
 team:
-  - member: christoph-praschl
-    role: senior_researcher
+  - christoph-praschl
 ---
 
 ## Urbaner Speichercluster Südburgenland

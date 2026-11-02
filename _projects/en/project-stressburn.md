@@ -12,6 +12,9 @@ projects:
     partner: VR Dimension e.U.; PIELab
     foerdergeber: Austrian Research Promotion Agency FFG – Innovationsscheck
 category: cv
+team:
+  - emmanuel-helm
+  - johann-aichberger
 ---
 
 ## Project StressBurn

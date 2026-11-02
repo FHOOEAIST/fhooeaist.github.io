@@ -11,6 +11,8 @@ projects:
     laufzeitEnd: 30.09.2024
     partner: Lmnop group GmbH
 category: ml
+team:
+  - andreas-pointner
 ---
 
 ## Vereinsgesundheit

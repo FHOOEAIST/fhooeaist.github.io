@@ -12,6 +12,9 @@ projects:
     partner: Redem GmbH
     foerdergeber: Austrian Research Promotion Agency FFG – Innovationsscheck
 category: cv
+team:
+  - christoph-praschl
+  - simone-sandler
 ---
 
 ## Real-ID

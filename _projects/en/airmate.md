@@ -12,6 +12,8 @@ projects:
     partner: Airmate
     foerdergeber: Land Oberösterreich – easy2research
 category: ml
+team:
+  - christoph-praschl
 ---
 
 ## Airmate Motor Tests

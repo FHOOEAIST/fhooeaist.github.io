@@ -14,12 +14,9 @@ projects:
       Forschungsfelder bei den Oö. außeruniversitären Forschungseinrichtungen
 category: ml
 team:
-  - member: gerald-zwettler
-    role: professor
-  - member: oliver-krauss
-    role: professor
-  - member: mert-dalkilic
-    role: researcher
+  - gerald-zwettler
+  - oliver-krauss
+  - mert-dalkilic
 ---
 
 ## MARIE - Mobile Robotic Assistance for Office Environments

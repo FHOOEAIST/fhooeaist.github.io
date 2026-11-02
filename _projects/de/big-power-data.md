@@ -13,6 +13,10 @@ projects:
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG –
       Energieforschung (7. Ausschreibung)
 category: ml
+team:
+  - oliver-krauss
+  - christoph-praschl
+  - sebastian-pritz
 ---
 
 ## Big Power Data

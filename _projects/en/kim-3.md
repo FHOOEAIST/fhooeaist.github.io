@@ -12,6 +12,10 @@ projects:
     partner: Realsim
     foerdergeber: Austrian Research Promotion Agency FFG Innovationsscheck+
 category: ehealth
+team:
+  - oliver-krauss
+  - christoph-praschl
+  - martin-hanreich
 ---
 
 ## KIM - KI in Mixed Reality

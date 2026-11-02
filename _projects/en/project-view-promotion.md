@@ -13,6 +13,11 @@ projects:
     partner: VIEW Promotion GmbH
     foerdergeber: FFG – Basic
 category: ml
+team:
+  - oliver-krauss
+  - gerald-zwettler
+  - rainer-meindl
+  - david-baumgartner
 ---
 
 ## ARISE – Advertisement Recommendation and Intelligent Scheduling for Elevators

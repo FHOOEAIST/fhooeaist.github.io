@@ -13,6 +13,8 @@ projects:
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG –
       Dissertationsprogramm der Fachhochschule OÖ
 category: cv
+team:
+  - christoph-praschl
 ---
 
 ## Thumper

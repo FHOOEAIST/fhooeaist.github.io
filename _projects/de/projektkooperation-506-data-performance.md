@@ -12,6 +12,10 @@ projects:
     partner: 506 Data & Performance GmbH
     foerdergeber: Easy2Research
 category: ml
+team:
+  - oliver-krauss
+  - simone-sandler
+  - clara-diesenreiter
 ---
 
 ## Projektkooperation 506 Data & Performance

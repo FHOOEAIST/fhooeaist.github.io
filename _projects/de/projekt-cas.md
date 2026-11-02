@@ -13,12 +13,9 @@ projects:
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ehealth
 team:
-  - member: emmanuel-helm
-    role: lead
-  - member: andreas-pointner
-    role: senior_researcher
-  - member: anna-lin
-    role: researcher
+  - emmanuel-helm
+  - andreas-pointner
+  - anna-lin
 ---
 
 ## REPO – Radiology E-health PlatfOrm

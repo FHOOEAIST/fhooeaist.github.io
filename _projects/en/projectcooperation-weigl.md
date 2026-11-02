@@ -12,6 +12,11 @@ projects:
     partner: Weigl Control GmbH
     foerdergeber: Austrian Research Promotion Agency FFG – Innovationsscheck
 category: ml
+team:
+  - andreas-schuler
+  - christoph-praschl
+  - oliver-krauss
+  - johann-aichberger
 ---
 
 ## Projectcooperation Weigl

@@ -12,6 +12,9 @@ projects:
     partner: hokify GmbH
     foerdergeber: Austrian Research Promotion Agency (FFG) – General Programme
 category: ml
+team:
+  - gerald-zwettler
+  - andreas-pointner
 ---
 
 ## Hokify

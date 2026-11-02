@@ -2,25 +2,17 @@
 One person in the team box of a project page (_includes/project-team.html).
 Expects:
   include.person    — a resolved team entry (_plugins/project_team.rb): the
-                      _data/team.yml entry plus role, years, contact, former
+                      _data/team.yml entry plus former
   include.en        — true on the English page
   include.team_url  — URL of the team page, the card links to the person there
   include.featured  — optional, the contact person: larger, e-mail and phone
                       written out
 
-Former staff (alumni entries) get a "former" marker and no contact details.
+Former staff (alumni entries) get a "former" marker with their years and no
+contact details.
 {% endcomment %}
 {% assign person = include.person %}
 {% assign en = include.en %}
-{% assign role = site.data.project_roles | where: "id", person.role | first %}
-{% if role %}
-  {% if en %}{% assign role_label = role.label_en %}
-  {% elsif person.gender == "f" %}{% assign role_label = role.label_de_f %}
-  {% elsif person.gender == "m" %}{% assign role_label = role.label_de_m %}
-  {% else %}{% assign role_label = role.label_de %}{% endif %}
-{% else %}
-  {% assign role_label = person.role %}
-{% endif %}
 {% if person.former %}
   {% assign person_url = include.team_url | append: "#alumni-" | append: person.id %}
 {% else %}
@@ -36,9 +28,8 @@ Former staff (alumni entries) get a "former" marker and no contact details.
   </a>
   <div class="team-person-text">
     <a class="team-person-name" href="{{ person_url }}">{{ person.name }}</a>
-    <span class="team-person-role">{{ role_label }}{% if person.years %} · {{ person.years }}{% endif %}</span>
     {% if person.former %}
-    <span class="team-person-former">{% if en %}Former staff{% else %}Ehemalig{% endif %}</span>
+    <span class="team-person-former">{% if en %}Former staff{% else %}Ehemalig{% endif %}{% if person.years %} · {{ person.years }}{% endif %}</span>
     {% elsif include.featured %}
     {% if person.email %}<a class="team-person-contact" href="mailto:{{ person.email }}"><i class="fas fa-envelope" aria-hidden="true"></i>{% assign mail = person.email | split: "@" %}<span>{{ mail[0] }}<wbr><span class="team-person-nowrap">@{{ mail[1] }}</span></span></a>{% endif %}
     {% if person.phone %}<a class="team-person-contact" href="tel:{{ person.phone | remove: ' ' }}"><i class="fas fa-phone" aria-hidden="true"></i><span class="team-person-phone">{{ person.phone }}</span></a>{% endif %}

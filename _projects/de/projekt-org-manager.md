@@ -12,6 +12,8 @@ projects:
     partner: LMNOP
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogram
 category: ml
+team:
+  - andreas-pointner
 ---
 
 ## Projekt ORG-Manager

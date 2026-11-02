@@ -12,6 +12,10 @@ projects:
     partner: Moonshot25
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: cv
+team:
+  - christoph-praschl
+  - gerald-zwettler
+  - mert-dalkilic
 ---
 
 ## WTA

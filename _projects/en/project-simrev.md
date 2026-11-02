@@ -12,6 +12,9 @@ projects:
     partner: Lietz GmbH
     foerdergeber: Austrian Research Promotion Agency FFG Innovationsscheck
 category: cv
+team:
+  - gerald-zwettler
+  - christoph-praschl
 ---
 
 ## Project SimRev

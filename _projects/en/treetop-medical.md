@@ -12,6 +12,12 @@ projects:
     partner: Treetop Medical Gmbh
     foerdergeber: FFG Basisprogramm
 category: ehealth
+team:
+  - christoph-praschl
+  - oliver-krauss
+  - simone-sandler
+  - sophie-bauernfeind
+  - natasha-trajkovska
 ---
 
 ## Treetop Medical

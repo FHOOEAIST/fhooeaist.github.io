@@ -12,6 +12,9 @@ projects:
     dissertant: Sebastian Pritz
     foerdergeber: Austrian Research Promotion Agency FFG – Dissertationsprogramm der Fachhochschule OÖ
 category: ml
+team:
+  - ulrich-bodenhofer
+  - sebastian-pritz
 ---
 
 ## MINERVA

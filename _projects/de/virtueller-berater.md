@@ -12,6 +12,10 @@ projects:
     partner: bluesource – mobile solutions gmbh
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: cv
+team:
+  - andreas-pointner
+  - ulrich-bodenhofer
+  - sophie-bauernfeind
 ---
 
 ## Virtueller Berater

@@ -12,6 +12,10 @@ projects:
     partner: LICA Life Care GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Digital Health
 category: ehealth
+team:
+  - barbara-traxler
+  - gerald-zwettler
+  - clara-diesenreiter
 ---
 
 ## Lica Ried

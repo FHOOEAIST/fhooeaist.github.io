@@ -12,6 +12,9 @@ projects:
     partner: Ralph Ohler
     foerdergeber: Easy2Research
 category: ml
+team:
+  - gerald-zwettler
+  - daniel-stuetz
 ---
 
 ## Learning while asleep

@@ -12,6 +12,9 @@ projects:
     partner: BlueDynamics Auersperg-Castell KG
     foerdergeber: easy2research
 category: cv
+team:
+  - gerald-zwettler
+  - christoph-praschl
 ---
 
 ## Project Woodmaster Plus

@@ -16,6 +16,13 @@ projects:
     partner: Formelracing
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Innovationsscheck
 category: cv
+team:
+  - oliver-krauss
+  - rainer-meindl
+  - christoph-praschl
+  - martin-hanreich
+  - gerald-zwettler
+  - herwig-mayr
 ---
 
 ## Drive for Knowledge

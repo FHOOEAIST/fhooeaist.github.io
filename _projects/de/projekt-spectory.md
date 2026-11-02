@@ -12,6 +12,9 @@ projects:
     partner: Spectory, HIVE
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Innovationsscheck
 category: cv
+team:
+  - gerald-zwettler
+  - christoph-praschl
 ---
 
 ## Projekt Spectory

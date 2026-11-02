@@ -12,6 +12,9 @@ projects:
     partner: cortEXPlore
     foerdergeber: Austrian Research Promotion Agency FFG – Basisprogramm
 category: ehealth
+team:
+  - gerald-zwettler
+  - rainer-meindl
 ---
 
 ## Project CortEXPlore

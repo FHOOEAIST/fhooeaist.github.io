@@ -12,6 +12,10 @@ projects:
     partner: Christian Seidl
     foerdergeber: FFG – Innovationsscheck Plus
 category: cv
+team:
+  - gerald-zwettler
+  - anna-reichhardt
+  - michael-stradner
 ---
 
 ## Project: Epilepsie Monitoring
