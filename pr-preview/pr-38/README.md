@@ -141,27 +141,20 @@ Markdown description for Bambi 2...
 
 ### Project Team
 
-A project can list who works (or worked) on it. The page then shows a **Team** box at the side (below the text on narrow screens) with each person's portrait, name and role in the project, linked to their card on the team page; the contact person comes first with e-mail and phone. A project without a `team:` list shows no box.
+A project can list who works (or worked) on it. The page then shows a **Team** box at the side (below the text on narrow screens) with each person's portrait and name, linked to their card on the team page. A project without a `team:` list shows no box.
 
 ```yaml
-team:                                # same block in the DE and the EN file
-  - member: christoph-praschl        # `id` of a member or alumni entry in _data/team.yml
-    role: lead                       # id from _data/project_roles.yml
-    contact: true                    # optional: shown first as the contact person
-  - member: andreas-pointner
-    role: senior_researcher
-  - member: sebastian-pritz
-    role: researcher
-    years: 2021–2023                 # optional, if the person was only on it for a while
+team:                     # same list in the DE and the EN file
+  - christoph-praschl     # `id` of a member or alumni entry in _data/team.yml; the first is the contact person
+  - simone-sandler        # everyone else: team members, shown in this order
+  - martin-hanreich
 ```
 
-- **Roles** (`lead`, `professor`, `senior_researcher`, `researcher`, `phd_student`, `student_assistant`) and their DE/EN labels live in [`_data/project_roles.yml`](_data/project_roles.yml); German labels are gendered by the member's `gender`. The box sorts by role (in the order of that file), then by last name.
-- **Contact person:** the entry with `contact: true`, otherwise the first `lead` who is still on the team.
-- **Former staff** (ids from `alumni:`) are shown with their years and a "former" marker, without contact details.
-- **Phases:** an entry of the `projects:` list can carry its own `team:` when the team changed; phases without one use the project-level list. If the phases end up with different teams, the box shows one group per team, latest phase first.
-- **Long teams:** the first five people of a group are shown as cards, the rest behind a row of small portraits with "+N".
+- **Contact person:** the first id, shown on top with e-mail and phone. If that person is former staff, there is no contact box and everyone is listed as a team member.
+- **Former staff** (ids from `alumni:`) are shown with a "former" marker and their years, without contact details.
+- **Long teams:** the first five members are shown as cards, the rest behind a row of small portraits with "+N".
 
-The ids are resolved by [`_plugins/project_team.rb`](_plugins/project_team.rb), which warns during the build about unknown member or role ids and about a project whose DE and EN files list different teams.
+The ids are resolved by [`_plugins/project_team.rb`](_plugins/project_team.rb), which warns during the build about unknown ids and about a project whose DE and EN files list different teams.
 
 ### Ordering
 
@@ -197,7 +190,7 @@ Area description (Markdown)...
 
 ## Publications
 
-Research papers, shown grouped by year with a category filter.
+Research papers, shown grouped by year with a category and year filter and a search field that finds entries by author, title or DOI (every word has to match; case and accents are ignored; the search is kept in the URL as `#q=...`, so it can be linked).
 
 - **Location:** `_publications/{de,en}/YYYY-MM-DD-title.md` (dates typically use `12-31`)
 
