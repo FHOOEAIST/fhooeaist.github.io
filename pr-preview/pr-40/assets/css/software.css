@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Software & Data (software.html, _includes/software-list.html): one card
+   grid per type with repository, DOI, licence and the publication to cite.
+   ========================================================================== */
+.software-section {
+  margin-bottom: 3.5rem;
+}
+
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.25rem;
+  /* cards of a row share its height; the link row is pushed to the bottom
+     (margin-top: auto), so the buttons line up across the row */
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.software-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  transition: box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.software-card:hover {
+  border-color: var(--color-line-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.software-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.software-type,
+.software-language {
+  padding: 0.05rem 0.55rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.02em;
+}
+
+.software-type {
+  background: var(--sky-100);
+  color: var(--color-primary);
+}
+
+.software-type-dataset {
+  background: var(--area-ehealth-soft);
+  color: var(--area-ehealth);
+}
+
+.software-type-model {
+  background: var(--area-ml-soft);
+  color: var(--area-ml);
+}
+
+.software-language {
+  background: var(--color-bg-muted);
+  color: var(--color-text);
+}
+
+.software-card .listing-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+}
+
+/* unfolded card: same accent as an opened publication entry */
+.software-card.open {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-md);
+}
+
+.software-description {
+  font-size: 0.95rem;
+}
+
+.software-description > :last-child {
+  margin-bottom: 0;
+}
+
+/* the area badges and the link row form the bottom of the card, so both
+   line up across a grid row whatever the length of the titles above */
+.software-card > .publication-categories {
+  margin-top: auto;
+}
+
+.software-card > .publication-categories ~ .software-links {
+  margin-top: 0;
+}
+
+/* badges here only label the areas, they are not filter shortcuts */
+.software-card .publication-category {
+  cursor: default;
+}
+
+.software-card .publication-category:hover {
+  background: var(--color-bg-light);
+  border-color: var(--color-line);
+  color: var(--color-text-light);
+}
+
+.software-facts {
+  margin: 0.75rem 0 0;
+  font-size: 0.88rem;
+}
+
+.software-facts > div {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.3rem 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.software-facts dt {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-heading);
+}
+
+.software-facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.software-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+/* narrower than the tiles theme's button padding, so the repository and
+   documentation buttons fit next to each other in a three-column card */
+.software-links .btn.btn-sm {
+  padding-inline: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .software-grid {
+    grid-template-columns: 1fr;
+  }
+}
