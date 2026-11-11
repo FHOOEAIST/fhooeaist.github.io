@@ -7,7 +7,7 @@ title_image: /assets/images/news/PintOfScience_2026_title.jpg
 
 ---
 
-Beim Pint of Science Festival 2026 hielt Christoph am 18. Mai im Track „The Wild and the Wired“ den Vortrag „On the trail of BAMBI and THUMPER“ – Wissenschaft bei einem Bier, mitten im Lokal statt im Hörsaal.
+Beim Pint of Science Festival 2026 hielt Christoph am 18. Mai in der Bar Forty Nine in Linz im Track „The Wild and the Wired“ den Vortrag „On the trail of BAMBI and THUMPER“ – Wissenschaft bei einem Bier, mitten im Lokal statt im Hörsaal.
 
 Mit der bewusst zugespitzten These „Wir brauchen mehr Überwachung!“ ging es um die Frage, wie viel wir eigentlich über unsere tierischen Nachbarn wissen – und wie Drohnen, Wärmebildkameras und künstliche Intelligenz helfen können, ein deutlich besseres Bild davon zu bekommen, wo und wie Wildtiere wie Rehe und Feldhasen leben.
 

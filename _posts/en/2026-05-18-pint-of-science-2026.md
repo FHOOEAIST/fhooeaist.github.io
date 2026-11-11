@@ -7,7 +7,7 @@ title_image: /assets/images/news/PintOfScience_2026_title.jpg
 
 ---
 
-At the Pint of Science Festival 2026, Christoph gave the talk "On the trail of BAMBI and THUMPER" on 18 May in the track "The Wild and the Wired": science over a pint, in a bar instead of a lecture hall.
+At the Pint of Science Festival 2026, Christoph gave the talk "On the trail of BAMBI and THUMPER" on 18 May at the Forty Nine bar in Linz, in the track "The Wild and the Wired": science over a pint, in a bar instead of a lecture hall.
 
 Under the deliberately provocative claim "We need more surveillance!", the talk asked how much we actually know about our animal neighbours, and how drones, thermal cameras and artificial intelligence can give us a much better picture of where and how wildlife such as roe deer and hares live.
 
