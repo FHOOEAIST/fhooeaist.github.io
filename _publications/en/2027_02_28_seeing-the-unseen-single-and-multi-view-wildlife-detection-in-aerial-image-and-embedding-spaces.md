@@ -2,7 +2,8 @@
 lang: en
 page_id: pub:seeing-the-unseen-single-and-multi-view-wildlife-detection-in-aerial-image-and-embedding-spaces
 permalink: /publications/seeing-the-unseen-single-and-multi-view-wildlife-detection-in-aerial-image-and-embedding-spaces/
-date: 2026-11-16  # accepted for VISAPP 2027, not published yet; dated today because future-dated entries are not rendered
+date: 2027-02-28
+early: true  # accepted for VISAPP 2027, not published yet; remove once the date has passed
 title: "Seeing the Unseen: Single- and Multi-View Wildlife Detection in Aerial Image and Embedding Spaces"
 reference: 'Praschl C., Schedl D. “Seeing the Unseen: Single- and Multi-View Wildlife
   Detection in Aerial Image and Embedding Spaces“, International Conference on Computer
