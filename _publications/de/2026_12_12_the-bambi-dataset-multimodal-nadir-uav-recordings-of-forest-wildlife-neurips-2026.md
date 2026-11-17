@@ -2,7 +2,8 @@
 lang: de
 page_id: pub:the-bambi-dataset-multimodal-nadir-uav-recordings-of-forest-wildlife-neurips-2026
 permalink: /publications/the-bambi-dataset-multimodal-nadir-uav-recordings-of-forest-wildlife-neurips-2026/
-date: 2026-10-08  # accepted for NeurIPS 2026 (December); dated today because future-dated entries are not rendered
+date: 2026-12-12
+early: true  # accepted for NeurIPS 2026, not published yet; remove once the date has passed
 title: "The BAMBI Dataset: Multimodal Nadir UAV-Recordings of Forest Wildlife"
 reference: 'Praschl C., Markoff H., Maschek A., Jantsch W., Wohlfahrt S., Jørgensen
   A., Mogensen C., Skadhauge M., Beery S., Ørsted M., Schedl D. “The BAMBI Dataset:
