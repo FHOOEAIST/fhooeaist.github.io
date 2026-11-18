@@ -207,12 +207,15 @@ projects: [projects:bambi]                   # optional, page_ids of the related
 external_url: https://example.org/abstract-book.pdf
 doi: https://doi.org/10.0000/example        # optional
 attachment: /assets/.../paper.pdf            # optional
+early: true                                  # optional, see below
 ---
 
 Abstract (Markdown)...
 ```
 
 `reference` always lists **all authors** (`Lastname X.`, comma-separated, in the order of the paper), never "et al.".
+
+A publication whose `date` lies in the future is left out of the site until that date has passed (`_plugins/early_publications.rb`; the nightly deploy picks it up). To list an accepted paper before it is published, give it its real publication date and add `early: true` — it then appears immediately, under the year of that date. The flag has no effect once the date has passed and can be removed then.
 
 To check for duplicates (missing DE/EN pairs, reused `page_id`s or permalinks, near-identical titles) run `python scripts/check_duplicates.py`; add `--base origin/main` to also compare newly added entries against the existing ones by authors and title keywords. If two entries were checked and really are separate works (e.g. a non-archival workshop version and the conference paper), add `not_duplicate_of: [<other page_id>]` to the front matter of one of them so the check stops flagging the pair.
 
