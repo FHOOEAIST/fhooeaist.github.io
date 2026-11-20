@@ -50,6 +50,7 @@ German is the default language (`default_lang: de`), English is secondary. This 
 - Small hook plugins in `_plugins/`:
   - `lang_to_locale.rb` copies front matter `lang` → `locale` after posts are read (paginate-v2 filters by `locale`, polyglot writes `lang`).
   - `img_baseurl.rb` rewrites bare `src="/..."` attributes in rendered HTML output to include `site.baseurl`, since not all image references go through Liquid's `relative_url` filter.
+  - `early_publications.rb` drops publications dated in the future from the collection unless they carry `early: true` (accepted, not yet published papers that should be listed under their real date straight away). Theses are not affected.
   - `project_sort_title.rb` derives `sort_title` on every project (title minus a leading `Projekt`/`Project`, with or without a colon) so the listings can sort projects by the name that distinguishes them rather than clumping a third of them under P.
   - `project_team.rb` resolves the projects' `team:` lists (see *Project team* below).
 
