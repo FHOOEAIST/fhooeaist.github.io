@@ -11,6 +11,11 @@ projects:
     laufzeitEnd: 31.03.2021
     partner: CAS – Computer Anwendungs Systeme GmbH
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
+  - title: WIRE – Workflow for Image prefetching in Radiology for ELGA
+    laufzeitStart: 01.10.2013
+    laufzeitEnd: 30.09.2015
+    partner: CAS – Computer Anwendungs Systeme GmbH
+    foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – Basisprogramm
 category: ehealth
 team:
   - emmanuel-helm
@@ -21,3 +26,9 @@ team:
 ## REPO – Radiology E-health PlatfOrm
 
 Das Ziel des Projekts ist es, einrichtungsübergreifende Zusammenarbeit in der Radiologie unter Verwendung der österreichischen e-Health-Infrastruktur zu ermöglichen. Konkret soll der in einem Vorprojekt (WIRE) identifizierte radiologische Workflow schrittweise um kollaborative Elemente erweitert werden. Von der Befundung über das Diktat bis hin zu neuen Feedback-Mechanismen am Ende des radiologischen Workflows sind e-Health-Anwendungen zur Verbesserung der Versorgungsqualität geplant. Insbesondere die Zusammenarbeit zwischen niedergelassenen RadiologInnen und den radiologischen, aber auch anderen, relevanten Abteilungen (Histologielabore, etc.) in Krankenhäusern soll damit verbessert werden
+
+---
+
+## WIRE – Workflow for Image prefetching in Radiology for ELGA
+
+Die Verabschiedung des ELGA-Gesetzes und die damit verbundene schrittweise Einführung der österreichischen elektronischen Gesundheitsakte, veränderten in manchen Teilbereichen die Rahmenbedingungen für die Arbeit von Radiologen. Das Ziel des FFG-geförderten Forschungsprojekts WIRE war es, Radiologen, zum Zeitpunkt der Befundung, Bilder früherer Untersuchungen (u.a. bei anderen GDAs), zur Verfügung zu stellen. Dieses Vorladen sollte über die ELGA-Infrastruktur erfolgen.
