@@ -4,8 +4,8 @@ page_id: pub:paka-a-process-anchored-knowledge-assistant-for-manufacturing-proce
 permalink: /publications/paka-a-process-anchored-knowledge-assistant-for-manufacturing-processes/
 date: 2026-11-11  # ISM 2026 conference start date (Nov 11–13); exact day unknown
 title: "PAKA: A Process-Anchored Knowledge Assistant for Manufacturing Processes"
-reference: Hanreich M., Zwettler G.A., Kloiber K., Schönböck J., Altmann J. “PAKA: A Process-Anchored
-  Knowledge Assistant for Manufacturing Processes“, ISM 2026, Procedia Computer Science.
+reference: 'Hanreich M., Zwettler G.A., Kloiber K., Schönböck J., Altmann J. “PAKA: A Process-Anchored
+  Knowledge Assistant for Manufacturing Processes“, ISM 2026, Procedia Computer Science.'
 categories: [ml]
 ---
 
