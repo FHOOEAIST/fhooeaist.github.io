@@ -17,6 +17,8 @@ projects:
     foerdergeber: Erasmus+ Cooperation Partnerships in Higher Education programme
 category: unknown
 eu_funded: co-funded
+eu_disclaimer: funded
+eu_granting_authority: der Agenzia Nazionale Erasmus+ INDIRE
 team:
   - gerald-zwettler
   - christoph-praschl

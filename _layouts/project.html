@@ -76,6 +76,11 @@ css: projects
           "The use of the EU emblem in the context of EU programmes 2021-2027".
           eu_funded: true shows "Funded by the European Union",
           eu_funded: co-funded shows "Co-funded by the European Union".
+          eu_disclaimer: funded (optional) starts the disclaimer text with
+          "Funded by the European Union" although the emblem is the co-funded one.
+          eu_granting_authority (optional, per language file, with its article:
+          "the Agenzia …" / "der Agenzia …") names the authority in the first
+          sentence of the disclaimer instead of "the granting authority".
         {%- endcomment -%}
         {% if page.eu_funded and forloop.first %}
         {% if page.eu_funded == "co-funded" %}
@@ -85,13 +90,17 @@ css: projects
           {% assign eu_img = 'eu-funded-' %}
           {% if en %}{% assign eu_statement = 'Funded by the European Union' %}{% else %}{% assign eu_statement = 'Finanziert von der Europäischen Union' %}{% endif %}
         {% endif %}
+        {% assign eu_disclaimer_statement = eu_statement %}
+        {% if page.eu_disclaimer == "funded" %}
+          {% if en %}{% assign eu_disclaimer_statement = 'Funded by the European Union' %}{% else %}{% assign eu_disclaimer_statement = 'Finanziert von der Europäischen Union' %}{% endif %}
+        {% endif %}
         <div class="project-eu-funding">
           <img src="{{ '/assets/images/projects/' | append: eu_img | append: site.active_lang | append: '.png' | relative_url }}" alt="{{ eu_statement }}" width="252" height="56" loading="lazy">
           <p class="project-eu-disclaimer">
             {%- if en -%}
-            {{ eu_statement }}. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the granting authority. Neither the European Union nor the granting authority can be held responsible for them.
+            {{ eu_disclaimer_statement }}. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or {{ page.eu_granting_authority | default: 'the granting authority' }}. Neither the European Union nor the granting authority can be held responsible for them.
             {%- else -%}
-            {{ eu_statement }}. Die geäußerten Ansichten und Meinungen entsprechen jedoch ausschließlich denen des Autors bzw. der Autoren und spiegeln nicht zwingend die der Europäischen Union oder der Bewilligungsbehörde wider. Weder die Europäische Union noch die Bewilligungsbehörde können dafür verantwortlich gemacht werden.
+            {{ eu_disclaimer_statement }}. Die geäußerten Ansichten und Meinungen entsprechen jedoch ausschließlich denen des Autors bzw. der Autoren und spiegeln nicht zwingend die der Europäischen Union oder {{ page.eu_granting_authority | default: 'der Bewilligungsbehörde' }} wider. Weder die Europäische Union noch die Bewilligungsbehörde können dafür verantwortlich gemacht werden.
             {%- endif -%}
           </p>
         </div>
