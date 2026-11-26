@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Imprint
+   ========================================================================== */
+.impressum-page {
+  line-height: 1.65;
+}
+
+.impressum-block {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 1.75rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--border-radius);
+}
+
+.impressum-block h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  color: var(--color-primary);
+}
+
+.impressum-block p {
+  margin: 0.5rem 0;
+}
+
+.impressum-block > :last-child {
+  margin-bottom: 0;
+}
+
+.impressum-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.impressum-list li {
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-light);
+  font-size: 0.88rem;
+}
+
+.impressum-page a {
+  overflow-wrap: anywhere;
+}
+
+.impressum-copyright {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
