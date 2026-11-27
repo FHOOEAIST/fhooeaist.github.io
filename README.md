@@ -124,6 +124,8 @@ projects:
     foerdergeber: Österreichische Forschungsförderungsgesellschaft FFG – AI4Green
     dissertant: <optional>
 eu_funded: true         # optional: shows the official "Funded by the European Union" emblem after the text (co-funded: "Co-funded by the European Union")
+eu_disclaimer: funded   # optional: the disclaimer text starts with "Funded by the European Union" although the emblem is the co-funded one
+eu_granting_authority: the Agenzia Nazionale Erasmus+ INDIRE   # optional: named in the EU disclaimer instead of "the granting authority"; include the article, per language file (DE: "der Agenzia ...")
 ---
 
 Markdown description for Bambi...
